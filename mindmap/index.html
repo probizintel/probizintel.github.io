@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-title-en="Knowledge Mind Map | ProBizIntel" data-title-vi="Sơ đồ Tri thức | ProBizIntel">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knowledge Mind Map | ProBizIntel</title>
+<meta name="description" content="A single map of the ProBizIntel knowledge network — industrial practice, the MBA and project management curriculum, risk, the research library, and the sister portals.">
+<meta name="theme-color" content="#fbf6ee">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23b8501e'/%3E%3Cpath d='M17 4 8 18h6l-1 10 9-14h-6z' fill='%23fff6e9'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="mindmap.css">
+</head>
+<body class="mm-page">
+<a class="skip-link" href="#outline" data-vi="Chuyển đến danh sách">Skip to list</a>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 20V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-net" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="18" r="2.4"/><circle cx="19" cy="18" r="2.4"/><path d="M12 7.4v4.6M12 12 6.6 16M12 12l5.4 4"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5"/></symbol>
+</svg>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a class="brand" href="../index.html" aria-label="ProBizIntel">
+      <span class="brand-mark"><svg class="ico"><use href="#i-bolt"/></svg></span>
+      <span class="brand-text">ProBiz<span class="accent">Intel</span></span>
+      <span class="brand-tag" data-vi="Cổng tri thức">Knowledge Portal</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Primary" data-vi-aria="Điều hướng chính">
+      <a class="nav-link" href="../index.html#chain" data-vi="Chuỗi giá trị">Value Chain</a>
+      <a class="nav-link" href="../index.html#delivery" data-vi="Triển khai">Delivery</a>
+      <a class="nav-link" href="../MBAPM/index.html" data-vi="MBA / QLDA">MBA / PM</a>
+      <a class="nav-link" href="../books/index.html" data-vi="Thư viện">Library</a>
+      <a class="nav-link is-active" href="index.html" data-vi="Sơ đồ">Mind Map</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language / Ngôn ngữ">
+        <button class="lang-btn is-active" type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button class="lang-btn" type="button" data-lang="vi" aria-pressed="false">VI</button>
+      </div>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" data-vi-aria="Mở menu" aria-expanded="false" aria-controls="nav">
+        <svg class="ico"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="mm-hero">
+  <div class="container">
+    <p class="kicker"><span class="pulse"></span> <span data-vi="Bản đồ toàn mạng lưới">The whole network, one map</span></p>
+    <h1 data-vi="Sơ đồ Tri thức">The Knowledge Map</h1>
+    <p class="lede" data-vi="Năm nhánh, hai mươi chín đích đến. Mỗi nút dẫn thẳng đến phần tương ứng của cổng — kéo để di chuyển, cuộn để phóng, bấm để đi.">
+      Five branches, twenty-nine destinations. Every node leads straight into the part of the portal it describes —
+      drag to pan, scroll to zoom, click to travel.
+    </p>
+  </div>
+</section>
+
+<section class="mm-stage">
+  <div class="container">
+    <div class="mm-toolbar">
+      <div class="search-shell mm-search">
+        <svg class="ico search-ico"><use href="#i-search"/></svg>
+        <input type="search" id="mmSearch" placeholder="Highlight a node…" data-vi-ph="Làm nổi bật một nút…" autocomplete="off" aria-label="Highlight nodes">
+        <button class="search-clear" id="mmClear" type="button" aria-label="Clear" hidden><svg class="ico"><use href="#i-close"/></svg></button>
+      </div>
+      <div class="mm-actions">
+        <button class="mm-btn" id="mmOut" type="button" aria-label="Zoom out" data-vi-aria="Thu nhỏ"><svg class="ico"><use href="#i-minus"/></svg></button>
+        <button class="mm-btn" id="mmIn" type="button" aria-label="Zoom in" data-vi-aria="Phóng to"><svg class="ico"><use href="#i-plus"/></svg></button>
+        <button class="mm-btn mm-reset" id="mmReset" type="button">
+          <svg class="ico"><use href="#i-target"/></svg>
+          <span data-vi="Đặt lại">Reset</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mm-canvas" id="mmCanvas">
+      <svg id="mmSvg" viewBox="0 0 1040 900" role="img" aria-labelledby="mmTitle" preserveAspectRatio="xMidYMid meet">
+        <title id="mmTitle">ProBizIntel knowledge map</title>
+        <g id="mmPanzoom"></g>
+      </svg>
+      <p class="mm-hint" data-vi="Kéo để di chuyển · Cuộn để phóng to · Bấm vào nút để mở">Drag to pan · Scroll to zoom · Click a node to open</p>
+    </div>
+
+    <div class="mm-legend" id="mmLegend"></div>
+  </div>
+</section>
+
+<section class="mm-outline-wrap" id="outline">
+  <div class="container">
+    <h2 class="sub-head" data-vi="Đọc dưới dạng danh sách">Read it as a list</h2>
+    <p class="intro-text" data-vi="Cùng nội dung, dạng văn bản — dùng được với trình đọc màn hình, in ra, hoặc khi bạn chỉ muốn tra nhanh.">
+      The same structure in text — usable with a screen reader, printable, or when you just want to look something up.
+    </p>
+    <div class="mm-outline" id="mmOutline"></div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-text">ProBiz<span class="accent">Intel</span></span>
+      <p data-vi="Hạ tầng tri thức công nghiệp — một khung, nhiều cổng.">Industrial knowledge infrastructure — one frame, many portals.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer" data-vi-aria="Chân trang">
+      <div>
+        <h5 data-vi="Cổng">Portal</h5>
+        <a href="../index.html" data-vi="Trang chủ">Home</a>
+        <a href="../MBAPM/index.html" data-vi="MBA / QLDA">MBA / PM</a>
+        <a href="../books/index.html" data-vi="Thư viện">Library</a>
+        <a href="../vi/books/index.html" data-vi="Thư viện tiếng Việt">Thư viện VI</a>
+      </div>
+      <div>
+        <h5 data-vi="Mạng lưới">Network</h5>
+        <a href="https://henryphamduc.github.io/" target="_blank" rel="noopener">Henry Phạm Đức</a>
+        <a href="https://geoinst.github.io/" target="_blank" rel="noopener">GeoInst</a>
+        <a href="https://tenniskb.github.io/" target="_blank" rel="noopener">Tennis KB</a>
+        <a href="https://taichikb.github.io/" target="_blank" rel="noopener">TaichiNOW</a>
+      </div>
+    </nav>
+  </div>
+  <div class="container footer-base">
+    <p>© <span id="year">2026</span> ProBizIntel.</p>
+    <p class="footer-target">probizintel.github.io/mindmap</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top" data-vi-aria="Về đầu trang">
+  <svg class="ico"><use href="#i-up"/></svg>
+</button>
+
+<script src="../app.js"></script>
+<script src="mindmap.js"></script>
+</body>
+</html>

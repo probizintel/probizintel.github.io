@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en" data-title-en="MBA × Project Management | ProBizIntel" data-title-vi="MBA × Quản lý Dự án | ProBizIntel">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MBA × Project Management | ProBizIntel</title>
+<meta name="description" content="A graduate-level project management knowledge base: the MSM MBA curriculum, the PMBOK process matrix, the PMP track, the Vietnamese QLDA financial toolkit, and a reusable thesis research framework.">
+<meta name="theme-color" content="#fbf6ee">
+<meta property="og:title" content="MBA × Project Management | ProBizIntel">
+<meta property="og:description" content="Curriculum, PMBOK matrix, PMP track, financial appraisal toolkit and an anonymised research framework.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23b8501e'/%3E%3Cpath d='M17 4 8 18h6l-1 10 9-14h-6z' fill='%23fff6e9'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="mbapm.css">
+</head>
+<body>
+<a class="skip-link" href="#main" data-vi="Chuyển đến nội dung">Skip to content</a>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 8.5 12 4l10 4.5-10 4.5z"/><path d="M6 11v4.2c0 1.6 2.7 2.8 6 2.8s6-1.2 6-2.8V11M22 8.5V14"/></symbol>
+  <symbol id="i-tree" viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="5" rx="1"/><rect x="15" y="10" width="6" height="5" rx="1"/><rect x="3" y="16" width="6" height="5" rx="1"/><path d="M6 8v8M9 6h4a2 2 0 0 1 2 2v5"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12.5 16V8M17 16v-6"/></symbol>
+  <symbol id="i-money" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 12h.01M18 12h.01"/></symbol>
+  <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3 2.5 20h19z"/><path d="M12 9v5M12 17h.01"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5.5 5.5L20 6"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 20V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4h9a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M17 7h2v13H8"/></symbol>
+  <symbol id="i-net" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="18" r="2.4"/><circle cx="19" cy="18" r="2.4"/><path d="M12 7.4v4.6M12 12 6.6 16M12 12l5.4 4"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"/></symbol>
+</svg>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a class="brand" href="../index.html" aria-label="ProBizIntel">
+      <span class="brand-mark"><svg class="ico"><use href="#i-bolt"/></svg></span>
+      <span class="brand-text">ProBiz<span class="accent">Intel</span></span>
+      <span class="brand-tag" data-vi="Cổng tri thức">Knowledge Portal</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Primary" data-vi-aria="Điều hướng chính">
+      <a class="nav-link" href="../index.html#chain" data-vi="Chuỗi giá trị">Value Chain</a>
+      <a class="nav-link" href="../index.html#delivery" data-vi="Triển khai">Delivery</a>
+      <a class="nav-link is-active" href="index.html" data-vi="MBA / QLDA">MBA / PM</a>
+      <a class="nav-link" href="../books/index.html" data-vi="Thư viện">Library</a>
+      <a class="nav-link" href="../mindmap/index.html" data-vi="Sơ đồ">Mind Map</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch" role="group" aria-label="Language / Ngôn ngữ">
+        <button class="lang-btn is-active" type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button class="lang-btn" type="button" data-lang="vi" aria-pressed="false">VI</button>
+      </div>
+      <button class="icon-btn" id="headerSearchBtn" type="button" aria-label="Search" data-vi-aria="Tìm kiếm">
+        <svg class="ico"><use href="#i-search"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" data-vi-aria="Mở menu" aria-expanded="false" aria-controls="nav">
+        <svg class="ico"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<a id="top"></a>
+
+<section class="hero mp-hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <p class="kicker"><span class="pulse"></span> <span data-vi="Chương trình sau đại học · Học liệu">Graduate Programme · Knowledge Base</span></p>
+    <h1>
+      <span data-vi="MBA × Quản lý">MBA × Project</span><br>
+      <span class="grad" data-vi="Dự án">Management</span>
+    </h1>
+    <p class="lede" data-vi="Toàn bộ học phần MBA được sắp lại quanh một câu hỏi duy nhất: làm sao bàn giao một dự án vốn đúng hạn, đúng ngân sách và không mất an toàn. Giáo trình, ma trận quy trình, lộ trình chứng chỉ, bộ công cụ tài chính và một khung nghiên cứu dùng lại được.">
+      The whole MBA curriculum re-sequenced around one question: how do you actually deliver a capital project
+      on time, on budget, and without hurting anyone. Curriculum, process matrix, certification track,
+      financial toolkit, and a research framework you can reuse.
+    </p>
+
+    <div class="search-block">
+      <div class="search-shell">
+        <svg class="ico search-ico"><use href="#i-search"/></svg>
+        <input type="search" id="portalSearch" placeholder="Filter courses, processes, formulas, or risk factors…" data-vi-ph="Lọc học phần, quy trình, công thức hoặc yếu tố rủi ro…" autocomplete="off" aria-label="Search this section" data-vi-aria="Tìm kiếm trong mục này">
+        <button class="search-clear" id="searchClear" type="button" aria-label="Clear search" data-vi-aria="Xóa tìm kiếm" hidden>
+          <svg class="ico"><use href="#i-close"/></svg>
+        </button>
+        <kbd class="search-kbd">/</kbd>
+      </div>
+      <div class="search-meta">
+        <span class="search-count" id="searchCount" aria-live="polite"></span>
+        <div class="quick-chips" id="quickChips">
+          <button class="chip" type="button" data-q="NPV">NPV</button>
+          <button class="chip" type="button" data-q="risk">Risk</button>
+          <button class="chip" type="button" data-q="scope">Scope</button>
+          <button class="chip" type="button" data-q="cost">Cost</button>
+          <button class="chip" type="button" data-q="stakeholder">Stakeholder</button>
+        </div>
+      </div>
+    </div>
+
+    <dl class="hero-stats">
+      <div class="stat"><dt>15</dt><dd data-vi="Học phần MSM MBA">MSM MBA courses</dd></div>
+      <div class="stat"><dt>42</dt><dd data-vi="Quy trình PMBOK">PMBOK processes</dd></div>
+      <div class="stat"><dt>59</dt><dd data-vi="Yếu tố rủi ro được xếp hạng">Ranked risk factors</dd></div>
+      <div class="stat"><dt>3</dt><dd data-vi="Công cụ tài chính tương tác">Live finance tools</dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="container content" id="content">
+
+  <!-- 01 CURRICULUM -->
+  <section class="knowledge-card" id="curriculum" data-title="curriculum MSM MBA courses statistics accounting economics finance strategy supply chain change diversity learning innovation thesis" data-title-vi="chương trình MSM MBA thống kê kế toán kinh tế tài chính chiến lược chuỗi cung ứng thay đổi đa dạng học tập đổi mới luận văn">
+    <div class="card-head">
+      <div class="card-index">01</div>
+      <div class="card-title">
+        <h2 data-vi="Kiến trúc Chương trình">Programme Architecture</h2>
+        <p class="card-sub" data-vi="Mười lăm học phần, năm chặng. Mỗi chặng trả lời một câu hỏi mà chặng sau giả định bạn đã trả lời xong.">Fifteen courses, five stages. Each stage answers a question the next stage assumes you already answered.</p>
+      </div>
+      <span class="badge" data-vi="Cốt lõi">Core</span>
+    </div>
+
+    <p class="intro-text" data-vi="Trình tự dưới đây không phải trình tự hành chính của trường — đó là trình tự học. Bạn không thể định giá một dự án (chặng 2) trước khi đọc được báo cáo tài chính (chặng 1), và không thể tranh luận chiến lược (chặng 3) trước khi biết chi phí vốn của mình.">
+      The sequence below is not the school's administrative order — it is the learning order. You cannot value a project (stage 2)
+      before you can read a financial statement (stage 1), and you cannot argue strategy (stage 3) before you know your cost of capital.
+    </p>
+
+    <div class="stage-flow">
+      <article class="stage s-item">
+        <div class="stage-head"><span class="stage-num">01</span><h3 data-vi="Nền tảng Định lượng">Quantitative Foundation</h3></div>
+        <p class="stage-q" data-vi="“Con số này có đáng tin không?”">&ldquo;Can I trust this number?&rdquo;</p>
+        <ul class="course-list">
+          <li><strong data-vi="Thống kê Kinh doanh">Business Statistics</strong><span data-vi="Kiểm định giả thuyết, hồi quy, SPSS và Minitab">Hypothesis testing, regression, SPSS &amp; Minitab</span></li>
+          <li><strong data-vi="Kế toán Tài chính">Financial Accounting</strong><span data-vi="Báo cáo tài chính và nguyên tắc ghi nhận">Statements and recognition rules</span></li>
+          <li><strong data-vi="Kế toán Quản trị">Managerial Accounting</strong><span data-vi="Chi phí, định giá nội bộ, ra quyết định">Cost behaviour, transfer pricing, decisions</span></li>
+        </ul>
+        <p class="stage-out" data-vi="<strong>Đầu ra:</strong> đọc được một bộ báo cáo tài chính và biết con số nào là ước lượng."><strong>Output:</strong> read a set of statements and know which numbers are estimates.</p>
+      </article>
+
+      <div class="stage-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></div>
+
+      <article class="stage s-item">
+        <div class="stage-head"><span class="stage-num">02</span><h3 data-vi="Động cơ Kinh tế &amp; Tài chính">Economic &amp; Financial Engine</h3></div>
+        <p class="stage-q" data-vi="“Dự án này có đáng làm không?”">&ldquo;Is this project worth doing?&rdquo;</p>
+        <ul class="course-list">
+          <li><strong data-vi="Kinh tế Quản trị">Managerial Economics</strong><span data-vi="Ước lượng cầu, định giá, cấu trúc thị trường">Demand estimation, pricing, market structure</span></li>
+          <li><strong data-vi="Tài chính Quản trị">Managerial Finance</strong><span data-vi="Chi phí vốn, hoạch định vốn, cấu trúc vốn">Cost of capital, capital budgeting, structure</span></li>
+          <li><strong data-vi="Tài chính Quốc tế">International Finance</strong><span data-vi="Tỷ giá, phòng ngừa, rủi ro đa tiền tệ">FX exposure, hedging, multi-currency risk</span></li>
+        </ul>
+        <p class="stage-out" data-vi="<strong>Đầu ra:</strong> một quyết định đầu tư có thể bảo vệ trước hội đồng."><strong>Output:</strong> an investment decision you can defend in a board room.</p>
+      </article>
+
+      <div class="stage-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></div>
+
+      <article class="stage s-item">
+        <div class="stage-head"><span class="stage-num">03</span><h3 data-vi="Chiến lược &amp; Vận hành Toàn cầu">Strategy &amp; Global Operations</h3></div>
+        <p class="stage-q" data-vi="“Chúng ta cạnh tranh ở đâu và bằng gì?”">&ldquo;Where and how do we compete?&rdquo;</p>
+        <ul class="course-list">
+          <li><strong data-vi="Chiến lược Doanh nghiệp Toàn cầu">Global Corporate Strategy</strong><span data-vi="Phân tích ngành, phạm vi, quốc tế hóa">Industry analysis, scope, internationalisation</span></li>
+          <li><strong data-vi="Kinh doanh trong Môi trường Toàn cầu">Business in Global Arena</strong><span data-vi="Thể chế, thương mại, rủi ro chính trị">Institutions, trade, political risk</span></li>
+          <li><strong data-vi="Quản lý Chuỗi cung ứng Toàn cầu">Global Supply Chain Management</strong><span data-vi="Mua sắm, logistics, tồn kho">Sourcing, logistics, inventory positioning</span></li>
+        </ul>
+        <p class="stage-out" data-vi="<strong>Đầu ra:</strong> biết dự án của mình nằm ở đâu trong chuỗi giá trị toàn cầu."><strong>Output:</strong> know where your project sits in the global value chain.</p>
+      </article>
+
+      <div class="stage-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></div>
+
+      <article class="stage s-item">
+        <div class="stage-head"><span class="stage-num">04</span><h3 data-vi="Con người &amp; Thay đổi">People &amp; Change</h3></div>
+        <p class="stage-q" data-vi="“Ai sẽ phản đối, và vì sao?”">&ldquo;Who will resist, and why?&rdquo;</p>
+        <ul class="course-list">
+          <li><strong data-vi="Dẫn dắt Thay đổi trong Tập đoàn Đa quốc gia">Leading Change in Multinationals</strong><span data-vi="Mô hình thay đổi, kháng cự cấu trúc">Change models, structural resistance</span></li>
+          <li><strong data-vi="Quản lý Đa dạng Văn hóa">Managing Cultural Diversity</strong><span data-vi="Khoảng cách văn hóa, đàm phán, đội ngũ">Cultural distance, negotiation, teams</span></li>
+          <li><strong data-vi="Tổ chức Học tập">Organizational Learning</strong><span data-vi="Tri thức, phản hồi, cải tiến liên tục">Knowledge, feedback, continuous improvement</span></li>
+        </ul>
+        <p class="stage-out" data-vi="<strong>Đầu ra:</strong> một kế hoạch quản lý thay đổi có tên người, không phải một slide."><strong>Output:</strong> a change plan with names on it, not a slide.</p>
+      </article>
+
+      <div class="stage-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></div>
+
+      <article class="stage s-item stage-cap">
+        <div class="stage-head"><span class="stage-num">05</span><h3 data-vi="Tích hợp &amp; Đồ án tốt nghiệp">Integration &amp; Capstone</h3></div>
+        <p class="stage-q" data-vi="“Làm sao để nó thực sự xảy ra?”">&ldquo;How does it actually happen?&rdquo;</p>
+        <ul class="course-list">
+          <li><strong data-vi="Quản lý Dự án — Nguyên lý &amp; Phương pháp">Project Management — Principles &amp; Methodologies</strong><span data-vi="Vòng đời, WBS, EVM, RACI, rủi ro">Life cycle, WBS, EVM, RACI, risk</span></li>
+          <li><strong data-vi="Đổi mới &amp; Khởi nghiệp">Innovation and Business Venture</strong><span data-vi="Từ cơ hội đến mô hình kinh doanh">Opportunity to business model</span></li>
+          <li><strong data-vi="Hội thảo Luận văn">Thesis Workshop</strong><span data-vi="Đề cương, phương pháp, bảo vệ">Proposal, methodology, defence</span></li>
+        </ul>
+        <p class="stage-out" data-vi="<strong>Đầu ra:</strong> một dự án đã bàn giao, hoặc một luận văn bảo vệ được."><strong>Output:</strong> a delivered project, or a defended thesis.</p>
+      </article>
+    </div>
+
+    <div class="note-strip">
+      <svg class="ico"><use href="#i-net"/></svg>
+      <p data-vi="&lt;strong&gt;Điều chương trình không dạy:&lt;/strong&gt; không học phần nào dạy bạn đọc một P&amp;ID, chạy một buổi HAZOP hay từ chối một thay đổi phạm vi vào tuần thứ 40. Những kỹ năng đó nằm ở &lt;a href=&quot;../index.html#automation&quot;&gt;Hệ tri thức PAC&amp;I&lt;/a&gt; và chỉ học được ngoài hiện trường."><strong>What the programme does not teach:</strong> no course covers reading a P&amp;ID, running a HAZOP, or refusing a scope change in week 40. Those live in the <a href="../index.html#automation">PAC&amp;I body of knowledge</a> and are learned on site.</p>
+    </div>
+  </section>
+
+  <!-- 02 PMBOK MATRIX -->
+  <section class="knowledge-card" id="pmbok" data-title="PMBOK matrix process groups knowledge areas integration scope time cost quality resource communications risk procurement initiating planning executing monitoring closing" data-title-vi="PMBOK ma trận nhóm quy trình lĩnh vực tri thức tích hợp phạm vi thời gian chi phí chất lượng nguồn lực truyền thông rủi ro mua sắm khởi tạo lập kế hoạch thực hiện giám sát kết thúc">
+    <div class="card-head">
+      <div class="card-index">02</div>
+      <div class="card-title">
+        <h2 data-vi="Ma trận Quy trình PMBOK">The PMBOK Process Matrix</h2>
+        <p class="card-sub" data-vi="Bốn mươi hai quy trình, mười lĩnh vực tri thức, năm nhóm quy trình. Đây là bản đồ — dùng để hỏi “còn thiếu gì?”, không phải để tô đủ ô.">Forty-two processes, ten knowledge areas, five process groups. Use it to ask &ldquo;what is missing?&rdquo;, not to tick every box.</p>
+      </div>
+      <span class="badge badge-cyan" data-vi="PMBOK 4th ed.">PMBOK 4th ed.</span>
+    </div>
+
+    <p class="intro-text" data-vi="Bảng dưới đây là phiên bản 2008 của PMBOK — phiên bản mà hầu hết luận văn và đề thi cũ vẫn tham chiếu. Ma trận này hữu ích vì nó buộc bạn phải chỉ ra quy trình nào đang bị bỏ trống: một dự án không có ô “Kiểm soát Phạm vi” là một dự án sẽ trôi phạm vi.">
+      The matrix below is the 2008 edition — the version most theses and legacy exams still cite. It is useful because it forces you to
+      name the empty cells: a project with nothing in <em>Control Scope</em> is a project that will drift.
+    </p>
+
+    <div class="table-wrap s-item">
+      <table class="data-table pm-matrix">
+        <caption class="sr-only">PMBOK 4th edition process matrix: knowledge areas by process group</caption>
+        <thead>
+          <tr>
+            <th scope="col" data-vi="Lĩnh vực tri thức">Knowledge area</th>
+            <th scope="col" data-vi="Khởi tạo">Initiating</th>
+            <th scope="col" data-vi="Lập kế hoạch">Planning</th>
+            <th scope="col" data-vi="Thực hiện">Executing</th>
+            <th scope="col" data-vi="Giám sát &amp; Kiểm soát">Monitoring &amp; Controlling</th>
+            <th scope="col" data-vi="Kết thúc">Closing</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" data-vi="4. Tích hợp">4. Integration</th>
+            <td><span class="proc">4.1 Develop Project Charter</span></td>
+            <td><span class="proc">4.2 Develop Project Management Plan</span></td>
+            <td><span class="proc">4.3 Direct and Manage Project Execution</span></td>
+            <td><span class="proc">4.4 Monitor and Control Project Work</span><span class="proc">4.5 Perform Integrated Change Control</span></td>
+            <td><span class="proc">4.6 Close Project or Phase</span></td>
+          </tr>
+          <tr>
+            <th scope="row" data-vi="5. Phạm vi">5. Scope</th>
+            <td class="cell-empty" data-vi="—">—</td>
+            <td><span class="proc">5.1 Collect Requirements</span><span class="proc">5.2 Define Scope</span><span class="proc">5.3 Create WBS</span></td>
+            <td class="cell-empty" data-vi="—">—</td>
+            <td><span class="proc">5.4 Verify Scope</span><span class="proc">5.5 Control Scope</span></td>
+            <td class="cell-empty" data-vi="—">—</td>
+          </tr>
+          <tr>
+            <th scope="row" data-vi="6. Thời gian">6. Time</th>
+            <td class="cell-empty" data-vi="—">—</td>
+            <td><span class="proc">6.1 Define Activities</span><span class="proc">6.2 Sequence Activities</span><span class="proc">6.3 Estimate Activity Resources</span><span class="proc">6.4 Estimate Activity Durations</span><span class="proc">6.5 Develop Schedule</span></td>
+            <td class="cell-empty" data-vi="—">—</td>
+            <td><span class="proc">6.6 Control Schedule</span></td>
+            <td class="cell-empty" data-vi="—">—</td>
+          </tr>
+          <tr>
+            <th scope="row" data-vi="7. Chi phí">7. Cost</th>
+            <td class="cell-empty" data-vi="—">—</td>
+            <td><span class="proc">7.1 Estimate Costs</span><span class="proc">7.2 Determine Budget</span></td>
+            <td class="cell-empty" data-vi="—">—</td>
+            <td><span class="proc">7.3 Control Costs</span></td>
+            <td class="cell-empty" data-vi="—">—</td>
+          </tr>
+          <tr>
+            <th scope="row" data-vi="8. Chất lượng">8. Quality</th>
+            <td class="cell-empty" data-vi="—">—</td>
+            <td><span class="proc">8.1 Plan Quality</span></td>
+            <td><span class="proc">8.2 Perform Quality Assurance</span></td>
+            <td><span class="proc">8.3 Perform Quality Control</span></td>
+            <td class="cell-empty" data-vi="—">—</td>
+          </tr>
+          <tr>
+            <th scope="row" data-vi="9. Nguồn nhân lực">9. Human Resource</th>
+            <td class="cell-empty" data-vi="—">—</td>
+            <td><span class="proc">9.1 Develop Human Resource Plan</span></td>
+            <td><span class="proc">9.2 Acquire Project Team</span><span class="proc">9.3 Develop Project Team</span><span class="proc">9.4 Manage Project Team</span></td>
+            <td class="cell-empty" data-vi="—">—</td>
+            <td class="cell-empty" data-vi="—">—</td>
+          </tr>
+          <tr>
+            <th scope="row" data-vi="10. Truyền thông">10. Communications</th>
+            <td><span class="proc">10.1 Identify Stakeholders</span></td>
+            <td><span class="proc">10.2 Plan Communications</span></td>
+            <td><span class="proc">10.3 Distribute Information</span><span class="proc">10.4 Manage Stakeholder Expectations</span></td>
+            <td><span class="proc">10.5 Report Performance</span></td>
+            <td class="cell-empty" data-vi="—">—</td>
+          </tr>
+          <tr>
+            <th scope="row" data-vi="11. Rủi ro">11. Risk</th>
+            <td class="cell-empty" data-vi="—">—</td>
+            <td><span class="proc">11.1 Plan Risk Management</span><span class="proc">11.2 Identify Risks</span><span class="proc">11.3 Perform Qualitative Risk Analysis</span><span class="proc">11.4 Perform Quantitative Risk Analysis</span><span class="proc">11.5 Plan Risk Responses</span></td>
+            <td class="cell-empty" data-vi="—">—</td>
+            <td><span class="proc">11.6 Monitor and Control Risks</span></td>
+            <td class="cell-empty" data-vi="—">—</td>
+          </tr>
+          <tr>
+            <th scope="row" data-vi="12. Mua sắm">12. Procurement</th>
+            <td class="cell-empty" data-vi="—">—</td>
+            <td><span class="proc">12.1 Plan Procurements</span></td>
+            <td><span class="proc">12.2 Conduct Procurements</span></td>
+            <td><span class="proc">12.3 Administer Procurements</span></td>
+            <td><span class="proc">12.4 Close Procurements</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub-head" data-vi="Ba phiên bản, ba cách nghĩ">Three editions, three ways of thinking</h3>
+    <div class="edition-row">
+      <article class="edition s-item">
+        <span class="edition-tag">2008</span>
+        <h4>PMBOK 4th</h4>
+        <p data-vi="42 quy trình. Trọng tâm là quy trình và tài liệu đầu ra — thời đại của “bạn đã tạo ra artefact chưa?”.">42 processes. Process and artefact driven — the era of &ldquo;have you produced the artefact?&rdquo;</p>
+      </article>
+      <article class="edition s-item">
+        <span class="edition-tag">2017</span>
+        <h4>PMBOK 6th</h4>
+        <p data-vi="49 quy trình, thêm quản lý các bên liên quan và nhấn mạnh vào tính linh hoạt của công cụ.">49 processes, stakeholder management promoted, tool agility emphasised.</p>
+      </article>
+      <article class="edition s-item">
+        <span class="edition-tag">2021</span>
+        <h4>PMBOK 7th</h4>
+        <p data-vi="12 nguyên lý và 8 lĩnh vực hiệu suất. Bỏ danh sách quy trình — chuyển sang nguyên tắc và kết quả bàn giao.">12 principles and 8 performance domains. The process list is gone — principles and outcomes instead.</p>
+      </article>
+    </div>
+    <div class="note-strip note-quiet">
+      <svg class="ico"><use href="#i-check"/></svg>
+      <p data-vi="&lt;strong&gt;Thực hành:&lt;/strong&gt; dùng ma trận 42 quy trình như danh mục kiểm tra khi khởi động dự án, và dùng 8 lĩnh vực hiệu suất của bản 7 để đánh giá xem dự án có thực sự tạo ra giá trị hay chỉ tạo ra tài liệu."><strong>Practice:</strong> use the 42-process matrix as a kick-off checklist, and the 8 performance domains of the 7th edition to judge whether the project created value or only documents.</p>
+    </div>
+  </section>
+
+  <!-- 03 PMP TRACK -->
+  <section class="knowledge-card" id="pmp" data-title="PMP certification exam prep prepcast flash cards podcast people process business environment study plan 12 weeks" data-title-vi="chứng chỉ PMP ôn thi prepcast thẻ ghi nhớ podcast con người quy trình môi trường kinh doanh kế hoạch học 12 tuần">
+    <div class="card-head">
+      <div class="card-index">03</div>
+      <div class="card-title">
+        <h2 data-vi="Lộ trình Chứng chỉ PMP">The PMP Certification Track</h2>
+        <p class="card-sub" data-vi="Chứng chỉ không chứng minh bạn quản lý dự án giỏi. Nó chứng minh bạn nói được cùng một ngôn ngữ với người tuyển dụng bạn.">The credential does not prove you can run a project. It proves you speak the same language as the people who hire you.</p>
+      </div>
+      <span class="badge badge-amber" data-vi="Chứng chỉ">Credential</span>
+    </div>
+
+    <div class="domain-grid">
+      <article class="domain s-item">
+        <span class="domain-pct">42%</span>
+        <h4 data-vi="Con người">People</h4>
+        <p data-vi="Xung đột, dẫn dắt đội ngũ, đàm phán, huấn luyện, đồng cảm. Phần lớn câu hỏi thi là tình huống “bạn sẽ làm gì tiếp theo”.">Conflict, leading a team, negotiation, coaching, empathy. Most exam items are &ldquo;what do you do next&rdquo; scenarios.</p>
+      </article>
+      <article class="domain s-item">
+        <span class="domain-pct">50%</span>
+        <h4 data-vi="Quy trình">Process</h4>
+        <p data-vi="Phạm vi, tiến độ, ngân sách, chất lượng, rủi ro. Phần nặng nhất — và phần dễ luyện nhất bằng cách làm đề.">Scope, schedule, budget, quality, risk. The heaviest slice — and the easiest to drill with practice questions.</p>
+      </article>
+      <article class="domain s-item">
+        <span class="domain-pct">8%</span>
+        <h4 data-vi="Môi trường Kinh doanh">Business Environment</h4>
+        <p data-vi="Tuân thủ, lợi ích tổ chức, thay đổi tổ chức. Ít câu nhưng dễ mất điểm vì bỏ qua.">Compliance, organisational benefits, change. Few questions, easy to lose because it is skipped.</p>
+      </article>
+    </div>
+    <p class="fine-print" data-vi="Trọng số theo đề cương hiện hành; luôn kiểm tra lại trên pmi.org trước khi lên kế hoạch thi — PMI điều chỉnh định kỳ.">Weightings follow the current examination content outline; confirm on pmi.org before booking — PMI revises it periodically.</p>
+
+    <h3 class="sub-head" data-vi="Tài sản học tập trong thư viện">Study assets held in the library</h3>
+    <div class="asset-grid">
+      <a class="asset s-item" href="../books/index.html#shelf-pmp">
+        <span class="asset-n">136</span>
+        <span class="asset-t" data-vi="Bài giảng PM PrepCast">PM PrepCast lessons</span>
+        <span class="asset-d" data-vi="Khóa học ghi hình theo trình tự đề cương">Recorded course, in outline order</span>
+      </a>
+      <a class="asset s-item" href="../books/index.html#shelf-pmp">
+        <span class="asset-n">336</span>
+        <span class="asset-t" data-vi="Thẻ ghi nhớ">Flash cards</span>
+        <span class="asset-d" data-vi="ITTO và định nghĩa">ITTOs and definitions</span>
+      </a>
+      <a class="asset s-item" href="../books/index.html#shelf-pmp">
+        <span class="asset-n">300</span>
+        <span class="asset-t" data-vi="Tập podcast">Podcast episodes</span>
+        <span class="asset-d" data-vi="5 Minutes Project Management">5 Minutes Project Management</span>
+      </a>
+      <a class="asset s-item" href="../books/index.html#shelf-project-management">
+        <span class="asset-n">8</span>
+        <span class="asset-t" data-vi="Sách chuyên ngành">Reference books</span>
+        <span class="asset-d" data-vi="PMBOK, Heldman, Mulcahy, Kerzner">PMBOK, Heldman, Mulcahy, Kerzner</span>
+      </a>
+    </div>
+
+    <h3 class="sub-head" data-vi="Kế hoạch 12 tuần">A twelve-week plan</h3>
+    <div class="plan">
+      <div class="plan-row s-item"><span class="plan-w">W1–2</span><div><strong data-vi="Bản đồ tổng thể">The map</strong><p data-vi="Đọc PMBOK một lượt không ghi chép. Mục tiêu là biết mình chưa biết gì, không phải hiểu hết.">Read PMBOK once with no notes. The goal is to know what you don't know, not to understand everything.</p></div></div>
+      <div class="plan-row s-item"><span class="plan-w">W3–5</span><div><strong data-vi="Phạm vi, Tiến độ, Chi phí">Scope, Schedule, Cost</strong><p data-vi="Ba lĩnh vực nặng nhất. Làm bài tập tính toán bằng tay — EVM, CPM, đường găng.">The three heaviest areas. Do the arithmetic by hand — EVM, CPM, critical path.</p></div></div>
+      <div class="plan-row s-item"><span class="plan-w">W6–7</span><div><strong data-vi="Chất lượng, Nguồn lực, Truyền thông">Quality, Resource, Communications</strong><p data-vi="Chủ yếu là câu hỏi tình huống. Luyện theo bộ thẻ ghi nhớ thay vì đọc lại.">Mostly scenario questions. Drill with flash cards rather than re-reading.</p></div></div>
+      <div class="plan-row s-item"><span class="plan-w">W8–9</span><div><strong data-vi="Rủi ro &amp; Mua sắm">Risk &amp; Procurement</strong><p data-vi="Hai lĩnh vực dễ mất điểm nhất với người có nền kỹ thuật. Học thuộc thứ tự quy trình.">The two areas engineers lose most points on. Memorise process order.</p></div></div>
+      <div class="plan-row s-item"><span class="plan-w">W10</span><div><strong data-vi="Đề thi thử đầu tiên">First full mock</strong><p data-vi="Làm đủ 180 câu, đúng thời gian, không tra cứu. Điểm số ít quan trọng hơn việc biết mình sai ở đâu.">Full 180 questions, timed, closed book. The score matters less than knowing where you were wrong.</p></div></div>
+      <div class="plan-row s-item"><span class="plan-w">W11</span><div><strong data-vi="Vá lỗ hổng">Patch the gaps</strong><p data-vi="Chỉ học những lĩnh vực sai dưới 60%. Đừng học lại phần đã đúng.">Study only the areas below 60%. Do not re-study what is already right.</p></div></div>
+      <div class="plan-row s-item"><span class="plan-w">W12</span><div><strong data-vi="Hai đề thi thử cuối">Two final mocks</strong><p data-vi="Cách nhau ba ngày. Nếu cả hai trên 75%, đặt lịch thi.">Three days apart. If both are above 75%, book the exam.</p></div></div>
+    </div>
+  </section>
+
+  <!-- 04 FINANCIAL TOOLKIT -->
+  <section class="knowledge-card" id="toolkit" data-title="NPV IRR payback WACC depreciation loan amortization breakeven cost of capital discount rate cash flow appraisal QLDA" data-title-vi="NPV IRR hoàn vốn WACC khấu hao trả nợ hòa vốn chi phí vốn tỷ lệ chiết khấu dòng tiền thẩm định QLDA">
+    <div class="card-head">
+      <div class="card-index">04</div>
+      <div class="card-title">
+        <h2 data-vi="Bộ công cụ Thẩm định Tài chính">The Financial Appraisal Toolkit</h2>
+        <p class="card-sub" data-vi="Bốn phép tính quyết định một dự án có được duyệt hay không. Chạy thử ngay trên trang này.">Four calculations decide whether a project is approved. Run them here.</p>
+      </div>
+      <span class="badge badge-cyan" data-vi="Tương tác">Interactive</span>
+    </div>
+
+    <p class="intro-text" data-vi="Đây là phần định lượng của học phần Quản lý Dự án và Tài chính Quản trị, chuyển từ bảng tính sang dạng dùng được. Mọi công thức đều hiển thị bên cạnh kết quả để bạn kiểm tra lại bằng tay.">
+      This is the quantitative core of the project management and managerial finance coursework, moved out of a spreadsheet
+      and into something you can use. Every formula sits next to its result so you can check it by hand.
+    </p>
+
+    <div class="tool-tabs" role="tablist" aria-label="Financial tools">
+      <button class="tab is-active" role="tab" aria-selected="true" aria-controls="tool-npv" id="tt-npv" type="button" data-vi="NPV / IRR">NPV / IRR</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="tool-loan" id="tt-loan" type="button" data-vi="Lịch trả nợ">Loan schedule</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="tool-dep" id="tt-dep" type="button" data-vi="Khấu hao">Depreciation</button>
+    </div>
+
+    <div class="tab-panels">
+      <!-- NPV -->
+      <div class="tab-panel is-active" id="tool-npv" role="tabpanel" aria-labelledby="tt-npv">
+        <div class="tool">
+          <div class="tool-inputs">
+            <label class="field">
+              <span data-vi="Vốn đầu tư ban đầu (CF₀)">Initial investment (CF₀)</span>
+              <input type="number" id="npvC0" value="-1000000" step="1000">
+            </label>
+            <label class="field field-wide">
+              <span data-vi="Dòng tiền các năm (cách nhau bằng dấu phẩy)">Cash flows, years 1…n</span>
+              <input type="text" id="npvCF" value="180000, 240000, 300000, 320000, 280000">
+            </label>
+            <label class="field">
+              <span data-vi="Tỷ lệ chiết khấu (%)">Discount rate (%)</span>
+              <input type="number" id="npvRate" value="10" step="0.1">
+            </label>
+            <button class="btn-run" id="npvRun" type="button" data-vi="Tính">Calculate</button>
+          </div>
+          <div class="tool-out" id="npvOut" aria-live="polite"></div>
+          <p class="tool-note" data-vi="<strong>Quy tắc quyết định:</strong> NPV &gt; 0 thì nhận; IRR &gt; tỷ lệ chiết khấu thì nhận; hoàn vốn càng ngắn càng tốt nhưng không bao giờ là tiêu chí duy nhất."><strong>Decision rule:</strong> accept if NPV &gt; 0; accept if IRR &gt; discount rate; shorter payback is better but is never the only criterion.</p>
+        </div>
+      </div>
+
+      <!-- LOAN -->
+      <div class="tab-panel" id="tool-loan" role="tabpanel" aria-labelledby="tt-loan" hidden>
+        <div class="tool">
+          <div class="tool-inputs">
+            <label class="field"><span data-vi="Số tiền vay">Loan amount</span><input type="number" id="lnAmt" value="5000000" step="1000"></label>
+            <label class="field"><span data-vi="Lãi suất năm (%)">Annual rate (%)</span><input type="number" id="lnRate" value="9" step="0.1"></label>
+            <label class="field"><span data-vi="Số năm">Term (years)</span><input type="number" id="lnYears" value="7" step="1" min="1" max="40"></label>
+            <button class="btn-run" id="lnRun" type="button" data-vi="Lập lịch">Build schedule</button>
+          </div>
+          <div class="tool-out" id="lnOut" aria-live="polite"></div>
+          <p class="tool-note" data-vi="Trả góp đều (annuity): mỗi kỳ trả một số tiền như nhau, phần lãi giảm dần và phần gốc tăng dần. Đây là lịch trình mà mọi dự án có vay vốn đều phải hiểu trước khi ký."><strong>Level payment (annuity):</strong> the same amount each period, interest falling and principal rising. Every debt-funded project team should understand this before signing.</p>
+        </div>
+      </div>
+
+      <!-- DEPRECIATION -->
+      <div class="tab-panel" id="tool-dep" role="tabpanel" aria-labelledby="tt-dep" hidden>
+        <div class="tool">
+          <div class="tool-inputs">
+            <label class="field"><span data-vi="Nguyên giá">Asset cost</span><input type="number" id="dpCost" value="1200000" step="1000"></label>
+            <label class="field"><span data-vi="Giá trị thu hồi">Salvage value</span><input type="number" id="dpSalv" value="120000" step="1000"></label>
+            <label class="field"><span data-vi="Thời gian sử dụng (năm)">Useful life (years)</span><input type="number" id="dpLife" value="8" step="1" min="2" max="40"></label>
+            <label class="field">
+              <span data-vi="Phương pháp">Method</span>
+              <select id="dpMethod">
+                <option value="sl" data-vi="Đường thẳng">Straight line</option>
+                <option value="dbb" data-vi="Số dư giảm dần kép">Double declining balance</option>
+                <option value="soyd" data-vi="Tổng số năm">Sum of years&rsquo; digits</option>
+              </select>
+            </label>
+            <button class="btn-run" id="dpRun" type="button" data-vi="Tính">Calculate</button>
+          </div>
+          <div class="tool-out" id="dpOut" aria-live="polite"></div>
+          <p class="tool-note" data-vi="Khấu hao không phải dòng tiền, nhưng nó quyết định lợi nhuận kế toán và thuế. Ba phương pháp cho ba con số lợi nhuận khác nhau trên cùng một tài sản."><strong>Depreciation is not cash flow</strong>, but it drives accounting profit and tax. Three methods give three different profit figures on the same asset.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub-head" data-vi="Công thức nền">The formulas underneath</h3>
+    <div class="formula-grid">
+      <article class="formula s-item">
+        <h4>NPV</h4>
+        <code>NPV = Σ CF<sub>t</sub> / (1+r)<sup>t</sup> − CF<sub>0</sub></code>
+        <p data-vi="Giá trị hiện tại ròng: toàn bộ dòng tiền tương lai quy về hôm nay, trừ vốn đầu tư.">Net present value: all future cash discounted to today, minus the investment.</p>
+      </article>
+      <article class="formula s-item">
+        <h4>IRR</h4>
+        <code>0 = Σ CF<sub>t</sub> / (1+IRR)<sup>t</sup> − CF<sub>0</sub></code>
+        <p data-vi="Tỷ lệ chiết khấu làm NPV bằng 0. Không giải được bằng công thức — phải dò nghiệm số.">The rate at which NPV equals zero. No closed form — it is solved numerically.</p>
+      </article>
+      <article class="formula s-item">
+        <h4>WACC</h4>
+        <code>WACC = (E/V)·R<sub>e</sub> + (D/V)·R<sub>d</sub>·(1−T)</code>
+        <p data-vi="Chi phí vốn bình quân gia quyền — chính là tỷ lệ chiết khấu bạn nên dùng cho dự án cùng rủi ro.">Weighted average cost of capital — the discount rate for a project of average risk.</p>
+      </article>
+      <article class="formula s-item">
+        <h4 data-vi="Hoàn vốn">Payback</h4>
+        <code>t : Σ CF<sub>t</sub> ≥ CF<sub>0</sub></code>
+        <p data-vi="Số năm để thu hồi vốn. Đơn giản, dễ hiểu, và bỏ qua mọi dòng tiền sau mốc đó.">Years to recover the outlay. Simple, intuitive, and blind to everything after the date.</p>
+      </article>
+      <article class="formula s-item">
+        <h4 data-vi="Chỉ số sinh lời">Profitability index</h4>
+        <code>PI = PV(inflows) / CF<sub>0</sub></code>
+        <p data-vi="Hữu ích khi ngân sách có hạn: xếp hạng dự án theo giá trị tạo ra trên mỗi đồng vốn.">Useful under a capital constraint: rank projects by value created per unit invested.</p>
+      </article>
+      <article class="formula s-item">
+        <h4 data-vi="Điểm hòa vốn">Break-even</h4>
+        <code>Q* = FC / (P − VC)</code>
+        <p data-vi="Sản lượng tối thiểu để không lỗ. Mẫu số chính là biên đóng góp trên mỗi đơn vị.">Minimum volume to avoid a loss. The denominator is contribution margin per unit.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 05 THESIS FRAMEWORK -->
+  <section class="knowledge-card" id="framework" data-title="thesis research framework proposal methodology qualitative quantitative questionnaire interview SPSS risk factors ISO 31000 PMBOK offshore oil gas construction" data-title-vi="khung nghiên cứu luận văn đề cương phương pháp định tính định lượng bảng hỏi phỏng vấn SPSS yếu tố rủi ro ISO 31000 PMBOK dầu khí xây dựng">
+    <div class="card-head">
+      <div class="card-index">05</div>
+      <div class="card-title">
+        <h2 data-vi="Khung Nghiên cứu Tái sử dụng">The Reusable Research Framework</h2>
+        <p class="card-sub" data-vi="Một đề cương luận văn MBA về quản lý rủi ro trong dự án dầu khí — đã lược bỏ toàn bộ thông tin cá nhân, giữ lại cấu trúc, phương pháp và bộ yếu tố rủi ro.">An MBA thesis proposal on risk management in oil &amp; gas construction — personal identifiers removed, structure, method and risk taxonomy kept.</p>
+      </div>
+      <span class="badge" data-vi="Phương pháp">Method</span>
+    </div>
+
+    <div class="note-strip">
+      <svg class="ico"><use href="#i-warn"/></svg>
+      <p data-vi="&lt;strong&gt;Về ẩn danh:&lt;/strong&gt; tên tác giả, mã số sinh viên, người hướng dẫn, tên doanh nghiệp và mọi chi tiết nhận dạng đã được loại bỏ. Phần còn lại là khung phương pháp — thứ duy nhất có giá trị tái sử dụng."><strong>On anonymity:</strong> author name, student number, advisor, company name and all identifying details have been removed. What remains is the method framework — the only part that transfers.</p>
+    </div>
+
+    <h3 class="sub-head" data-vi="Cấu trúc đề cương">Proposal structure</h3>
+    <div class="frame-steps">
+      <article class="fstep s-item">
+        <span class="fstep-n">1</span>
+        <div>
+          <h4 data-vi="Tiêu đề — theo mẫu">Title — the pattern</h4>
+          <p class="fstep-eg" data-vi="“Quản lý rủi ro trong các dự án xây dựng dầu khí — tập trung vào dự án ngoài khơi tại Việt Nam”">“Risk management in oil and gas construction projects — a focus on offshore projects in Vietnam”</p>
+          <p data-vi="Công thức: <em>[Chủ đề] trong [loại dự án] — tập trung vào [phạm vi cụ thể] tại [địa bàn]</em>. Ba mức thu hẹp phạm vi trong một dòng.">Formula: <em>[topic] in [project type] — a focus on [specific scope] in [territory]</em>. Three levels of narrowing in one line.</p>
+        </div>
+      </article>
+      <article class="fstep s-item">
+        <span class="fstep-n">2</span>
+        <div>
+          <h4 data-vi="Bối cảnh &amp; tổng quan">Background &amp; overview</h4>
+          <p data-vi="Quy mô thị trường, kế hoạch đầu tư, số dự án đang triển khai — bằng số liệu có nguồn. Kết thúc bằng câu “tuy nhiên, các nỗ lực nhận diện rủi ro còn khó thực hiện và thiếu công cụ”.">Market size, investment plans, number of live projects — with sourced figures. End on &ldquo;however, identifying and assessing these risks remains difficult and few tools exist&rdquo;.</p>
+        </div>
+      </article>
+      <article class="fstep s-item">
+        <span class="fstep-n">3</span>
+        <div>
+          <h4 data-vi="Phát biểu vấn đề">Problem statement</h4>
+          <p data-vi="Neo vào ba ràng buộc (phạm vi, chi phí, tiến độ) rồi nâng lên hậu quả thảm khốc — tai nạn công nghiệp là ví dụ, không phải trọng tâm.">Anchor in the triple constraint (scope, cost, schedule), then escalate to catastrophic consequence — industrial accidents as illustration, not as the subject.</p>
+        </div>
+      </article>
+      <article class="fstep s-item">
+        <span class="fstep-n">4</span>
+        <div>
+          <h4 data-vi="Ba câu hỏi nghiên cứu">Three research questions</h4>
+          <ol class="fstep-list">
+            <li data-vi="Các yếu tố chính liên quan đến rủi ro của dự án là gì? → nhận diện &amp; đánh giá">What are the key factors behind project risk? → identification and assessment</li>
+            <li data-vi="Yếu tố nào có thể tránh được và bằng cách nào? → kế hoạch né tránh">Which can be avoided, and how? → avoidance planning</li>
+            <li data-vi="Nếu rủi ro xảy ra thì làm gì để giảm thiểu? → kế hoạch dự phòng">If it materialises anyway, what minimises the effect? → contingency planning</li>
+          </ol>
+        </div>
+      </article>
+      <article class="fstep s-item">
+        <span class="fstep-n">5</span>
+        <div>
+          <h4 data-vi="Mục tiêu">Objectives</h4>
+          <p data-vi="Xác định mối quan hệ giữa các yếu tố và rủi ro dự án; đo độ mạnh của quan hệ đó; đề xuất hệ thống quản lý rủi ro phù hợp.">Establish the relationship between factors and project risk; measure the strength of that relationship; recommend an adequate risk management system.</p>
+        </div>
+      </article>
+      <article class="fstep s-item">
+        <span class="fstep-n">6</span>
+        <div>
+          <h4 data-vi="Phương pháp">Methodology</h4>
+          <p data-vi="Định tính làm chính, định lượng để kiểm chứng: bảng hỏi gửi tới chủ dự án, nhà thầu và công ty dầu khí; phỏng vấn bán cấu trúc với quản lý dự án; phân tích thống kê bằng SPSS; mô tả và giải thích.">Qualitative as the main approach, quantitative for validation: questionnaires to owners, contractors and operators; semi-structured interviews with project managers; statistical analysis in SPSS; descriptive and explanatory design.</p>
+        </div>
+      </article>
+      <article class="fstep s-item">
+        <span class="fstep-n">7</span>
+        <div>
+          <h4 data-vi="Phạm vi &amp; giới hạn">Scope &amp; limitations</h4>
+          <p data-vi="Giới hạn ở dự án ngoài khơi trong mười năm. Thừa nhận: mẫu lớn và phức tạp nên không khái quát hóa được; quản lý rủi ro là nghệ thuật nhiều hơn khoa học, nên kết quả là bộ thực hành tốt chứ không phải hệ thống tuyệt đối.">Limited to offshore projects over ten years. Concedes: large complex sample so results are not generalisable; risk management is more art than science, so the output is best practice, not a guaranteed system.</p>
+        </div>
+      </article>
+      <article class="fstep s-item">
+        <span class="fstep-n">8</span>
+        <div>
+          <h4 data-vi="Nền tảng lý thuyết">Literature base</h4>
+          <p data-vi="Hai chuẩn đối chiếu: ISO 31000:2009 (khung quản trị, mạnh ở tài chính–ngân hàng) và PMBOK 2008 (quy trình dự án, mạnh ở năng lượng–hạ tầng). Luận văn chọn PMBOK vì đối tượng là dự án.">Two standards compared: ISO 31000:2009 (governance frame, strong in finance and banking) and PMBOK 2008 (project processes, strong in energy and infrastructure). The thesis chooses PMBOK because the unit of analysis is a project.</p>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="sub-head" data-vi="59 yếu tố rủi ro, xếp theo bốn nhóm">The 59 ranked risk factors, in four bands</h3>
+    <p class="intro-text" data-vi="Kết quả từ nghiên cứu tiền nhiệm trên các dự án dầu khí tại Việt Nam. Đọc theo nhóm: nhóm 1 là những gì bạn kiểm soát được trong nội bộ tổ chức; nhóm 3–4 là những gì bạn chỉ có thể phòng ngừa.">
+      Drawn from prior research on oil and gas construction projects in Vietnam. Read it in bands: band 1 is largely inside your own
+      organisation; bands 3 and 4 are things you can only prepare for.
+    </p>
+
+    <div class="band-grid">
+      <article class="band s-item">
+        <div class="band-head"><span class="band-n">01</span><h4 data-vi="Nhóm rủi ro cao nhất">Highest-ranked</h4></div>
+        <ol class="band-list">
+          <li data-vi="Hệ thống hành chính quan liêu, thủ tục phê duyệt kéo dài">Bureaucratic government system and long approval procedure</li>
+          <li data-vi="Thiết kế kém chất lượng">Poor design</li>
+          <li data-vi="Năng lực đội dự án yếu">Incompetence of project team</li>
+          <li data-vi="Đấu thầu không đầy đủ">Inadequate tendering</li>
+          <li data-vi="Chủ đầu tư phê duyệt nội bộ chậm">Late internal approval from the owner</li>
+          <li data-vi="Cơ cấu tổ chức dự án không phù hợp">Inadequate project organisation structure</li>
+          <li data-vi="Nghiên cứu khả thi sơ sài">Improper project feasibility study</li>
+          <li data-vi="Nhà thầu thi công kém hiệu quả">Inefficient and poor performance of constructors</li>
+          <li data-vi="Lập kế hoạch và ngân sách không đúng">Improper project planning and budgeting</li>
+          <li data-vi="Thay đổi thiết kế">Design changes</li>
+        </ol>
+      </article>
+
+      <article class="band s-item">
+        <div class="band-head"><span class="band-n">02</span><h4 data-vi="Nhóm thứ hai">Second band</h4></div>
+        <ol class="band-list">
+          <li data-vi="Giá đấu thầu không hợp lý">Inadequate tendering price</li>
+          <li data-vi="Chậm ký hợp đồng">Delay in signing contract</li>
+          <li data-vi="Thiếu phối hợp giữa các nhà thầu">Inadequate coordination among contractors</li>
+          <li data-vi="Điều kiện hợp đồng mơ hồ">Ambiguous conditions of contract</li>
+          <li data-vi="Thiếu kiến thức và kinh nghiệm thi công">Lack of construction knowledge and experience</li>
+          <li data-vi="Chọn sai địa điểm dự án">Improper selection of project location</li>
+          <li data-vi="Hành lang pháp lý chưa đủ">Insufficient laws on projects</li>
+          <li data-vi="Quy trình pháp lý kém hiệu quả">Inefficiency of the legal process</li>
+          <li data-vi="Chi phí đền bù giải phóng mặt bằng tăng">Increase of resettlement cost</li>
+          <li data-vi="Khả năng thi công (constructability)">Constructability</li>
+        </ol>
+      </article>
+
+      <article class="band s-item">
+        <div class="band-head"><span class="band-n">03</span><h4 data-vi="Nhóm thứ ba">Third band</h4></div>
+        <ol class="band-list">
+          <li data-vi="Biến động tỷ giá">Exchange rate changes</li>
+          <li data-vi="Thay đổi chính sách">Changes of policies</li>
+          <li data-vi="Giá vật liệu tăng">Increase of material cost</li>
+          <li data-vi="Tham nhũng, hối lộ">Corruption and bribery</li>
+          <li data-vi="Khủng hoảng kinh tế – tài chính">Economic and financial crisis</li>
+          <li data-vi="Giá thiết bị tăng">Increase of equipment cost</li>
+          <li data-vi="Khác biệt tiêu chuẩn trong liên doanh">Difference of standards and codes in JV</li>
+          <li data-vi="Khác biệt thông lệ nhà thầu ngoại – nội">Deference practice between foreign and domestic contractors</li>
+          <li data-vi="Thay đổi luật và quy định">Change in laws and regulations</li>
+          <li data-vi="Lạm phát biến động">Inflation rate fluctuation</li>
+        </ol>
+      </article>
+
+      <article class="band s-item">
+        <div class="band-head"><span class="band-n">04</span><h4 data-vi="Nhóm thứ tư &amp; đuôi dài">Fourth band &amp; long tail</h4></div>
+        <ol class="band-list">
+          <li data-vi="Can thiệp của chính quyền">Government interference</li>
+          <li data-vi="Thiếu phối hợp nhà thầu – nhà thầu phụ">Lack of coordination among contractors and subcontractors</li>
+          <li data-vi="Điều kiện làm việc khác hợp đồng">Work conditions differing from contract</li>
+          <li data-vi="Chất lượng vật tư mua kém">Poor quality of procured materials</li>
+          <li data-vi="Giám sát tư vấn kém hiệu quả">Ineffective supervision by consultants</li>
+          <li data-vi="Quan hệ đối tác xấu, tranh chấp">Poor relations and disputes with partners</li>
+          <li data-vi="Thời tiết bất thường">Unusual weather</li>
+          <li data-vi="Loại hợp đồng không phù hợp">Inadequate type of contract</li>
+          <li data-vi="Lãi suất biến động">Interest rate fluctuation</li>
+          <li data-vi="Giao vật tư muộn">Late material delivery</li>
+        </ol>
+        <p class="band-tail" data-vi="Cộng thêm 19 yếu tố đuôi dài: thiếu vật tư, thiếu công nghệ mới, chậm phê duyệt của bên cho vay, can thiệp của bên cho vay, quy định cứng nhắc của bên cho vay, thiếu hợp tác giữa cơ quan nhà nước, áp lực môi trường, hư hại do bên thứ ba…">Plus a nineteen-item tail: material shortage, shortage of new technology, late lender approval, lender interference, inflexible lender rules, weak inter-agency coordination, environmental pressure, third-party damage…</p>
+      </article>
+    </div>
+
+    <div class="note-strip note-quiet">
+      <svg class="ico"><use href="#i-check"/></svg>
+      <p data-vi="&lt;strong&gt;Cách dùng lại khung này:&lt;/strong&gt; thay “dầu khí ngoài khơi” bằng lĩnh vực của bạn, giữ nguyên cấu trúc tám bước, và chạy lại bảng hỏi. Bộ yếu tố rủi ro sẽ khác — nhưng nhóm 1 hầu như luôn là năng lực nội bộ và thủ tục phê duyệt."><strong>How to reuse this:</strong> replace &ldquo;offshore oil and gas&rdquo; with your own sector, keep the eight-step structure, and re-run the questionnaire. The factor list will change — but band 1 is almost always internal capability and approval process.</p>
+    </div>
+  </section>
+
+  <!-- 06 READING MAP -->
+  <section class="knowledge-card" id="reading" data-title="reading map library shelves strategy finance economics project management risk leadership" data-title-vi="bản đồ đọc sách kệ chiến lược tài chính kinh tế quản lý dự án rủi ro lãnh đạo">
+    <div class="card-head">
+      <div class="card-index">06</div>
+      <div class="card-title">
+        <h2 data-vi="Bản đồ Đọc">Where to Read Next</h2>
+        <p class="card-sub" data-vi="Mỗi chặng của chương trình tương ứng một kệ trong thư viện. Đừng đọc tuần tự — đọc theo vấn đề đang có.">Each stage of the programme maps to a library shelf. Do not read in sequence — read against the problem you have this week.</p>
+      </div>
+      <span class="badge" data-vi="Thư viện">Library</span>
+    </div>
+
+    <div class="read-grid">
+      <a class="read-card s-item" href="../books/index.html#shelf-strategy">
+        <span class="read-n">01</span>
+        <h4 data-vi="Chiến lược &amp; Quản trị">Strategy &amp; Corporate Management</h4>
+        <p data-vi="Porter, Collins, Drucker, Goldratt, Mintzberg.">Porter, Collins, Drucker, Goldratt, Mintzberg.</p>
+        <span class="read-go" data-vi="Mở kệ →">Open shelf →</span>
+      </a>
+      <a class="read-card s-item" href="../books/index.html#shelf-finance">
+        <span class="read-n">02</span>
+        <h4 data-vi="Tài chính &amp; Kế toán">Finance &amp; Accounting</h4>
+        <p data-vi="Brealey &amp; Myers, Gitman, Damodaran.">Brealey &amp; Myers, Gitman, Damodaran.</p>
+        <span class="read-go" data-vi="Mở kệ →">Open shelf →</span>
+      </a>
+      <a class="read-card s-item" href="../books/index.html#shelf-economics">
+        <span class="read-n">03</span>
+        <h4 data-vi="Kinh tế học">Economics</h4>
+        <p data-vi="Mankiw, Varian, Menger, Krugman.">Mankiw, Varian, Menger, Krugman.</p>
+        <span class="read-go" data-vi="Mở kệ →">Open shelf →</span>
+      </a>
+      <a class="read-card s-item" href="../books/index.html#shelf-project-management">
+        <span class="read-n">04</span>
+        <h4 data-vi="Quản lý Dự án">Project Management</h4>
+        <p data-vi="PMBOK, Kerzner, Chapman &amp; Ward, Wysocki.">PMBOK, Kerzner, Chapman &amp; Ward, Wysocki.</p>
+        <span class="read-go" data-vi="Mở kệ →">Open shelf →</span>
+      </a>
+      <a class="read-card s-item" href="../books/index.html#shelf-risk">
+        <span class="read-n">05</span>
+        <h4 data-vi="Quản lý Rủi ro">Risk Management</h4>
+        <p data-vi="Crouhy, Hopkin, COSO, Hopkinson.">Crouhy, Hopkin, COSO, Hopkinson.</p>
+        <span class="read-go" data-vi="Mở kệ →">Open shelf →</span>
+      </a>
+      <a class="read-card s-item" href="../books/index.html#shelf-mba">
+        <span class="read-n">06</span>
+        <h4 data-vi="MBA Cốt lõi">MBA Core</h4>
+        <p data-vi="Kaufman, Portable MBA, Rosenzweig.">Kaufman, Portable MBA, Rosenzweig.</p>
+        <span class="read-go" data-vi="Mở kệ →">Open shelf →</span>
+      </a>
+    </div>
+
+    <div class="next-strip">
+      <a class="next-link" href="../mindmap/index.html">
+        <svg class="ico"><use href="#i-net"/></svg>
+        <span><strong data-vi="Xem toàn bộ mạng lưới">See the whole network</strong> — <span data-vi="sơ đồ tư duy liên kết mọi khu vực của cổng">the mind map linking every area of the portal</span></span>
+        <svg class="ico go"><use href="#i-arrow"/></svg>
+      </a>
+      <a class="next-link" href="../books/index.html">
+        <svg class="ico"><use href="#i-book"/></svg>
+        <span><strong data-vi="Thư viện nghiên cứu">The research library</strong> — <span data-vi="86 tác phẩm có chú giải, 32.899 tệp được lập mục">86 annotated works, 32,899 files indexed</span></span>
+        <svg class="ico go"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <p class="empty-state" id="emptyState" hidden>
+    <strong data-vi="Không có kết quả.">No matches.</strong> <span data-vi="Thử một học phần (&lt;em&gt;Finance&lt;/em&gt;), một quy trình (&lt;em&gt;Control Costs&lt;/em&gt;) hoặc một công thức (&lt;em&gt;IRR&lt;/em&gt;).">Try a course (<em>Finance</em>), a process (<em>Control Costs</em>), or a formula (<em>IRR</em>).</span>
+  </p>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-text">ProBiz<span class="accent">Intel</span></span>
+      <p data-vi="Học liệu sau đại học cho người phải bàn giao dự án — không chỉ mô tả nó.">Graduate material for people who have to deliver a project — not just describe one.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer" data-vi-aria="Chân trang">
+      <div>
+        <h5 data-vi="Chương trình">Programme</h5>
+        <a href="#curriculum" data-vi="Kiến trúc chương trình">Curriculum</a>
+        <a href="#pmbok" data-vi="Ma trận PMBOK">PMBOK matrix</a>
+        <a href="#pmp" data-vi="Lộ trình PMP">PMP track</a>
+        <a href="#toolkit" data-vi="Bộ công cụ tài chính">Finance toolkit</a>
+      </div>
+      <div>
+        <h5 data-vi="Nghiên cứu">Research</h5>
+        <a href="#framework" data-vi="Khung luận văn">Thesis framework</a>
+        <a href="#reading" data-vi="Bản đồ đọc">Reading map</a>
+        <a href="../books/index.html" data-vi="Thư viện">Library</a>
+        <a href="../books/index.html#shelf-classics" data-vi="Kệ mở">Open shelf</a>
+      </div>
+      <div>
+        <h5 data-vi="Cổng">Portal</h5>
+        <a href="../index.html" data-vi="Trang chủ">Home</a>
+        <a href="../mindmap/index.html" data-vi="Sơ đồ tư duy">Mind map</a>
+        <a href="../index.html#automation" data-vi="PAC&amp;I">PAC&amp;I BoK</a>
+        <a href="../index.html#risk-management" data-vi="Ma trận rủi ro">Risk matrix</a>
+      </div>
+    </nav>
+  </div>
+  <div class="container footer-base">
+    <p>© <span id="year">2026</span> ProBizIntel. <span data-vi="Dự án Hạ tầng Tri thức Công nghiệp.">Industrial Knowledge Infrastructure Project.</span></p>
+    <p class="footer-target">probizintel.github.io/MBAPM</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top" data-vi-aria="Về đầu trang">
+  <svg class="ico"><use href="#i-up"/></svg>
+</button>
+
+<script src="../app.js"></script>
+<script src="mbapm.js"></script>
+</body>
+</html>

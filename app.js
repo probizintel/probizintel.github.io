@@ -32,6 +32,15 @@
 
   function t(key) { return STRINGS[currentLang][key] || STRINGS.en[key]; }
 
+  // Per-page titles: <html data-title-en="…" data-title-vi="…">
+  var PAGE_TITLE = {
+    en: document.documentElement.getAttribute('data-title-en'),
+    vi: document.documentElement.getAttribute('data-title-vi')
+  };
+  function pageTitle() {
+    return PAGE_TITLE[currentLang] || PAGE_TITLE.en || t('title');
+  }
+
   /* ---------------- i18n engine ---------------- */
   var textStore = new Map();   // element -> original innerHTML
   var phStore = new Map();     // input -> original placeholder
@@ -40,7 +49,7 @@
   function applyLang(lang, persist) {
     currentLang = lang === 'vi' ? 'vi' : 'en';
     document.documentElement.setAttribute('lang', currentLang);
-    document.title = t('title');
+    document.title = pageTitle();
 
     $$('[data-vi]').forEach(function (el) {
       if (!textStore.has(el)) textStore.set(el, el.innerHTML);

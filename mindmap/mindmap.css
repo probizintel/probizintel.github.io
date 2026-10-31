@@ -1,0 +1,257 @@
+/* ==========================================================================
+   ProBizIntel — knowledge mind map
+   ========================================================================== */
+
+.mm-page { overflow-x: hidden; }
+
+.mm-hero { padding: 128px 0 26px; }
+.mm-hero h1 {
+  font-size: clamp(2.1rem, 4.6vw, 3.2rem);
+  letter-spacing: -.03em;
+  margin: 12px 0 0;
+}
+.mm-hero .lede {
+  max-width: 62ch;
+  margin: 14px 0 0;
+  font-size: 1.02rem;
+  color: var(--text-2);
+}
+
+/* ---------- stage ---------- */
+.mm-stage { padding: 0 0 40px; }
+.mm-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.mm-search { flex: 1 1 280px; max-width: 420px; }
+.mm-actions { display: flex; gap: 7px; margin-left: auto; }
+.mm-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--f-body);
+  font-size: .78rem;
+  font-weight: 500;
+  color: var(--text-2);
+  background: var(--panel);
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-sm);
+  padding: 7px 11px;
+  cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+.mm-btn:hover { border-color: var(--amber-line); color: var(--amber); }
+.mm-btn .ico {
+  width: 14px; height: 14px;
+  stroke: currentColor; fill: none; stroke-width: 2;
+}
+.mm-reset { padding-left: 10px; }
+
+.mm-canvas {
+  position: relative;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(184, 80, 30, .045), transparent 62%),
+    var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+#mmSvg {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+#mmSvg.is-dragging { cursor: grabbing; }
+.mm-hint {
+  position: absolute;
+  left: 16px;
+  bottom: 12px;
+  margin: 0;
+  font-family: var(--f-mono);
+  font-size: .66rem;
+  letter-spacing: .02em;
+  color: var(--text-3);
+  pointer-events: none;
+  opacity: .8;
+}
+
+/* ---------- svg nodes ---------- */
+.mm-link {
+  fill: none;
+  stroke: var(--line-2);
+  stroke-width: 1.2;
+  transition: stroke .2s, stroke-width .2s, opacity .2s;
+}
+.mm-link.is-hot { stroke-width: 2; }
+
+.mm-node { cursor: pointer; }
+.mm-node .dot {
+  fill: #fff;
+  stroke: var(--line-3);
+  stroke-width: 1.4;
+  transition: r .18s, fill .18s, stroke .18s;
+}
+.mm-node .halo {
+  fill: currentColor;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.mm-node text {
+  font-family: var(--f-body);
+  font-size: 11px;
+  fill: var(--text-2);
+  transition: fill .18s, opacity .2s;
+  pointer-events: none;
+  paint-order: stroke;
+  stroke: #fffdf9;
+  stroke-width: 3.4px;
+  stroke-linejoin: round;
+}
+.mm-node.branch text {
+  font-family: var(--f-display);
+  font-size: 12.5px;
+  font-weight: 600;
+  fill: var(--text);
+  letter-spacing: -.01em;
+}
+.mm-node .sub {
+  font-family: var(--f-mono);
+  font-size: 8.5px;
+  letter-spacing: .04em;
+  fill: var(--text-3);
+  text-transform: uppercase;
+}
+.mm-node:hover .dot,
+.mm-node.is-hot .dot { fill: currentColor; stroke: currentColor; }
+.mm-node:hover text,
+.mm-node.is-hot text { fill: var(--text); }
+.mm-node:hover .halo,
+.mm-node.is-hot .halo { opacity: .1; }
+.mm-node:focus { outline: none; }
+.mm-node:focus-visible .dot { stroke: var(--text); stroke-width: 2.4; }
+
+.mm-root circle { fill: var(--text); }
+.mm-root .ring {
+  fill: none;
+  stroke: var(--amber);
+  stroke-width: 1.6;
+  opacity: .55;
+}
+.mm-root text {
+  font-family: var(--f-display);
+  font-size: 14px;
+  stroke: none;
+  font-weight: 700;
+  fill: #fff;
+  letter-spacing: -.01em;
+}
+.mm-root .tagline {
+  font-family: var(--f-mono);
+  font-size: 6.2px;
+  letter-spacing: .06em;
+  stroke: none;
+  fill: var(--amber-soft);
+  opacity: .9;
+  text-transform: uppercase;
+}
+
+.mm-dim { opacity: .16 !important; }
+
+/* ---------- legend ---------- */
+.mm-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 14px;
+}
+.mm-leg {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: .76rem;
+  color: var(--text-2);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--f-body);
+}
+.mm-leg i {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  display: block;
+}
+.mm-leg:hover { color: var(--text); }
+
+/* ---------- outline ---------- */
+.mm-outline-wrap { padding: 10px 0 70px; }
+.mm-outline { margin-top: 18px; }
+.mm-group {
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--panel);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.mm-group > summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px;
+  cursor: pointer;
+  font-family: var(--f-display);
+  font-size: .94rem;
+  font-weight: 600;
+  color: var(--text);
+  list-style: none;
+}
+.mm-group > summary::-webkit-details-marker { display: none; }
+.mm-group > summary::after {
+  content: "+";
+  margin-left: auto;
+  font-family: var(--f-mono);
+  color: var(--text-3);
+  font-weight: 400;
+}
+.mm-group[open] > summary::after { content: "−"; }
+.mm-group > summary i {
+  width: 9px; height: 9px; border-radius: 50%; flex: 0 0 9px;
+}
+.mm-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 16px 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2px 22px;
+}
+.mm-group li { border-top: 1px solid var(--line); }
+.mm-group a {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: .82rem;
+  color: var(--text-2);
+  text-decoration: none;
+}
+.mm-group a:hover { color: var(--amber); }
+.mm-group a span {
+  font-family: var(--f-mono);
+  font-size: .66rem;
+  color: var(--text-3);
+  flex: 0 0 auto;
+}
+
+@media (max-width: 720px) {
+  .mm-hero { padding: 104px 0 20px; }
+  .mm-hint { display: none; }
+  .mm-actions { margin-left: 0; }
+}

@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thư viện | ProBizIntel</title>
+<meta name="description" content="ProBizIntel research library — strategy, finance, economics, project management, risk and the MBA core, indexed and annotated.">
+<meta name="theme-color" content="#fbf6ee">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23b8501e'/%3E%3Cpath d='M17 4 8 18h6l-1 10 9-14h-6z' fill='%23fff6e9'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../books/library.css">
+</head>
+<body class="lib-page">
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 20V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4h9a3 3 0 013 3v13H8a3 3 0 01-3-3zM17 7h2v13H8"/></symbol>
+</svg>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="ProBizIntel">
+      <span class="brand-mark"><svg class="ico"><use href="#i-bolt"/></svg></span>
+      <span class="brand-text">ProBiz<span class="accent">Intel</span></span>
+      <span class="brand-tag">Cổng chính</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a class="nav-link" href="../../index.html#chain">Chuỗi giá trị</a>
+      <a class="nav-link" href="../../index.html#delivery">Triển khai</a>
+      <a class="nav-link" href="../../MBAPM/index.html">MBA / QLDA</a>
+      <a class="nav-link is-active" href="index.html">Thư viện</a>
+      <a class="nav-link" href="../../mindmap/index.html">Sơ đồ</a>
+    </nav>
+    <div class="header-actions">
+      <a class="lang-btn is-active" href="../../books/" style="text-decoration:none">English</a>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav">
+        <svg class="ico"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="lib-hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="container">
+    <p class="kicker"><span class="pulse"></span> Thư viện nghiên cứu &amp; học tập kinh doanh</p>
+    <h1>Thư viện Làm việc</h1>
+    <p class="lede">Sách, slide, biểu mẫu và học liệu đằng sau các khung của ProBizIntel — xếp theo ngành, có chú giải và tra cứu được.</p>
+    <dl class="lib-stats">
+      <div class="stat"><dt>86</dt><dd>tác phẩm có chú giải</dd></div>
+      <div class="stat"><dt>14</dt><dd>kệ</dd></div>
+      <div class="stat"><dt>32,899</dt><dd>tệp được lập mục</dd></div>
+      <div class="stat"><dt>32 GB</dt><dd>dung lượng</dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="lib-bar" id="libBar">
+  <div class="container lib-bar-inner">
+    <div class="search-shell">
+      <svg class="ico search-ico"><use href="#i-search"/></svg>
+      <input type="search" id="libSearch" placeholder="Tìm tiêu đề, tác giả, chủ đề…" autocomplete="off" aria-label="Search the library">
+      <button class="search-clear" id="libClear" type="button" aria-label="Clear" hidden><svg class="ico"><use href="#i-close"/></svg></button>
+      <kbd class="search-kbd">/</kbd>
+    </div>
+    <div class="lib-bar-meta">
+      <span class="lib-count" id="libCount" aria-live="polite"></span>
+      <label class="jump">
+        <span>Chuyển đến kệ</span>
+        <select id="libJump">
+          <option value="all">Tất cả các kệ</option>          <option value="shelf-strategy">Chiến lược &amp; Quản trị doanh nghiệp (12360)</option>          <option value="shelf-finance">Tài chính &amp; Kế toán (2313)</option>          <option value="shelf-economics">Kinh tế học (1483)</option>          <option value="shelf-project-management">Quản lý dự án (309)</option>          <option value="shelf-leadership">Lãnh đạo &amp; Quản trị (6766)</option>          <option value="shelf-ob">Hành vi tổ chức (328)</option>          <option value="shelf-operations">Vận hành &amp; Chất lượng (5)</option>          <option value="shelf-risk">Quản lý rủi ro (44)</option>          <option value="shelf-knowledge">Tri thức &amp; Vốn trí tuệ (8)</option>          <option value="shelf-mba">MBA cốt lõi (23)</option>          <option value="shelf-toolkits">Bộ công cụ kinh doanh (1151)</option>          <option value="shelf-classics">Nền tảng — Kệ mở (236)</option>          <option value="shelf-pmp">Học liệu PMP (33)</option>          <option value="shelf-coursework">Học liệu MSM MBA (5799)</option>        </select>
+      </label>
+    </div>
+  </div>
+  <div class="container pill-row" id="libPills">    <button class="cat-pill is-active" type="button" data-filter="all">Tất cả các kệ<span class="n">86</span></button>    <button class="cat-pill" type="button" data-filter="strategy">Chiến lược &amp; Quản trị doanh nghiệp<span class="n">9</span></button>    <button class="cat-pill" type="button" data-filter="finance">Tài chính &amp; Kế toán<span class="n">7</span></button>    <button class="cat-pill" type="button" data-filter="economics">Kinh tế học<span class="n">7</span></button>    <button class="cat-pill" type="button" data-filter="project-management">Quản lý dự án<span class="n">8</span></button>    <button class="cat-pill" type="button" data-filter="leadership">Lãnh đạo &amp; Quản trị<span class="n">7</span></button>    <button class="cat-pill" type="button" data-filter="ob">Hành vi tổ chức<span class="n">7</span></button>    <button class="cat-pill" type="button" data-filter="operations">Vận hành &amp; Chất lượng<span class="n">4</span></button>    <button class="cat-pill" type="button" data-filter="risk">Quản lý rủi ro<span class="n">6</span></button>    <button class="cat-pill" type="button" data-filter="knowledge">Tri thức &amp; Vốn trí tuệ<span class="n">6</span></button>    <button class="cat-pill" type="button" data-filter="mba">MBA cốt lõi<span class="n">8</span></button>    <button class="cat-pill" type="button" data-filter="toolkits">Bộ công cụ kinh doanh<span class="n">7</span></button>    <button class="cat-pill" type="button" data-filter="classics">Nền tảng — Kệ mở<span class="n">10</span></button>    <button class="cat-pill" type="button" data-filter="pmp">Học liệu PMP<span class="n">0</span></button>    <button class="cat-pill" type="button" data-filter="coursework">Học liệu MSM MBA<span class="n">0</span></button>  </div>
+</div>
+<div class="container lib-body">
+  <aside class="lib-note">
+    <svg class="ico"><use href="#i-book"/></svg>
+    <p><strong>Kệ mở.</strong> Ấn bản thuộc phạm vi công cộng, tải miễn phí — lưu trữ dưới dạng tệp đính kèm bản phát hành, không nằm trong kho mã nguồn. Có trong thư viện làm việc. Tiêu đề được lập mục phục vụ nghiên cứu; các ấn bản còn bản quyền không được phát hành lại ở đây.</p>
+  </aside>
+
+  <section class="shelf" id="shelf-strategy" data-shelf="strategy">
+    <div class="shelf-head">
+      <span class="shelf-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M6 16V9M11 16V5M16 16v-4M21 16v-7"/></svg></span>
+      <div class="shelf-title">
+        <h2>Chiến lược &amp; Quản trị doanh nghiệp</h2>
+        <p class="shelf-sub">Vị thế cạnh tranh, mô hình kinh doanh và logic vận hành của doanh nghiệp.</p>
+      </div>
+      <div class="shelf-meta">
+        <span class="shelf-count">12,360 tệp</span>
+        <span class="shelf-fmt">PDF 2,347 · DOCX 8 · DOC 263</span>
+      </div>
+    </div>
+    <div class="work-grid">
+      <article class="work" data-shelf="strategy" data-text="competitive strategy michael e porter 1980 strategy corporate management chi n l c qu n tr doanh nghi p the five forces book structure the industry before you argue about tactics everything else in the strategy shelf is a reply to this cu n s ch v n m p l c c nh tranh h y ph n t ch c u tr c ng nh tr c khi b n chi n thu t m i th kh c tr n k chi n l c u l ph n h i cho cu n n y">
+        <span class="work-meta">Michael E. Porter · 1980</span>
+        <h3>Competitive Strategy</h3>
+        <p>Cuốn sách về năm áp lực cạnh tranh. Hãy phân tích cấu trúc ngành trước khi bàn chiến thuật — mọi thứ khác trên kệ chiến lược đều là phản hồi cho cuốn này.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">21 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="strategy" data-text="competitive advantage michael e porter 1985 strategy corporate management chi n l c qu n tr doanh nghi p the sequel that turns structure into margin the value chain cost drivers and differentiation read it with a p l open ph n ti p theo bi n c u tr c ng nh th nh bi n l i nhu n chu i gi tr c c y u t chi ph v kh c bi t h a n n c k m b o c o l i l">
+        <span class="work-meta">Michael E. Porter · 1985</span>
+        <h3>Competitive Advantage</h3>
+        <p>Phần tiếp theo biến cấu trúc ngành thành biên lợi nhuận: chuỗi giá trị, các yếu tố chi phí và khác biệt hóa. Nên đọc kèm báo cáo lãi lỗ.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">21 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="strategy" data-text="what is strategy michael e porter hbr 1996 strategy corporate management chi n l c qu n tr doanh nghi p twenty pages that separate operational effectiveness from strategy the single most useful corrective to a room full of busy people hai m i trang ph n bi t hi u qu v n h nh v i chi n l c li u thu c ch nh s a h u ch nh t cho m t c n ph ng to n ng i b n r n">
+        <span class="work-meta">Michael E. Porter / HBR · 1996</span>
+        <h3>What Is Strategy?</h3>
+        <p>Hai mươi trang phân biệt hiệu quả vận hành với chiến lược. Liều thuốc chỉnh sửa hữu ích nhất cho một căn phòng toàn người bận rộn.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">849 KB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="strategy" data-text="blue ocean strategy w chan kim ren e mauborgne 2005 strategy corporate management chi n l c qu n tr doanh nghi p value innovation and the strategy canvas best used as a workshop tool not a doctrine the canvas earns its keep in a real pricing argument i m i gi tr v khung v chi n l c d ng t t nh t nh c ng c h i th o kh ng ph i gi o i u khung v s ch ng minh gi tr trong m t cu c tranh lu n gi th c t">
+        <span class="work-meta">W. Chan Kim &amp; Renée Mauborgne · 2005</span>
+        <h3>Blue Ocean Strategy</h3>
+        <p>Đổi mới giá trị và khung vẽ chiến lược. Dùng tốt nhất như công cụ hội thảo, không phải giáo điều — khung vẽ sẽ chứng minh giá trị trong một cuộc tranh luận giá thực tế.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">3 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="strategy" data-text="good to great jim collins 2001 strategy corporate management chi n l c qu n tr doanh nghi p the level 5 leader the hedgehog concept the flywheel selection bias is real but the discipline of the comparison set is still worth studying l nh o c p 5 kh i ni m nh m b nh thi n l ch ch n m u l c th t nh ng k lu t c a nh m so s nh v n ng nghi n c u">
+        <span class="work-meta">Jim Collins · 2001</span>
+        <h3>Good to Great</h3>
+        <p>Lãnh đạo cấp 5, khái niệm nhím, bánh đà. Thiên lệch chọn mẫu là có thật, nhưng kỷ luật của nhóm so sánh vẫn đáng nghiên cứu.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">20 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="strategy" data-text="the effective executive peter f drucker 1967 strategy corporate management chi n l c qu n tr doanh nghi p still the shortest honest book on managerial work know where your time goes build on strengths make few decisions but make them well v n l cu n s ch trung th c ng n nh t v c ng vi c qu n l bi t th i gian i u x y tr n i m m nh ra t quy t nh nh ng ra ng">
+        <span class="work-meta">Peter F. Drucker · 1967</span>
+        <h3>The Effective Executive</h3>
+        <p>Vẫn là cuốn sách trung thực ngắn nhất về công việc quản lý: biết thời gian đi đâu, xây trên điểm mạnh, ra ít quyết định nhưng ra đúng.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">3 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="strategy" data-text="innovation and entrepreneurship peter f drucker 1985 strategy corporate management chi n l c qu n tr doanh nghi p treats innovation as a discipline with seven sources not a personality trait the practitioner s counterweight to every disruption deck xem i m i s ng t o l m t k lu t v i b y ngu n kh ng ph i t ch t i tr ng th c h nh cho m i b i thuy t tr nh v t ph">
+        <span class="work-meta">Peter F. Drucker · 1985</span>
+        <h3>Innovation and Entrepreneurship</h3>
+        <p>Xem đổi mới sáng tạo là một kỷ luật với bảy nguồn, không phải tố chất. Đối trọng thực hành cho mọi bài thuyết trình về &#x27;đột phá&#x27;.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">7 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="strategy" data-text="the goal eliyahu m goldratt 1984 strategy corporate management chi n l c qu n tr doanh nghi p a novel about a plant manager and the clearest explanation of throughput bottlenecks and the theory of constraints ever written m t ti u thuy t v qu n c nh m y v l l i gi i th ch r nh t v th ng l ng i m ngh n v l thuy t r ng bu c">
+        <span class="work-meta">Eliyahu M. Goldratt · 1984</span>
+        <h3>The Goal</h3>
+        <p>Một tiểu thuyết về quản đốc nhà máy, và là lời giải thích rõ nhất về thông lượng, điểm nghẽn và lý thuyết ràng buộc.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">4 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="strategy" data-text="strategy safari henry mintzberg bruce ahlstrand joseph lampel 1998 strategy corporate management chi n l c qu n tr doanh nghi p ten schools of strategy each taken seriously then punctured the antidote to believing any single framework is the framework m i tr ng ph i chi n l c m i tr ng ph i c xem tr ng r i b m x li u gi i c cho ni m tin r ng m t khung duy nh t l t t c">
+        <span class="work-meta">Henry Mintzberg, Bruce Ahlstrand &amp; Joseph Lampel · 1998</span>
+        <h3>Strategy Safari</h3>
+        <p>Mười trường phái chiến lược, mỗi trường phái được xem trọng rồi bị mổ xẻ. Liều giải độc cho niềm tin rằng một khung duy nhất là tất cả.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">21 MB</span>
+          
+        </div>
+      </article>
+    </div>
+    <div class="also">
+      <p class="also-head">Cùng kệ này <span>— 16 mục khác</span></p>
+      <ul class="also-list">        <li><span class="also-t">Management system auditors handbook</span><span class="also-f">PDF · 66 MB</span></li>        <li><span class="also-t">graphics patterns</span><span class="also-f">DOC · 53 MB</span></li>        <li><span class="also-t">Encyclopedia of Leadership 076192597X</span><span class="also-f">PDF · 43 MB</span></li>        <li><span class="also-t">SelfOrganisation</span><span class="also-f">PDF · 41 MB</span></li>        <li><span class="also-t">Database Modeling with Microsoft® Visio for Enterprise Architects</span><span class="also-f">CHM · 37 MB</span></li>        <li><span class="also-t">HBR.0907i</span><span class="also-f">PDF · 36 MB</span></li>        <li><span class="also-t">Sustainable Company</span><span class="also-f">PDF · 34 MB</span></li>        <li><span class="also-t">Encyclopedia of Business in Today&#x27;s World (2009)</span><span class="also-f">PDF · 34 MB</span></li>        <li><span class="also-t">HBR.1007i</span><span class="also-f">PDF · 34 MB</span></li>        <li><span class="also-t">hbr 072008</span><span class="also-f">PDF · 34 MB</span></li>        <li><span class="also-t">HBR.0707 0807i</span><span class="also-f">PDF · 33 MB</span></li>        <li><span class="also-t">Harvard Business Review 2010-01 02</span><span class="also-f">PDF · 31 MB</span></li>        <li><span class="also-t">MCGraw-Hill Osborne Introduction to Business</span><span class="also-f">PDF · 31 MB</span></li>        <li><span class="also-t">business-week-2009-10-12</span><span class="also-f">PDF · 31 MB</span></li>        <li><span class="also-t">The E-Myth</span><span class="also-f">PDF · 30 MB</span></li>        <li><span class="also-t">HBR.1207i</span><span class="also-f">PDF · 28 MB</span></li>      </ul>
+    </div>
+  </section>
+  <section class="shelf" id="shelf-finance" data-shelf="finance">
+    <div class="shelf-head">
+      <span class="shelf-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4zM4 10h16"/></svg></span>
+      <div class="shelf-title">
+        <h2>Tài chính &amp; Kế toán</h2>
+        <p class="shelf-sub">Tài chính doanh nghiệp, định giá, kế toán chi phí và cấu trúc vốn.</p>
+      </div>
+      <div class="shelf-meta">
+        <span class="shelf-count">2,313 tệp</span>
+        <span class="shelf-fmt">PDF 900 · DOCX 3 · DOC 90</span>
+      </div>
+    </div>
+    <div class="work-grid">
+      <article class="work" data-shelf="finance" data-text="principles of corporate finance richard brealey stewart myers 2000 finance accounting t i ch nh k to n the standard text npv risk capital structure and payout policy built in the right order read the first four chapters before any deal memo gi o tr nh chu n npv r i ro c u tr c v n v ch nh s ch c t c c x y ng th t c b n ch ng u tr c m i b n ghi nh giao d ch">
+        <span class="work-meta">Richard Brealey &amp; Stewart Myers · 2000</span>
+        <h3>Principles of Corporate Finance</h3>
+        <p>Giáo trình chuẩn. NPV, rủi ro, cấu trúc vốn và chính sách cổ tức được xây đúng thứ tự — đọc bốn chương đầu trước mọi bản ghi nhớ giao dịch.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">3 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="finance" data-text="principles of managerial finance lawrence j gitman 2008 finance accounting t i ch nh k to n the working finance version ratios working capital capital budgeting written for people who have to run the numbers on tuesday phi n b n t i ch nh th c h nh t s v n l u ng ho ch nh v n vi t cho nh ng ng i ph i ch y s li u v o th ba">
+        <span class="work-meta">Lawrence J. Gitman · 2008</span>
+        <h3>Principles of Managerial Finance</h3>
+        <p>Phiên bản tài chính thực hành: tỷ số, vốn lưu động, hoạch định vốn. Viết cho những người phải chạy số liệu vào thứ Ba.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">32 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="finance" data-text="investment fables aswath damodaran 2004 finance accounting t i ch nh k to n thirteen market myths tested against data the best available training in refusing a plausible story that has no evidence behind it m i ba huy n tho i th tr ng c ki m ch ng b ng d li u c ch hu n luy n t t nh t t ch i m t c u chuy n nghe h p l nh ng kh ng c b ng ch ng">
+        <span class="work-meta">Aswath Damodaran · 2004</span>
+        <h3>Investment Fables</h3>
+        <p>Mười ba huyền thoại thị trường được kiểm chứng bằng dữ liệu. Cách huấn luyện tốt nhất để từ chối một câu chuyện nghe hợp lý nhưng không có bằng chứng.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">3 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="finance" data-text="financial analysis with excel timothy mayes brealey myers companion 2004 finance accounting t i ch nh k to n spreadsheet mechanics for ratio analysis and forecasting unglamorous and the reason a model either reconciles or quietly lies c ch b ng t nh cho ph n t ch t s v d b o kh ng h o nho ng nh ng l l do m t m h nh ho c kh p s ho c m th m sai">
+        <span class="work-meta">Timothy Mayes / Brealey-Myers companion · 2004</span>
+        <h3>Financial Analysis with Excel</h3>
+        <p>Cơ chế bảng tính cho phân tích tỷ số và dự báo. Không hào nhoáng, nhưng là lý do một mô hình hoặc khớp số hoặc âm thầm sai.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">5 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="finance" data-text="risk management and capital adequacy robert kolb 2003 finance accounting t i ch nh k to n how regulatory capital var and credit exposure actually interact bridges the finance shelf and the risk shelf c ch v n theo quy nh var v r i ro t n d ng th c s t ng t c c u n i gi a k t i ch nh v k r i ro">
+        <span class="work-meta">Robert Kolb · 2003</span>
+        <h3>Risk Management and Capital Adequacy</h3>
+        <p>Cách vốn theo quy định, VaR và rủi ro tín dụng thực sự tương tác. Cầu nối giữa kệ tài chính và kệ rủi ro.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">4 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="finance" data-text="principles of cash flow valuation tham v lez pareja 2004 finance accounting t i ch nh k to n free cash flow discount rates and terminal value without hand waving use it to audit a valuation someone else built d ng ti n t do t l chi t kh u v gi tr cu i k kh ng c n bi n h d ng ki m to n m t b n nh gi do ng i kh c l p">
+        <span class="work-meta">Tham &amp; Vélez-Pareja · 2004</span>
+        <h3>Principles of Cash Flow Valuation</h3>
+        <p>Dòng tiền tự do, tỷ lệ chiết khấu và giá trị cuối kỳ không cần biện hộ. Dùng để kiểm toán một bản định giá do người khác lập.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">2 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="finance" data-text="the sages charles r morris 2008 finance accounting t i ch nh k to n buffett soros and volcker in one frame how three very different risk temperaments survived the same markets buffett soros v volcker trong m t khung ba kh ch t r i ro r t kh c nhau c ng s ng s t qua nh ng th tr ng nh nhau">
+        <span class="work-meta">Charles R. Morris · 2008</span>
+        <h3>The Sages</h3>
+        <p>Buffett, Soros và Volcker trong một khung — ba khí chất rủi ro rất khác nhau cùng sống sót qua những thị trường như nhau.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">955 KB</span>
+          
+        </div>
+      </article>
+    </div>
+    <div class="also">
+      <p class="also-head">Cùng kệ này <span>— 16 mục khác</span></p>
+      <ul class="also-list">        <li><span class="also-t">Business Accounting 2(11th edition)</span><span class="also-f">PDF · 658 MB</span></li>        <li><span class="also-t">L12. Financial Limits of Growth</span><span class="also-f">MP4 · 475 MB</span></li>        <li><span class="also-t">L10. The Costs of Capital</span><span class="also-f">MP4 · 475 MB</span></li>        <li><span class="also-t">L11. Return on Sales, Assets, and Equity</span><span class="also-f">MP4 · 474 MB</span></li>        <li><span class="also-t">L09. Financial Decisions</span><span class="also-f">MP4 · 473 MB</span></li>        <li><span class="also-t">L07. Learning Curves and Cost Reduction</span><span class="also-f">MP4 · 473 MB</span></li>        <li><span class="also-t">L16. Legal Issues and Summary</span><span class="also-f">MP4 · 471 MB</span></li>        <li><span class="also-t">L15. Measuring and Controlling</span><span class="also-f">MP4 · 465 MB</span></li>        <li><span class="also-t">L14. Strategic Signatures, Case II</span><span class="also-f">MP4 · 464 MB</span></li>        <li><span class="also-t">L13. Strategic Signatures, Case I</span><span class="also-f">MP4 · 461 MB</span></li>        <li><span class="also-t">L03. Income Statement - The Nature of Costs</span><span class="also-f">MP4 · 458 MB</span></li>        <li><span class="also-t">L02. Balance Sheets - Liabilities and Equities</span><span class="also-f">MP4 · 458 MB</span></li>        <li><span class="also-t">L01. Balance Sheet - Assets</span><span class="also-f">MP4 · 453 MB</span></li>        <li><span class="also-t">L08. Scale and Transportation Effects</span><span class="also-f">MP4 · 451 MB</span></li>        <li><span class="also-t">L04. Economies of Scale and Cash Flow</span><span class="also-f">MP4 · 440 MB</span></li>        <li><span class="also-t">L06. Financial Reports, Part II</span><span class="also-f">MP4 · 437 MB</span></li>      </ul>
+    </div>
+  </section>
+  <section class="shelf" id="shelf-economics" data-shelf="economics">
+    <div class="shelf-head">
+      <span class="shelf-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 15l4-5 3 3 5-7"/></svg></span>
+      <div class="shelf-title">
+        <h2>Kinh tế học</h2>
+        <p class="shelf-sub">Nền tảng vi mô và vĩ mô đằng sau mọi quyết định vốn.</p>
+      </div>
+      <div class="shelf-meta">
+        <span class="shelf-count">1,483 tệp</span>
+        <span class="shelf-fmt">PDF 1,013 · DOCX 2 · DOC 6</span>
+      </div>
+    </div>
+    <div class="work-grid">
+      <article class="work" data-shelf="economics" data-text="principles of economics n gregory mankiw 2003 economics kinh t h c the teaching standard ten principles supply and demand market failure dense with examples easy to argue with hard to replace chu n gi ng d y m i nguy n l cung c u th t b i th tr ng nhi u v d d tranh lu n kh thay th">
+        <span class="work-meta">N. Gregory Mankiw · 2003</span>
+        <h3>Principles of Economics</h3>
+        <p>Chuẩn giảng dạy: mười nguyên lý, cung cầu, thất bại thị trường. Nhiều ví dụ, dễ tranh luận, khó thay thế.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">13 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="economics" data-text="intermediate microeconomics hal r varian 2005 economics kinh t h c consumer theory production market structure game theory the version of micro you need before reading a pricing paper l thuy t ti u d ng s n xu t c u tr c th tr ng l thuy t tr ch i phi n b n vi m b n c n tr c khi c m t b i b o v gi">
+        <span class="work-meta">Hal R. Varian · 2005</span>
+        <h3>Intermediate Microeconomics</h3>
+        <p>Lý thuyết tiêu dùng, sản xuất, cấu trúc thị trường, lý thuyết trò chơi. Phiên bản vi mô bạn cần trước khi đọc một bài báo về giá.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">66 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="economics" data-text="principles of economics carl menger 1871 economics kinh t h c the founding text of marginalism written without a single equation read it to remember that value is subjective before it is a curve v n b n khai sinh thuy t c n bi n vi t m kh ng c m t ph ng tr nh n o c nh r ng gi tr l ch quan tr c khi n th nh m t ng cong">
+        <span class="work-meta">Carl Menger · 1871</span>
+        <h3>Principles of Economics</h3>
+        <p>Văn bản khai sinh thuyết cận biên, viết mà không có một phương trình nào. Đọc để nhớ rằng giá trị là chủ quan trước khi nó thành một đường cong.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">1 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="economics" data-text="international economics paul krugman maurice obstfeld 2003 economics kinh t h c trade theory and open economy macro in one volume the reference behind every argument about local content and currency exposure l thuy t th ng m i v kinh t v m m trong m t t p t i li u tham chi u cho m i tranh lu n v t l n i a h a v r i ro t gi">
+        <span class="work-meta">Paul Krugman &amp; Maurice Obstfeld · 2003</span>
+        <h3>International Economics</h3>
+        <p>Lý thuyết thương mại và kinh tế vĩ mô mở trong một tập. Tài liệu tham chiếu cho mọi tranh luận về tỷ lệ nội địa hóa và rủi ro tỷ giá.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">40 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="economics" data-text="mathematics for economists carl p simon lawrence blume 1994 economics kinh t h c the maths bridge linear algebra optimisation comparative statics if a model in another book loses you the answer is usually here c u n i to n h c i s tuy n t nh t i u h a so s nh t nh n u m t m h nh s ch kh c l m b n m t h ng c u tr l i th ng n m y">
+        <span class="work-meta">Carl P. Simon &amp; Lawrence Blume · 1994</span>
+        <h3>Mathematics for Economists</h3>
+        <p>Cầu nối toán học — đại số tuyến tính, tối ưu hóa, so sánh tĩnh. Nếu một mô hình ở sách khác làm bạn mất hướng, câu trả lời thường nằm ở đây.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">25 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="economics" data-text="the wealth of ideas alessandro roncaglia 2005 economics kinh t h c a history of economic thought that takes the arguments seriously as arguments best read alongside the primary texts on the open shelf l ch s t t ng kinh t xem c c tranh lu n l tranh lu n th c s n n c song song v i c c v n b n g c tr n k m">
+        <span class="work-meta">Alessandro Roncaglia · 2005</span>
+        <h3>The Wealth of Ideas</h3>
+        <p>Lịch sử tư tưởng kinh tế xem các tranh luận là tranh luận thực sự. Nên đọc song song với các văn bản gốc trên kệ mở.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">6 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="economics" data-text="good capitalism bad capitalism william j baumol robert litan carl schramm 2007 economics kinh t h c four varieties of capitalism and which one actually produces growth a useful frame for reading emerging market policy b n d ng c a ch ngh a t b n v d ng n o th c s t o ra t ng tr ng khung h u ch c ch nh s ch th tr ng m i n i">
+        <span class="work-meta">William J. Baumol, Robert Litan &amp; Carl Schramm · 2007</span>
+        <h3>Good Capitalism, Bad Capitalism</h3>
+        <p>Bốn dạng của chủ nghĩa tư bản và dạng nào thực sự tạo ra tăng trưởng. Khung hữu ích để đọc chính sách thị trường mới nổi.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">2 MB</span>
+          
+        </div>
+      </article>
+    </div>
+    <div class="also">
+      <p class="also-head">Cùng kệ này <span>— 16 mục khác</span></p>
+      <ul class="also-list">        <li><span class="also-t">Monkey Business; Swinging through the Wall Street Jungle - Rolfe &amp; Troob [2000]</span><span class="also-f">PDF · 141 MB</span></li>        <li><span class="also-t">Calculus For Dummies</span><span class="also-f">PDF · 91 MB</span></li>        <li><span class="also-t">CFA - Analysis Of Derivatives</span><span class="also-f">PDF · 74 MB</span></li>        <li><span class="also-t">economist-2010-02-27-feb</span><span class="also-f">PDF · 69 MB</span></li>        <li><span class="also-t">Microeconomics - Pindyck, Rubinfeld (3Ed 1995)</span><span class="also-f">PDF · 61 MB</span></li>        <li><span class="also-t">Kinh te hoc quoc te - Lindert 1991</span><span class="also-f">PDF · 61 MB</span></li>        <li><span class="also-t">The Economist-2009-12-12c</span><span class="also-f">PDF · 59 MB</span></li>        <li><span class="also-t">The Economist February 13th - 19th 2010</span><span class="also-f">PDF · 57 MB</span></li>        <li><span class="also-t">Wiley - Managerial Economics 5th Edition (2005)</span><span class="also-f">PDF · 56 MB</span></li>        <li><span class="also-t">The Economist-2009-November 28th - December 4th</span><span class="also-f">PDF · 56 MB</span></li>        <li><span class="also-t">The Economist-2009-October 24th - October 30th</span><span class="also-f">PDF · 55 MB</span></li>        <li><span class="also-t">Human Action - Mises, L [1949]</span><span class="also-f">PDF · 53 MB</span></li>        <li><span class="also-t">Microeconomics - Private and Public Choice 11th ed - Gwartney, J [2006]</span><span class="also-f">PDF · 53 MB</span></li>        <li><span class="also-t">The Economist-2009-October 31st - November 6th</span><span class="also-f">PDF · 50 MB</span></li>        <li><span class="also-t">The Economist - January 16th - 22td 2010</span><span class="also-f">PDF · 45 MB</span></li>        <li><span class="also-t">The Lost Science of Money - Zarlenga, S - [2002]</span><span class="also-f">PDF · 44 MB</span></li>      </ul>
+    </div>
+  </section>
+  <section class="shelf" id="shelf-project-management" data-shelf="project-management">
+    <div class="shelf-head">
+      <span class="shelf-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h6v6H4zM14 13h6v6h-6zM10 8h4v8"/></svg></span>
+      <div class="shelf-title">
+        <h2>Quản lý dự án</h2>
+        <p class="shelf-sub">Phương pháp luận, tiến độ, giá trị thu được và lộ trình chứng chỉ.</p>
+      </div>
+      <div class="shelf-meta">
+        <span class="shelf-count">309 tệp</span>
+        <span class="shelf-fmt">PDF 261 · DOCX 2 · DOC 4</span>
+      </div>
+    </div>
+    <div class="work-grid">
+      <article class="work" data-shelf="project-management" data-text="a guide to the project management body of knowledge pmi 2008 project management qu n l d n the reference spine of the whole discipline use the process tables as a checklist not a religion the value is in the questions it forces x ng s ng tham chi u c a c ng nh d ng b ng quy tr nh nh danh m c ki m tra kh ng ph i t n gi o gi tr n m nh ng c u h i n bu c b n t ra">
+        <span class="work-meta">PMI · 2008</span>
+        <h3>A Guide to the Project Management Body of Knowledge</h3>
+        <p>Xương sống tham chiếu của cả ngành. Dùng bảng quy trình như danh mục kiểm tra, không phải tôn giáo — giá trị nằm ở những câu hỏi nó buộc bạn đặt ra.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">11 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="project-management" data-text="strategic planning for project management harold kerzner 2001 project management qu n l d n the maturity model how an organisation moves from ad hoc projects to a managed portfolio written for the person who has to sell that change m h nh tr ng th nh c ch m t t ch c i t d n t y h ng n danh m c c qu n tr vi t cho ng i ph i b n s thay i">
+        <span class="work-meta">Harold Kerzner · 2001</span>
+        <h3>Strategic Planning for Project Management</h3>
+        <p>Mô hình trưởng thành: cách một tổ chức đi từ dự án tùy hứng đến danh mục được quản trị. Viết cho người phải bán sự thay đổi đó.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">3 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="project-management" data-text="project management professional pmp study guide kim heldman 2005 project management qu n l d n exam preparation organised by knowledge area with the process inputs and outputs that the exam actually tests n thi theo t ng l nh v c tri th c k m u v o v u ra c a quy tr nh m thi th c s ki m tra">
+        <span class="work-meta">Kim Heldman · 2005</span>
+        <h3>Project Management Professional (PMP) Study Guide</h3>
+        <p>Ôn thi theo từng lĩnh vực tri thức, kèm đầu vào và đầu ra của quy trình mà đề thi thực sự kiểm tra.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">9 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="project-management" data-text="pmp exam prep rita mulcahy 2005 project management qu n l d n the other half of pmp preparation exam logic and trick questions rather than theory pair it with the pmbok never instead of it n a c n l i c a vi c n pmp logic thi v c u h i b y thay v l thuy t d ng k m pmbok kh ng bao gi thay th">
+        <span class="work-meta">Rita Mulcahy · 2005</span>
+        <h3>PMP Exam Prep</h3>
+        <p>Nửa còn lại của việc ôn PMP: logic đề thi và câu hỏi bẫy thay vì lý thuyết. Dùng kèm PMBOK, không bao giờ thay thế.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">7 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="project-management" data-text="project risk management processes techniques and insights chris chapman stephen ward 2003 project management qu n l d n the serious treatment of project risk shaping ownership and why a risk register without a decision is just paperwork c ch x l nghi m t c r i ro d n nh h nh quy n s h u v v sao m t s r i ro kh ng g n v i quy t nh ch l gi y t">
+        <span class="work-meta">Chris Chapman &amp; Stephen Ward · 2003</span>
+        <h3>Project Risk Management: Processes, Techniques and Insights</h3>
+        <p>Cách xử lý nghiêm túc rủi ro dự án: định hình, quyền sở hữu, và vì sao một sổ rủi ro không gắn với quyết định chỉ là giấy tờ.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">16 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="project-management" data-text="effective project management traditional agile extreme robert k wysocki 2009 project management qu n l d n one book that covers the linear incremental iterative and adaptive life cycles side by side useful when choosing a method is the actual decision m t cu n bao qu t c c chu k s ng tuy n t nh t ng d n l p v th ch ng song song h u ch khi vi c ch n ph ng ph p ch nh l quy t nh">
+        <span class="work-meta">Robert K. Wysocki · 2009</span>
+        <h3>Effective Project Management: Traditional, Agile, Extreme</h3>
+        <p>Một cuốn bao quát các chu kỳ sống tuyến tính, tăng dần, lặp và thích ứng song song — hữu ích khi việc chọn phương pháp chính là quyết định.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">4 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="project-management" data-text="the fast forward mba in project management eric verzuh 2008 project management qu n l d n the compressed practitioner s version scope schedule cost and stakeholder in a few hundred pages with the templates to match phi n b n th c h nh c ng ph m vi ti n chi ph v c c b n li n quan trong v i tr m trang k m bi u m u t ng ng">
+        <span class="work-meta">Eric Verzuh · 2008</span>
+        <h3>The Fast Forward MBA in Project Management</h3>
+        <p>Phiên bản thực hành cô đọng. Phạm vi, tiến độ, chi phí và các bên liên quan trong vài trăm trang, kèm biểu mẫu tương ứng.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">4 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="project-management" data-text="project management for engineering business and technology john m nicholas herman steyn 2012 project management qu n l d n written for capital and technology projects rather than software the systems view of a project as a temporary organisation vi t cho d n v n v c ng ngh thay v ph n m m g c nh n h th ng v d n nh m t t ch c t m th i">
+        <span class="work-meta">John M. Nicholas &amp; Herman Steyn · 2012</span>
+        <h3>Project Management for Engineering, Business and Technology</h3>
+        <p>Viết cho dự án vốn và công nghệ thay vì phần mềm. Góc nhìn hệ thống về dự án như một tổ chức tạm thời.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">6 MB</span>
+          
+        </div>
+      </article>
+    </div>
+    <div class="also">
+      <p class="also-head">Cùng kệ này <span>— 16 mục khác</span></p>
+      <ul class="also-list">        <li><span class="also-t">Microsoft Project 2007 Bible (2007)</span><span class="also-f">PDF · 68 MB</span></li>        <li><span class="also-t">Wiley - Project Management - A Systems Approach to Planning Scheduling and Controlling (2001)</span><span class="also-f">PDF · 33 MB</span></li>        <li><span class="also-t">Managing Project Risk</span><span class="also-f">PDF · 30 MB</span></li>        <li><span class="also-t">Project Management</span><span class="also-f">PDF · 28 MB</span></li>        <li><span class="also-t">Microsoft Office Project 2007 For Dummies</span><span class="also-f">PDF · 17 MB</span></li>        <li><span class="also-t">Mcgraw-Hill - Software Project Management - Second Edition</span><span class="also-f">PDF · 17 MB</span></li>        <li><span class="also-t">Project Management 5th Edition</span><span class="also-f">PDF · 16 MB</span></li>        <li><span class="also-t">Project and Cost Engineers&#x27; Handbook</span><span class="also-f">CHM · 15 MB</span></li>        <li><span class="also-t">Enterprise Risk Management</span><span class="also-f">PDF · 15 MB</span></li>        <li><span class="also-t">Probability For Risk Management, 2nd Edition</span><span class="also-f">PDF · 15 MB</span></li>        <li><span class="also-t">A Guide to the Project Management Body of Knowledge (PMBOK Guide)</span><span class="also-f">CHM · 15 MB</span></li>        <li><span class="also-t">Managing Risk in Large Projects and Complex Procurement</span><span class="also-f">PDF · 14 MB</span></li>        <li><span class="also-t">Deepwater Horizon Accident Investigation Report</span><span class="also-f">PDF · 14 MB</span></li>        <li><span class="also-t">MindManager for Dummies</span><span class="also-f">PDF · 13 MB</span></li>        <li><span class="also-t">Amacom - Modern Project Management (Ocr) - 2001 ! - (By Laxxuss)</span><span class="also-f">PDF · 13 MB</span></li>        <li><span class="also-t">Amacom Modern Project Management</span><span class="also-f">PDF · 13 MB</span></li>      </ul>
+    </div>
+  </section>
+  <section class="shelf" id="shelf-leadership" data-shelf="leadership">
+    <div class="shelf-head">
+      <span class="shelf-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l3 6 6 1-4.5 4.5L17 21l-5-3-5 3 1.5-6.5L4 10l6-1z"/></svg></span>
+      <div class="shelf-title">
+        <h2>Lãnh đạo &amp; Quản trị</h2>
+        <p class="shelf-sub">Thực hành điều hành, thiết kế đội ngũ và các tác phẩm quản trị kinh điển.</p>
+      </div>
+      <div class="shelf-meta">
+        <span class="shelf-count">6,766 tệp</span>
+        <span class="shelf-fmt">PDF 913 · DOCX 4 · DOC 16</span>
+      </div>
+    </div>
+    <div class="work-grid">
+      <article class="work" data-shelf="leadership" data-text="the 7 habits of highly effective people stephen r covey 1989 leadership management l nh o qu n tr the personal effectiveness foundation most management books assume you already have habit 2 and 3 still do the heaviest lifting n n t ng hi u qu c nh n m h u h t s ch qu n tr m c nh b n c th i quen 2 v 3 v n g nh ph n n ng nh t">
+        <span class="work-meta">Stephen R. Covey · 1989</span>
+        <h3>The 7 Habits of Highly Effective People</h3>
+        <p>Nền tảng hiệu quả cá nhân mà hầu hết sách quản trị mặc định bạn đã có. Thói quen 2 và 3 vẫn gánh phần nặng nhất.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">756 KB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="leadership" data-text="the one minute manager kenneth blanchard spencer johnson 1982 leadership management l nh o qu n tr ninety pages on goals praise and reprimand thin on theory unusually good on what a manager actually says on a monday ch n m i trang v m c ti u khen ng i v khi n tr ch t l thuy t nh ng r t hay ch n i r ng i qu n l th c s n i g v o th hai">
+        <span class="work-meta">Kenneth Blanchard &amp; Spencer Johnson · 1982</span>
+        <h3>The One Minute Manager</h3>
+        <p>Chín mươi trang về mục tiêu, khen ngợi và khiển trách. Ít lý thuyết, nhưng rất hay ở chỗ nói rõ người quản lý thực sự nói gì vào thứ Hai.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">451 KB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="leadership" data-text="the toyota way jeffrey k liker 2004 leadership management l nh o qu n tr fourteen principles and the argument that the tools only work on top of the culture read before copying anyone s kanban m i b n nguy n l v l p lu n r ng c ng c ch hi u qu khi t tr n n n v n h a c tr c khi sao ch p kanban c a ai">
+        <span class="work-meta">Jeffrey K. Liker · 2004</span>
+        <h3>The Toyota Way</h3>
+        <p>Mười bốn nguyên lý, và lập luận rằng công cụ chỉ hiệu quả khi đặt trên nền văn hóa. Đọc trước khi sao chép kanban của ai đó.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">CHM</span>
+          <span class="work-size">6 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="leadership" data-text="management stephen p robbins mary coulter 2012 leadership management l nh o qu n tr the survey text planning organising leading controlling with the research behind each the map of the territory gi o tr nh kh o s t ho ch nh t ch c l nh o ki m so t k m nghi n c u ng sau m i ph n b n c a to n b l nh th">
+        <span class="work-meta">Stephen P. Robbins &amp; Mary Coulter · 2012</span>
+        <h3>Management</h3>
+        <p>Giáo trình khảo sát: hoạch định, tổ chức, lãnh đạo, kiểm soát, kèm nghiên cứu đằng sau mỗi phần. Bản đồ của toàn bộ lãnh thổ.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">49 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="leadership" data-text="geeks geezers warren g bennis robert j thomas 2002 leadership management l nh o qu n tr how leaders are made at 30 and at 70 the difference is whether they kept being tested a study of adaptive capacity c ch ng i l nh o c t o n n tu i 30 v tu i 70 kh c bi t n m vi c h c ti p t c c th th ch hay kh ng m t nghi n c u v n ng l c th ch ng">
+        <span class="work-meta">Warren G. Bennis &amp; Robert J. Thomas · 2002</span>
+        <h3>Geeks &amp; Geezers</h3>
+        <p>Cách người lãnh đạo được tạo nên ở tuổi 30 và tuổi 70 — khác biệt nằm ở việc họ có tiếp tục được thử thách hay không. Một nghiên cứu về năng lực thích ứng.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">2 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="leadership" data-text="introduction to management science bernard w taylor iii 2006 leadership management l nh o qu n tr linear programming queuing decision trees the quantitative half of management that the soft skills shelf pretends does not exist quy ho ch tuy n t nh l thuy t h ng i c y quy t nh n a nh l ng c a qu n tr m k s ch k n ng m m th ng ph t l">
+        <span class="work-meta">Bernard W. Taylor III · 2006</span>
+        <h3>Introduction to Management Science</h3>
+        <p>Quy hoạch tuyến tính, lý thuyết hàng đợi, cây quyết định. Nửa định lượng của quản trị mà kệ sách kỹ năng mềm thường phớt lờ.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">CHM</span>
+          <span class="work-size">36 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="leadership" data-text="effective succession planning william j rothwell 2005 leadership management l nh o qu n tr the unglamorous system that decides whether a project survives its sponsor leaving read it before you need it h th ng k m h o nho ng quy t nh li u d n c s ng s t khi nh t i tr r i i c tr c khi b n c n n n">
+        <span class="work-meta">William J. Rothwell · 2005</span>
+        <h3>Effective Succession Planning</h3>
+        <p>Hệ thống kém hào nhoáng quyết định liệu dự án có sống sót khi nhà tài trợ rời đi. Đọc trước khi bạn cần đến nó.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">2 MB</span>
+          
+        </div>
+      </article>
+    </div>
+    <div class="also">
+      <p class="also-head">Cùng kệ này <span>— 16 mục khác</span></p>
+      <ul class="also-list">        <li><span class="also-t">Brain Sync - Increase Creativity</span><span class="also-f">MP3 · 76 MB</span></li>        <li><span class="also-t">Work And Life Integration Organizational Cultural And Ind</span><span class="also-f">PDF · 46 MB</span></li>        <li><span class="also-t">ARE BLIND SPOTS DERAILING YOUR LEADERSHIP POTENTIAL Part 1 - YouTube</span><span class="also-f">FLV · 29 MB</span></li>        <li><span class="also-t">SBMPro01</span><span class="also-f">CAB · 25 MB</span></li>        <li><span class="also-t">PC Disaster and Recovery Kate J. Chase (Sybex 2003)</span><span class="also-f">CHM · 25 MB</span></li>        <li><span class="also-t">Leading Quietly - Harvard Business School Press</span><span class="also-f">PDF · 25 MB</span></li>        <li><span class="also-t">Lessons in Leadership Polarity Management - YouTube</span><span class="also-f">FLV · 24 MB</span></li>        <li><span class="also-t">Visionary Leadership Skills</span><span class="also-f">PDF · 21 MB</span></li>        <li><span class="also-t">Small Business For Dummies, 3rd Edition</span><span class="also-f">PDF · 20 MB</span></li>        <li><span class="also-t">D M Messick R M Kramer - The Psychology of Leadership - New Perspectives and Research</span><span class="also-f">PDF · 19 MB</span></li>        <li><span class="also-t">The Psychology of Leadership - New Perspectives and Research (Lawrence Erlbaum Associates 2005)</span><span class="also-f">PDF · 19 MB</span></li>        <li><span class="also-t">The AMA Handbook of Project Management Second Edition (AMACOM 2006)</span><span class="also-f">PDF · 17 MB</span></li>        <li><span class="also-t">Butterworth-Heinemann Planning Under Pressure (2005) 3ed</span><span class="also-f">PDF · 15 MB</span></li>        <li><span class="also-t">Piping Engineering Leadership for Process Plant Projects James O. Pennock (Elsevier 2001)</span><span class="also-f">PDF · 14 MB</span></li>        <li><span class="also-t">Barry Johnson about Polartity Management.mov - YouTube</span><span class="also-f">FLV · 14 MB</span></li>        <li><span class="also-t">McClelland79Cascade</span><span class="also-f">PDF · 14 MB</span></li>      </ul>
+    </div>
+  </section>
+  <section class="shelf" id="shelf-ob" data-shelf="ob">
+    <div class="shelf-head">
+      <span class="shelf-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4a3 3 0 100 6 3 3 0 000-6zM5 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/></svg></span>
+      <div class="shelf-title">
+        <h2>Hành vi tổ chức</h2>
+        <p class="shelf-sub">Văn hóa, động lực, động lực nhóm và thiết kế tổ chức.</p>
+      </div>
+      <div class="shelf-meta">
+        <span class="shelf-count">328 tệp</span>
+        <span class="shelf-fmt">PDF 66 · DOC 1 · PPT 1</span>
+      </div>
+    </div>
+    <div class="work-grid">
+      <article class="work" data-shelf="ob" data-text="fundamentals of organizational behaviour nancy langton stephen robbins timothy judge 2010 organizational behaviour h nh vi t ch c the core ob curriculum perception motivation group behaviour power conflict and structure with cases ch ng tr nh ob c t l i nh n th c ng l c h nh vi nh m quy n l c xung t v c u tr c k m t nh hu ng">
+        <span class="work-meta">Nancy Langton, Stephen Robbins &amp; Timothy Judge · 2010</span>
+        <h3>Fundamentals of Organizational Behaviour</h3>
+        <p>Chương trình OB cốt lõi: nhận thức, động lực, hành vi nhóm, quyền lực, xung đột và cấu trúc, kèm tình huống.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">5 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="ob" data-text="the fifth discipline peter m senge 1990 organizational behaviour h nh vi t ch c systems thinking mental models shared vision team learning the book that made learning organisation a board level phrase t duy h th ng m h nh t m tr t m nh n chung h c t p ng i cu n s ch a t ch c h c t p l n b n h i ng qu n tr">
+        <span class="work-meta">Peter M. Senge · 1990</span>
+        <h3>The Fifth Discipline</h3>
+        <p>Tư duy hệ thống, mô hình tâm trí, tầm nhìn chung, học tập đồng đội. Cuốn sách đưa &#x27;tổ chức học tập&#x27; lên bàn hội đồng quản trị.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">4 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="ob" data-text="outliers malcolm gladwell 2008 organizational behaviour h nh vi t ch c the 10 000 hour argument and its critics useful less as science than as a challenge to the merit story organisations tell about themselves l p lu n 10 000 gi v nh ng ph b nh h u ch kh ng ph i nh khoa h c m nh m t th ch th c v i c u chuy n c ng tr ng c c t ch c t k v m nh">
+        <span class="work-meta">Malcolm Gladwell · 2008</span>
+        <h3>Outliers</h3>
+        <p>Lập luận 10.000 giờ và những phê bình. Hữu ích không phải như khoa học mà như một thách thức với câu chuyện công trạng các tổ chức tự kể về mình.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">4 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="ob" data-text="handbook of principles of organizational behaviour edwin a locke ed 2009 organizational behaviour h nh vi t ch c inductive evidence on what actually works in organisations one principle per chapter with the research behind it b ng ch ng quy n p v i u g th c s hi u qu trong t ch c m i ch ng m t nguy n l k m nghi n c u n n">
+        <span class="work-meta">Edwin A. Locke (ed.) · 2009</span>
+        <h3>Handbook of Principles of Organizational Behaviour</h3>
+        <p>Bằng chứng quy nạp về điều gì thực sự hiệu quả trong tổ chức, mỗi chương một nguyên lý kèm nghiên cứu nền.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">6 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="ob" data-text="companion to organizations joel a c baum ed 2002 organizational behaviour h nh vi t ch c a research grade survey of organisation theory institutional ecological network and sensemaking perspectives kh o s t c p nghi n c u v l thuy t t ch c c c g c nh n th ch sinh th i m ng l i v t o ngh a">
+        <span class="work-meta">Joel A. C. Baum (ed.) · 2002</span>
+        <h3>Companion to Organizations</h3>
+        <p>Khảo sát cấp nghiên cứu về lý thuyết tổ chức — các góc nhìn thể chế, sinh thái, mạng lưới và tạo nghĩa.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">10 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="ob" data-text="designing organizations richard m burton et al 2006 organizational behaviour h nh vi t ch c contingency design how size technology and environment should change the structure you draw the antidote to copying an org chart thi t k theo t nh hu ng quy m c ng ngh v m i tr ng n n thay i c u tr c b n v nh th n o li u gi i c cho vi c sao ch p s t ch c">
+        <span class="work-meta">Richard M. Burton et al. · 2006</span>
+        <h3>Designing Organizations</h3>
+        <p>Thiết kế theo tình huống: quy mô, công nghệ và môi trường nên thay đổi cấu trúc bạn vẽ như thế nào. Liều giải độc cho việc sao chép sơ đồ tổ chức.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">2 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="ob" data-text="principles of the self organizing system w ross ashby 1962 organizational behaviour h nh vi t ch c a short cybernetics paper that still explains why complex systems resist your reorganisation hard and worth the effort m t b i b o ng n v i u khi n h c v n gi i th ch c v sao h th ng ph c t p ch ng l i vi c t i t ch c c a b n kh v ng c ng">
+        <span class="work-meta">W. Ross Ashby · 1962</span>
+        <h3>Principles of the Self-Organizing System</h3>
+        <p>Một bài báo ngắn về điều khiển học, vẫn giải thích được vì sao hệ thống phức tạp chống lại việc tái tổ chức của bạn. Khó, và đáng công.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">4 MB</span>
+          
+        </div>
+      </article>
+    </div>
+    <div class="also">
+      <p class="also-head">Cùng kệ này <span>— 16 mục khác</span></p>
+      <ul class="also-list">        <li><span class="also-t">Introduction to organizational behaviour</span><span class="also-f">PDF · 147 MB</span></li>        <li><span class="also-t">Dosi 2000 Innovation Organization and Economic Dynamics</span><span class="also-f">PDF · 46 MB</span></li>        <li><span class="also-t">Oxford - The Oxford Handbook of Organization Theory (2003)</span><span class="also-f">PDF · 41 MB</span></li>        <li><span class="also-t">Perspectives on Organization Design and Behavior</span><span class="also-f">PDF · 34 MB</span></li>        <li><span class="also-t">lawrence erlbaum emotions in organizational behavior 2005</span><span class="also-f">PDF · 30 MB</span></li>        <li><span class="also-t">CORPORATION ON A TIGHT ROPE</span><span class="also-f">PDF · 20 MB</span></li>        <li><span class="also-t">YouTube - Naomi Klein - The Shock Doctrine - Part 6 of 6</span><span class="also-f">AVI · 19 MB</span></li>        <li><span class="also-t">Organizational Behavior- 638 Slides Presentation</span><span class="also-f">PPS · 17 MB</span></li>        <li><span class="also-t">Mashup Patterns Designs and Examples for the Modern Enterprise</span><span class="also-f">PDF · 8 MB</span></li>        <li><span class="also-t">Wiley (2002) Organizational Psychology - A Scientist Practitioner Approach</span><span class="also-f">PDF · 6 MB</span></li>        <li><span class="also-t">Handbook of Organizational Capabilities</span><span class="also-f">PDF · 6 MB</span></li>        <li><span class="also-t">Grammar of Organization</span><span class="also-f">PDF · 5 MB</span></li>        <li><span class="also-t">Hanbook of Organizational Consulting Psychology</span><span class="also-f">PDF · 3 MB</span></li>        <li><span class="also-t">Organization and economic behaviour</span><span class="also-f">PDF · 3 MB</span></li>        <li><span class="also-t">(ebook - english) - Naomi Klein - No Logo (with photos)</span><span class="also-f">PDF · 3 MB</span></li>        <li><span class="also-t">Organizational Assessment and Improvement in the Public Sector</span><span class="also-f">PDF · 3 MB</span></li>      </ul>
+    </div>
+  </section>
+  <section class="shelf" id="shelf-operations" data-shelf="operations">
+    <div class="shelf-head">
+      <span class="shelf-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l3 3M15 15l3 3M18 6l-3 3M9 15l-3 3"/></svg></span>
+      <div class="shelf-title">
+        <h2>Vận hành &amp; Chất lượng</h2>
+        <p class="shelf-sub">Thiết kế quy trình, tinh gọn, six sigma và thông lượng.</p>
+      </div>
+      <div class="shelf-meta">
+        <span class="shelf-count">5 tệp</span>
+        <span class="shelf-fmt">PDF 5</span>
+      </div>
+    </div>
+    <div class="work-grid">
+      <article class="work" data-shelf="operations" data-text="operations management nigel slack stuart chambers robert johnston 2010 operations quality v n h nh ch t l ng the standard om text capacity process design quality inventory planning strong on the trade offs not just the tools gi o tr nh om chu n c ng su t thi t k quy tr nh ch t l ng t n kho ho ch nh m nh ph n nh i kh ng ch c ng c">
+        <span class="work-meta">Nigel Slack, Stuart Chambers &amp; Robert Johnston · 2010</span>
+        <h3>Operations Management</h3>
+        <p>Giáo trình OM chuẩn: công suất, thiết kế quy trình, chất lượng, tồn kho, hoạch định. Mạnh ở phần đánh đổi, không chỉ công cụ.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">23 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="operations" data-text="kaizen assembly chris a ortiz 2006 operations quality v n h nh ch t l ng designing and running a lean assembly line in practice takt balance standard work closer to the shop floor than most lean books thi t k v v n h nh d y chuy n l p r p tinh g n trong th c t takt c n b ng c ng vi c chu n g n s n s n xu t h n h u h t s ch lean">
+        <span class="work-meta">Chris A. Ortiz · 2006</span>
+        <h3>Kaizen Assembly</h3>
+        <p>Thiết kế và vận hành dây chuyền lắp ráp tinh gọn trong thực tế — takt, cân bằng, công việc chuẩn. Gần sàn sản xuất hơn hầu hết sách lean.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">7 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="operations" data-text="six sigma business scorecard praveen gupta 2007 operations quality v n h nh ch t l ng linking six sigma projects to financial results rather than defect counts the argument you need when the programme is being cut g n d n six sigma v i k t qu t i ch nh thay v s l i l p lu n b n c n khi ch ng tr nh b c t">
+        <span class="work-meta">Praveen Gupta · 2007</span>
+        <h3>Six Sigma Business Scorecard</h3>
+        <p>Gắn dự án six sigma với kết quả tài chính thay vì số lỗi. Lập luận bạn cần khi chương trình bị cắt.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">2 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="operations" data-text="lean accounting joe stenzel ed 2007 operations quality v n h nh ch t l ng why standard cost accounting fights lean manufacturing and what to measure instead a niche book that resolves a very real argument v sao k to n chi ph ti u chu n ch ng l i s n xu t tinh g n v n n o g thay th s ch ng ch nh ng gi i quy t m t tranh c i r t th c">
+        <span class="work-meta">Joe Stenzel (ed.) · 2007</span>
+        <h3>Lean Accounting</h3>
+        <p>Vì sao kế toán chi phí tiêu chuẩn chống lại sản xuất tinh gọn, và nên đo gì thay thế. Sách ngách nhưng giải quyết một tranh cãi rất thực.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">13 MB</span>
+          
+        </div>
+      </article>
+    </div>
+    <div class="also">
+      <p class="also-head">Cùng kệ này <span>— 3 mục khác</span></p>
+      <ul class="also-list">        <li><span class="also-t">Operations-Management-Course-Supply-Chain-Networks-Gothenburg-University</span><span class="also-f">PDF · 18 MB</span></li>        <li><span class="also-t">SOP-eBook</span><span class="also-f">PDF · 5 MB</span></li>        <li><span class="also-t">Operations Management</span><span class="also-f">PDF · 4 MB</span></li>      </ul>
+    </div>
+  </section>
+  <section class="shelf" id="shelf-risk" data-shelf="risk">
+    <div class="shelf-head">
+      <span class="shelf-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.4-3.3 8-8 9-4.7-1-8-4.6-8-9V6z"/></svg></span>
+      <div class="shelf-title">
+        <h2>Quản lý rủi ro</h2>
+        <p class="shelf-sub">Rủi ro doanh nghiệp, ISO 31000, an toàn vốn và rủi ro dự án.</p>
+      </div>
+      <div class="shelf-meta">
+        <span class="shelf-count">44 tệp</span>
+        <span class="shelf-fmt">PDF 36 · DOC 4 · XLS 1</span>
+      </div>
+    </div>
+    <div class="work-grid">
+      <article class="work" data-shelf="risk" data-text="risk management michel crouhy dan galai robert mark 2001 risk management qu n l r i ro the quantitative backbone market credit and operational risk var and its limits capital allocation x ng s ng nh l ng r i ro th tr ng t n d ng v v n h nh var v gi i h n c a n ph n b v n">
+        <span class="work-meta">Michel Crouhy, Dan Galai &amp; Robert Mark · 2001</span>
+        <h3>Risk Management</h3>
+        <p>Xương sống định lượng: rủi ro thị trường, tín dụng và vận hành, VaR và giới hạn của nó, phân bổ vốn.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">9 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="risk" data-text="fundamentals of risk management paul hopkin 2010 risk management qu n l r i ro the governance side risk appetite framework culture and reporting the part that decides whether the model is used kh a c nh qu n tr kh u v r i ro khung v n h a v b o c o ph n quy t nh li u m h nh c c d ng hay kh ng">
+        <span class="work-meta">Paul Hopkin · 2010</span>
+        <h3>Fundamentals of Risk Management</h3>
+        <p>Khía cạnh quản trị: khẩu vị rủi ro, khung, văn hóa và báo cáo. Phần quyết định liệu mô hình có được dùng hay không.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">3 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="risk" data-text="enterprise risk management executive summary coso 2004 risk management qu n l r i ro the eight component framework that most corporate risk registers are quietly modelled on short and worth reading in the original khung t m th nh ph n m h u h t s r i ro doanh nghi p ang m th m d a theo ng n v ng c b n g c">
+        <span class="work-meta">COSO · 2004</span>
+        <h3>Enterprise Risk Management — Executive Summary</h3>
+        <p>Khung tám thành phần mà hầu hết sổ rủi ro doanh nghiệp đang âm thầm dựa theo. Ngắn, và đáng đọc bản gốc.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">181 KB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="risk" data-text="making enterprise risk management pay off thomas l barton william g shenkir paul l walker 2002 risk management qu n l r i ro case studies of erm that survived contact with a real company including the ones that stalled c c t nh hu ng erm s ng s t sau khi ti p x c v i doanh nghi p th c k c nh ng tr ng h p b nh tr">
+        <span class="work-meta">Thomas L. Barton, William G. Shenkir &amp; Paul L. Walker · 2002</span>
+        <h3>Making Enterprise Risk Management Pay Off</h3>
+        <p>Các tình huống ERM sống sót sau khi tiếp xúc với doanh nghiệp thực, kể cả những trường hợp bị đình trệ.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">CHM</span>
+          <span class="work-size">3 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="risk" data-text="risk management in international development projects various 2010 risk management qu n l r i ro risk practice in donor funded infrastructure where the lender the state and the contractor all carry different risk th c h nh r i ro trong h t ng do nh t i tr c p v n n i b n cho vay nh n c v nh th u mang r i ro kh c nhau">
+        <span class="work-meta">various · 2010</span>
+        <h3>Risk Management in International Development Projects</h3>
+        <p>Thực hành rủi ro trong hạ tầng do nhà tài trợ cấp vốn, nơi bên cho vay, nhà nước và nhà thầu mang rủi ro khác nhau.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">99 KB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="risk" data-text="project risk maturity model martin hopkinson 2011 risk management qu n l r i ro a way to grade how seriously an organisation actually manages project risk rather than how many templates it owns c ch nh gi m c nghi m t c th c s c a t ch c trong qu n l r i ro d n thay v m s bi u m u h c">
+        <span class="work-meta">Martin Hopkinson · 2011</span>
+        <h3>Project Risk Maturity Model</h3>
+        <p>Cách đánh giá mức độ nghiêm túc thực sự của tổ chức trong quản lý rủi ro dự án, thay vì đếm số biểu mẫu họ có.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">562 KB</span>
+          
+        </div>
+      </article>
+    </div>
+    <div class="also">
+      <p class="also-head">Cùng kệ này <span>— 7 mục khác</span></p>
+      <ul class="also-list">        <li><span class="also-t">Risk Register</span><span class="also-f">XLS · 1014 KB</span></li>        <li><span class="also-t">Risk Management Process</span><span class="also-f">DOC · 1002 KB</span></li>        <li><span class="also-t">Risk Plan</span><span class="also-f">DOC · 943 KB</span></li>        <li><span class="also-t">Risk Form</span><span class="also-f">DOC · 920 KB</span></li>        <li><span class="also-t">l1130 fm</span><span class="also-f">PDF · 400 KB</span></li>        <li><span class="also-t">License Agreement</span><span class="also-f">DOC · 52 KB</span></li>        <li><span class="also-t">tlf-jwsirm</span><span class="also-f">NFO · 10 KB</span></li>      </ul>
+    </div>
+  </section>
+  <section class="shelf" id="shelf-knowledge" data-shelf="knowledge">
+    <div class="shelf-head">
+      <span class="shelf-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 012-2h5v18H6a2 2 0 01-2-2zM20 5a2 2 0 00-2-2h-5v18h5a2 2 0 002-2z"/></svg></span>
+      <div class="shelf-title">
+        <h2>Tri thức &amp; Vốn trí tuệ</h2>
+        <p class="shelf-sub">Kiến tạo tri thức, chuyển giao và giá trị tài sản vô hình.</p>
+      </div>
+      <div class="shelf-meta">
+        <span class="shelf-count">8 tệp</span>
+        <span class="shelf-fmt">PDF 5 · CHM 3</span>
+      </div>
+    </div>
+    <div class="work-grid">
+      <article class="work" data-shelf="knowledge" data-text="the knowledge management toolkit amrit tiwana 2002 knowledge intellectual capital tri th c v n tr tu orchestrating knowledge platforms processes and strategy in sequence still the most practical km book on the shelf i u ph i n n t ng quy tr nh v chi n l c tri th c theo tr nh t v n l s ch km th c d ng nh t tr n k">
+        <span class="work-meta">Amrit Tiwana · 2002</span>
+        <h3>The Knowledge Management Toolkit</h3>
+        <p>Điều phối nền tảng, quy trình và chiến lược tri thức theo trình tự. Vẫn là sách KM thực dụng nhất trên kệ.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">13 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="knowledge" data-text="executive guide to knowledge management various 2003 knowledge intellectual capital tri th c v n tr tu a short management brief what km is for what it costs and how it fails good for a first conversation with a sponsor b n t m t t qu n tr ng n km l m g t n bao nhi u v th t b i ra sao t t cho l n trao i u v i nh t i tr">
+        <span class="work-meta">various · 2003</span>
+        <h3>Executive Guide to Knowledge Management</h3>
+        <p>Bản tóm tắt quản trị ngắn: KM để làm gì, tốn bao nhiêu, và thất bại ra sao. Tốt cho lần trao đổi đầu với nhà tài trợ.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">676 KB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="knowledge" data-text="knowledge management strategies miltiadis lytras et al eds 2008 knowledge intellectual capital tri th c v n tr tu applied technologies and measurement for km programmes taxonomies portals and the metrics that survive audit c ng ngh ng d ng v o l ng cho ch ng tr nh km ph n lo i c ng th ng tin v c c ch s tr c qua ki m to n">
+        <span class="work-meta">Miltiadis Lytras et al. (eds.) · 2008</span>
+        <h3>Knowledge Management Strategies</h3>
+        <p>Công nghệ ứng dụng và đo lường cho chương trình KM — phân loại, cổng thông tin, và các chỉ số trụ được qua kiểm toán.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">6 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="knowledge" data-text="strategic knowledge management technology petter gottschalk 2004 knowledge intellectual capital tri th c v n tr tu how technology choices encode a knowledge strategy whether or not anyone intended them to c ch c c l a ch n c ng ngh m h a m t chi n l c tri th c d c ai ch hay kh ng">
+        <span class="work-meta">Petter Gottschalk · 2004</span>
+        <h3>Strategic Knowledge Management Technology</h3>
+        <p>Cách các lựa chọn công nghệ mã hóa một chiến lược tri thức, dù có ai chủ ý hay không.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">CHM</span>
+          <span class="work-size">9 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="knowledge" data-text="managing intellectual capital various 2005 knowledge intellectual capital tri th c v n tr tu measuring and reporting intangibles the gap between book value and market value taken seriously o l ng v b o c o t i s n v h nh kho ng c ch gi a gi tr s s ch v gi tr th tr ng c xem tr ng">
+        <span class="work-meta">various · 2005</span>
+        <h3>Managing Intellectual Capital</h3>
+        <p>Đo lường và báo cáo tài sản vô hình — khoảng cách giữa giá trị sổ sách và giá trị thị trường, được xem trọng.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">4 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="knowledge" data-text="strategic intellectual capital management in mncs various 2009 knowledge intellectual capital tri th c v n tr tu how multinationals move knowledge across borders without losing it at the boundary c ch c c t p o n a qu c gia chuy n giao tri th c qua bi n gi i m kh ng nh m t n ranh gi i">
+        <span class="work-meta">various · 2009</span>
+        <h3>Strategic Intellectual Capital Management in MNCs</h3>
+        <p>Cách các tập đoàn đa quốc gia chuyển giao tri thức qua biên giới mà không đánh mất nó ở ranh giới.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">4 MB</span>
+          
+        </div>
+      </article>
+    </div>
+    <div class="also">
+      <p class="also-head">Cùng kệ này <span>— 2 mục khác</span></p>
+      <ul class="also-list">        <li><span class="also-t">KNOWLEDGE MANAGEMENT AND Management Learning</span><span class="also-f">PDF · 24 MB</span></li>        <li><span class="also-t">Idea Group - Knowledge Management (2003)</span><span class="also-f">CHM · 3 MB</span></li>      </ul>
+    </div>
+  </section>
+  <section class="shelf" id="shelf-mba" data-shelf="mba">
+    <div class="shelf-head">
+      <span class="shelf-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5zM6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></span>
+      <div class="shelf-title">
+        <h2>MBA cốt lõi</h2>
+        <p class="shelf-sub">Chương trình sau đại học được cô đọng thành sách.</p>
+      </div>
+      <div class="shelf-meta">
+        <span class="shelf-count">23 tệp</span>
+        <span class="shelf-fmt">PDF 23</span>
+      </div>
+    </div>
+    <div class="work-grid">
+      <article class="work" data-shelf="mba" data-text="the personal mba josh kaufman 2010 mba core mba c t l i a mental model catalogue value creation marketing sales finance the psyche the best single starting point if you have no formal training danh m c m h nh t duy t o gi tr ti p th b n h ng t i ch nh t m l i m kh i u t t nh t n u b n kh ng c o t o ch nh quy">
+        <span class="work-meta">Josh Kaufman · 2010</span>
+        <h3>The Personal MBA</h3>
+        <p>Danh mục mô hình tư duy: tạo giá trị, tiếp thị, bán hàng, tài chính, tâm lý. Điểm khởi đầu tốt nhất nếu bạn không được đào tạo chính quy.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">747 KB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="mba" data-text="the portable mba in finance and accounting john leslie livingstone theodore grossman 2002 mba core mba c t l i the finance half of an mba in one volume statements cost budgeting valuation and what the numbers are for n a t i ch nh c a m t mba trong m t t p b o c o chi ph ng n s ch nh gi v m c ch c a c c con s">
+        <span class="work-meta">John Leslie Livingstone &amp; Theodore Grossman · 2002</span>
+        <h3>The Portable MBA in Finance and Accounting</h3>
+        <p>Nửa tài chính của một MBA trong một tập — báo cáo, chi phí, ngân sách, định giá, và mục đích của các con số.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">3 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="mba" data-text="mba in a day steven stralser 2004 mba core mba c t l i a fast tour of the graduate curriculum accounting economics marketing systems strategy skim it to find the gaps chuy n tham quan nhanh ch ng tr nh sau i h c k to n kinh t ti p th h th ng chi n l c c l t t m l h ng c a m nh">
+        <span class="work-meta">Steven Stralser · 2004</span>
+        <h3>MBA in a Day</h3>
+        <p>Chuyến tham quan nhanh chương trình sau đại học: kế toán, kinh tế, tiếp thị, hệ thống, chiến lược. Đọc lướt để tìm lỗ hổng của mình.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">2 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="mba" data-text="the fast forward mba in finance john a tracy 2002 mba core mba c t l i reading financial statements for decisions rather than compliance the shortest honest route to a p l you can argue with c b o c o t i ch nh ra quy t nh thay v tu n th con ng trung th c ng n nh t n m t b o c o l i l b n c th tranh lu n">
+        <span class="work-meta">John A. Tracy · 2002</span>
+        <h3>The Fast Forward MBA in Finance</h3>
+        <p>Đọc báo cáo tài chính để ra quyết định thay vì để tuân thủ. Con đường trung thực ngắn nhất đến một báo cáo lãi lỗ bạn có thể tranh luận.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">2 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="mba" data-text="the fast forward mba pocket reference paul a argenti 2000 mba core mba c t l i definitions and frameworks on demand not a book to read a book to keep within reach during a meeting nh ngh a v khung c s n khi c n kh ng ph i s ch c m trong t m tay trong m t cu c h p">
+        <span class="work-meta">Paul A. Argenti · 2000</span>
+        <h3>The Fast Forward MBA Pocket Reference</h3>
+        <p>Định nghĩa và khung có sẵn khi cần. Không phải sách để đọc — mà để trong tầm tay trong một cuộc họp.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">2 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="mba" data-text="complete mba for dummies kathleen allen peter economy 2008 mba core mba c t l i plain language coverage of the whole curriculum useful precisely because it refuses to assume jargon bao qu t to n b ch ng tr nh b ng ng n ng b nh d h u ch ch nh v n kh ng gi nh b n bi t thu t ng">
+        <span class="work-meta">Kathleen Allen &amp; Peter Economy · 2008</span>
+        <h3>Complete MBA for Dummies</h3>
+        <p>Bao quát toàn bộ chương trình bằng ngôn ngữ bình dị. Hữu ích chính vì nó không giả định bạn biết thuật ngữ.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">8 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="mba" data-text="five minute mba in corporate finance various 2003 mba core mba c t l i capital budgeting cost of capital and working capital in pocket format a revision aid not a substitute for brealey ho ch nh v n chi ph v n v v n l u ng d ng b t i c ng c n t p kh ng thay th brealey">
+        <span class="work-meta">various · 2003</span>
+        <h3>Five-Minute MBA in Corporate Finance</h3>
+        <p>Hoạch định vốn, chi phí vốn và vốn lưu động ở dạng bỏ túi. Công cụ ôn tập, không thay thế Brealey.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">6 MB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="mba" data-text="the halo effect phil rosenzweig 2007 mba core mba c t l i why so much management research is circular read it immediately after good to great and then decide what you believe v sao r t nhi u nghi n c u qu n tr l v ng tr n c ngay sau good to great r i t quy t nh tin i u g">
+        <span class="work-meta">Phil Rosenzweig · 2007</span>
+        <h3>The Halo Effect</h3>
+        <p>Vì sao rất nhiều nghiên cứu quản trị là vòng tròn. Đọc ngay sau Good to Great, rồi tự quyết định tin điều gì.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">132 KB</span>
+          
+        </div>
+      </article>
+    </div>
+    <div class="also">
+      <p class="also-head">Cùng kệ này <span>— 13 mục khác</span></p>
+      <ul class="also-list">        <li><span class="also-t">Complete Idiot&#x27;s Guide to MBA Basics</span><span class="also-f">PDF · 21 MB</span></li>        <li><span class="also-t">MBA Guide to Excel 2000</span><span class="also-f">PDF · 20 MB</span></li>        <li><span class="also-t">IDIOTS GUIDE - Complete Idiots Guide to Small Business</span><span class="also-f">PDF · 16 MB</span></li>        <li><span class="also-t">MBABibleComplete</span><span class="also-f">PDF · 6 MB</span></li>        <li><span class="also-t">MBA full-time</span><span class="also-f">PDF · 4 MB</span></li>        <li><span class="also-t">FastForwardMBA-BusinessCommunications</span><span class="also-f">PDF · 3 MB</span></li>        <li><span class="also-t">FastForwardMBA-BusinessPlanning</span><span class="also-f">PDF · 2 MB</span></li>        <li><span class="also-t">John Wiley &amp; Sons - The Portable Mba In Project Management</span><span class="also-f">PDF · 2 MB</span></li>        <li><span class="also-t">Fast Forward MBA - Finance</span><span class="also-f">PDF · 2 MB</span></li>        <li><span class="also-t">Economics - MBA in A Day - What You Would Learn At Top-Tier Business Schools - Wiley 2004</span><span class="also-f">PDF · 2 MB</span></li>        <li><span class="also-t">Mba In Finance</span><span class="also-f">PDF · 1 MB</span></li>        <li><span class="also-t">Business - Negotiating Skills For Managers Management Mba</span><span class="also-f">PDF · 1 MB</span></li>        <li><span class="also-t">PersonalMBA</span><span class="also-f">PDF · 747 KB</span></li>      </ul>
+    </div>
+  </section>
+  <section class="shelf" id="shelf-toolkits" data-shelf="toolkits">
+    <div class="shelf-head">
+      <span class="shelf-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v13H4zM9 7V4h6v3"/></svg></span>
+      <div class="shelf-title">
+        <h2>Bộ công cụ kinh doanh</h2>
+        <p class="shelf-sub">Mẫu văn bản, thư từ, chính sách và bảng tính dùng ngay.</p>
+      </div>
+      <div class="shelf-meta">
+        <span class="shelf-count">1,151 tệp</span>
+        <span class="shelf-fmt">PDF 3 · XLS 52 · RTF 1,083</span>
+      </div>
+    </div>
+    <div class="work-grid">
+      <article class="work" data-shelf="toolkits" data-text="business plan document set business in a box 2009 business in a box b c ng c kinh doanh full business plan skeletons executive summary market analysis financials as editable documents rather than advice b khung k ho ch kinh doanh y t m t t i u h nh ph n t ch th tr ng t i ch nh d i d ng t i li u ch nh s a c">
+        <span class="work-meta">Business-in-a-Box · 2009</span>
+        <h3>Business Plan Document Set</h3>
+        <p>Bộ khung kế hoạch kinh doanh đầy đủ — tóm tắt điều hành, phân tích thị trường, tài chính — dưới dạng tài liệu chỉnh sửa được.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">RTF</span>
+          <span class="work-size">181 KB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="toolkits" data-text="venture capital term sheet long form business in a box 2009 business in a box b c ng c kinh doanh a full long form term sheet liquidation preference anti dilution board rights the document that decides who controls the company m t term sheet d i y quy n u ti n thanh l ch ng pha lo ng quy n h i ng v n b n quy t nh ai ki m so t c ng ty">
+        <span class="work-meta">Business-in-a-Box · 2009</span>
+        <h3>Venture Capital Term Sheet (long form)</h3>
+        <p>Một term sheet dài đầy đủ: quyền ưu tiên thanh lý, chống pha loãng, quyền hội đồng. Văn bản quyết định ai kiểm soát công ty.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">RTF</span>
+          <span class="work-size">96 KB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="toolkits" data-text="employment hr policy pack business in a box 2009 business in a box b c ng c kinh doanh absence leave conduct and termination policies in consistent language a starting point that a lawyer can review rather than draft ch nh s ch ngh ph p ngh vi c ng x v ch m d t h p ng v i ng n ng nh t qu n i m kh i u lu t s r so t thay v so n t u">
+        <span class="work-meta">Business-in-a-Box · 2009</span>
+        <h3>Employment &amp; HR Policy Pack</h3>
+        <p>Chính sách nghỉ phép, nghỉ việc, ứng xử và chấm dứt hợp đồng với ngôn ngữ nhất quán. Điểm khởi đầu để luật sư rà soát thay vì soạn từ đầu.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">RTF</span>
+          <span class="work-size">42 KB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="toolkits" data-text="commercial correspondence library business in a box 2009 business in a box b c ng c kinh doanh hundreds of letters for orders claims delays and refusals old fashioned and still faster than writing from scratch h ng tr m m u th cho n h ng khi u n i ch m tr v t ch i c i n nh ng v n nhanh h n vi t t u">
+        <span class="work-meta">Business-in-a-Box · 2009</span>
+        <h3>Commercial Correspondence Library</h3>
+        <p>Hàng trăm mẫu thư cho đơn hàng, khiếu nại, chậm trễ và từ chối. Cổ điển, nhưng vẫn nhanh hơn viết từ đầu.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">RTF</span>
+          <span class="work-size">19 KB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="toolkits" data-text="breakeven and profit volume cost analysis business in a box 2009 business in a box b c ng c kinh doanh a working spreadsheet for contribution margin breakeven and operating leverage the fastest way to answer how many do we need to sell b ng t nh l m vi c cho bi n ng g p i m h a v n v n b y v n h nh c ch nhanh nh t tr l i c n b n bao nhi u">
+        <span class="work-meta">Business-in-a-Box · 2009</span>
+        <h3>Breakeven and Profit-Volume-Cost Analysis</h3>
+        <p>Bảng tính làm việc cho biên đóng góp, điểm hòa vốn và đòn bẩy vận hành. Cách nhanh nhất trả lời &#x27;cần bán bao nhiêu?&#x27;</p>
+        <div class="work-foot">
+          <span class="fmt-badge">XLS</span>
+          <span class="work-size">34 KB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="toolkits" data-text="accounts receivable aging business in a box 2009 business in a box b c ng c kinh doanh the ar aging template plus the statement that goes with it unglamorous and directly tied to cash m u ph n t ch tu i n ph i thu k m b ng sao k i k m kh ng h o nho ng v g n tr c ti p v i ti n m t">
+        <span class="work-meta">Business-in-a-Box · 2009</span>
+        <h3>Accounts Receivable Aging</h3>
+        <p>Mẫu phân tích tuổi nợ phải thu, kèm bảng sao kê đi kèm. Không hào nhoáng và gắn trực tiếp với tiền mặt.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">XLS</span>
+          <span class="work-size">17 KB</span>
+          
+        </div>
+      </article>
+      <article class="work" data-shelf="toolkits" data-text="stock ledger and capitalisation summary business in a box 2009 business in a box b c ng c kinh doanh cap table and share ledger templates the record that every funding round quietly depends on m u b ng v n c ph n v s c ng h s m m i v ng g i v n u m th m ph thu c v o">
+        <span class="work-meta">Business-in-a-Box · 2009</span>
+        <h3>Stock Ledger and Capitalisation Summary</h3>
+        <p>Mẫu bảng vốn cổ phần và sổ cổ đông — hồ sơ mà mọi vòng gọi vốn đều âm thầm phụ thuộc vào.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">RTF</span>
+          <span class="work-size">167 KB</span>
+          
+        </div>
+      </article>
+    </div>
+    <div class="also">
+      <p class="also-head">Cùng kệ này <span>— 16 mục khác</span></p>
+      <ul class="also-list">        <li><span class="also-t">Employee Handbook</span><span class="also-f">RTF · 1 MB</span></li>        <li><span class="also-t">Employee Absence Tracking</span><span class="also-f">XLS · 838 KB</span></li>        <li><span class="also-t">Sales Proposal</span><span class="also-f">RTF · 706 KB</span></li>        <li><span class="also-t">Brochure PR Submitter</span><span class="also-f">PDF · 520 KB</span></li>        <li><span class="also-t">Brochure Business-in-a-Box</span><span class="also-f">PDF · 514 KB</span></li>        <li><span class="also-t">Management Audit</span><span class="also-f">RTF · 475 KB</span></li>        <li><span class="also-t">Stock Option and Incentive Stock Option Plan</span><span class="also-f">RTF · 456 KB</span></li>        <li><span class="also-t">Checklist Co-Branding Agreement</span><span class="also-f">RTF · 377 KB</span></li>        <li><span class="also-t">Checklist Office Leases</span><span class="also-f">RTF · 369 KB</span></li>        <li><span class="also-t">Loan Calculator with Extra Payments</span><span class="also-f">XLS · 364 KB</span></li>        <li><span class="also-t">Checklist Contract Terms and Provisions</span><span class="also-f">RTF · 356 KB</span></li>        <li><span class="also-t">Profit Sharing Plan</span><span class="also-f">RTF · 330 KB</span></li>        <li><span class="also-t">Checklist Issues For Web Site Development Agreements</span><span class="also-f">RTF · 302 KB</span></li>        <li><span class="also-t">Sublease</span><span class="also-f">RTF · 297 KB</span></li>        <li><span class="also-t">Overtime Policy Guidance</span><span class="also-f">RTF · 280 KB</span></li>        <li><span class="also-t">Bylaws Corporation</span><span class="also-f">RTF · 271 KB</span></li>      </ul>
+    </div>
+  </section>
+  <section class="shelf" id="shelf-classics" data-shelf="classics">
+    <div class="shelf-head">
+      <span class="shelf-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h9a3 3 0 013 3v13H8a3 3 0 01-3-3zM17 7h2v13H8"/></svg></span>
+      <div class="shelf-title">
+        <h2>Nền tảng — Kệ mở</h2>
+        <p class="shelf-sub">Các tác phẩm thuộc phạm vi công cộng mà phần còn lại của thư viện đối thoại cùng. Tải miễn phí.</p>
+      </div>
+      <div class="shelf-meta">
+        <span class="shelf-count">236 tệp</span>
+        <span class="shelf-fmt">PDF 112 · RTF 1 · LIT 41</span>
+      </div>
+    </div>
+    <div class="work-grid">
+      <article class="work" data-shelf="classics" data-text="the wealth of nations adam smith 1776 foundations open shelf n n t ng k m division of labour markets and the invisible hand in the original long and the source of arguments people still misquote ph n c ng lao ng th tr ng v b n tay v h nh b n g c d i v l ngu n c a nh ng tranh lu n ng i ta v n tr ch d n sai">
+        <span class="work-meta">Adam Smith · 1776</span>
+        <h3>The Wealth of Nations</h3>
+        <p>Phân công lao động, thị trường và bàn tay vô hình, bản gốc. Dài, và là nguồn của những tranh luận người ta vẫn trích dẫn sai.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">2 MB</span>
+          <a class="dl-btn" href="https://github.com/probizintel/probizintel.github.io/releases/download/library-v1/wealth-of-nations-smith.pdf" download><svg class="ico"><use href="#i-dl"/></svg>Tải PDF</a>
+        </div>
+      </article>
+      <article class="work" data-shelf="classics" data-text="the prince niccol machiavelli 1532 foundations open shelf n n t ng k m the first manual on acquiring and holding power that refused to be sentimental about it read as political realism not as advice cu n s ch u ti n v gi nh v gi quy n l c d m t b s a c m c nh ch ngh a hi n th c ch nh tr kh ng ph i l i khuy n">
+        <span class="work-meta">Niccolò Machiavelli · 1532</span>
+        <h3>The Prince</h3>
+        <p>Cuốn sách đầu tiên về giành và giữ quyền lực dám từ bỏ sự đa cảm. Đọc như chủ nghĩa hiện thực chính trị, không phải lời khuyên.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">495 KB</span>
+          <a class="dl-btn" href="https://github.com/probizintel/probizintel.github.io/releases/download/library-v1/the-prince-machiavelli.pdf" download><svg class="ico"><use href="#i-dl"/></svg>Tải PDF</a>
+        </div>
+      </article>
+      <article class="work" data-shelf="classics" data-text="on liberty john stuart mill 1859 foundations open shelf n n t ng k m the argument for the limits of authority over the individual the philosophical base under every later claim about autonomy at work l p lu n v gi i h n c a quy n l c i v i c nh n n n t ng tri t h c cho m i tuy n b v t ch trong c ng vi c">
+        <span class="work-meta">John Stuart Mill · 1859</span>
+        <h3>On Liberty</h3>
+        <p>Lập luận về giới hạn của quyền lực đối với cá nhân. Nền tảng triết học cho mọi tuyên bố về tự chủ trong công việc.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">291 KB</span>
+          <a class="dl-btn" href="https://github.com/probizintel/probizintel.github.io/releases/download/library-v1/on-liberty-mill.pdf" download><svg class="ico"><use href="#i-dl"/></svg>Tải PDF</a>
+        </div>
+      </article>
+      <article class="work" data-shelf="classics" data-text="democracy in america alexis de tocqueville 1835 foundations open shelf n n t ng k m an outsider s anatomy of a commercial society association equality and the tyranny of the majority still the best field study of a market culture gi i ph u c a m t ng i ngo i v x h i th ng m i hi p h i b nh ng v chuy n ch c a a s v n l nghi n c u th c a hay nh t v v n h a th tr ng">
+        <span class="work-meta">Alexis de Tocqueville · 1835</span>
+        <h3>Democracy in America</h3>
+        <p>Giải phẫu của một người ngoài về xã hội thương mại: hiệp hội, bình đẳng, và chuyên chế của đa số. Vẫn là nghiên cứu thực địa hay nhất về văn hóa thị trường.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">1 MB</span>
+          <a class="dl-btn" href="https://github.com/probizintel/probizintel.github.io/releases/download/library-v1/democracy-in-america-tocqueville.pdf" download><svg class="ico"><use href="#i-dl"/></svg>Tải PDF</a>
+        </div>
+      </article>
+      <article class="work" data-shelf="classics" data-text="common sense thomas paine 1776 foundations open shelf n n t ng k m the most effective piece of persuasion ever written in english study it as a case in making a complex argument unavoidable ng thuy t ph c hi u qu nh t t ng c vi t b ng ti ng anh h y nghi n c u nh m t t nh hu ng bi n l p lu n ph c t p th nh kh ng th tr nh">
+        <span class="work-meta">Thomas Paine · 1776</span>
+        <h3>Common Sense</h3>
+        <p>Áng thuyết phục hiệu quả nhất từng được viết bằng tiếng Anh. Hãy nghiên cứu như một tình huống biến lập luận phức tạp thành không thể tránh.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">130 KB</span>
+          <a class="dl-btn" href="https://github.com/probizintel/probizintel.github.io/releases/download/library-v1/common-sense-paine.pdf" download><svg class="ico"><use href="#i-dl"/></svg>Tải PDF</a>
+        </div>
+      </article>
+      <article class="work" data-shelf="classics" data-text="rights of man thomas paine 1791 foundations open shelf n n t ng k m a reply to burke that invented the language of modern political economy rights taxation and the cost of inherited order ph n h i burke khai sinh ng n ng kinh t ch nh tr hi n i quy n thu v c i gi c a tr t t th a k">
+        <span class="work-meta">Thomas Paine · 1791</span>
+        <h3>Rights of Man</h3>
+        <p>Phản hồi Burke, khai sinh ngôn ngữ kinh tế chính trị hiện đại: quyền, thuế, và cái giá của trật tự thừa kế.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">532 KB</span>
+          <a class="dl-btn" href="https://github.com/probizintel/probizintel.github.io/releases/download/library-v1/rights-of-man-paine.pdf" download><svg class="ico"><use href="#i-dl"/></svg>Tải PDF</a>
+        </div>
+      </article>
+      <article class="work" data-shelf="classics" data-text="the republic plato c 375 bc foundations open shelf n n t ng k m the founding inquiry into justice specialisation and who should rule every organisation chart is a partial answer to it cu c truy v n khai sinh v c ng l chuy n m n h a v ai n n cai tr m i s t ch c l m t c u tr l i b ph n cho n">
+        <span class="work-meta">Plato · c. 375 BC</span>
+        <h3>The Republic</h3>
+        <p>Cuộc truy vấn khai sinh về công lý, chuyên môn hóa và ai nên cai trị. Mọi sơ đồ tổ chức là một câu trả lời bộ phận cho nó.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">473 KB</span>
+          <a class="dl-btn" href="https://github.com/probizintel/probizintel.github.io/releases/download/library-v1/the-republic-plato.pdf" download><svg class="ico"><use href="#i-dl"/></svg>Tải PDF</a>
+        </div>
+      </article>
+      <article class="work" data-shelf="classics" data-text="the analects confucius c 479 bc foundations open shelf n n t ng k m governance by example ritual and the rectification of names indispensable for managing across east asian hierarchies cai tr b ng t m g ng l v s ch nh danh kh ng th thi u khi qu n l trong c c h th ng th b c ng">
+        <span class="work-meta">Confucius · c. 479 BC</span>
+        <h3>The Analects</h3>
+        <p>Cai trị bằng tấm gương, lễ và sự chính danh. Không thể thiếu khi quản lý trong các hệ thống thứ bậc Đông Á.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">2 MB</span>
+          <a class="dl-btn" href="https://github.com/probizintel/probizintel.github.io/releases/download/library-v1/the-analects-confucius.pdf" download><svg class="ico"><use href="#i-dl"/></svg>Tải PDF</a>
+        </div>
+      </article>
+      <article class="work" data-shelf="classics" data-text="tao te ching laozi c 400 bc foundations open shelf n n t ng k m eighty one short chapters on acting without forcing the oldest surviving argument for the lightest possible intervention t m m i m t ch ng ng n v h nh ng kh ng c ng p l p lu n c nh t c n t n t i cho s can thi p nh nh ng nh t c th">
+        <span class="work-meta">Laozi · c. 400 BC</span>
+        <h3>Tao Te Ching</h3>
+        <p>Tám mươi mốt chương ngắn về hành động không cưỡng ép. Lập luận cổ nhất còn tồn tại cho sự can thiệp nhẹ nhàng nhất có thể.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">97 KB</span>
+          <a class="dl-btn" href="https://github.com/probizintel/probizintel.github.io/releases/download/library-v1/tao-te-ching-laozi.pdf" download><svg class="ico"><use href="#i-dl"/></svg>Tải PDF</a>
+        </div>
+      </article>
+      <article class="work" data-shelf="classics" data-text="walden henry david thoreau 1854 foundations open shelf n n t ng k m an experiment in deliberate economy what a life actually costs itemised the original book on operating leverage at the personal scale m t th nghi m v kinh t c ch ch m t cu c i th c s t n bao nhi u c li t k t ng kho n cu n s ch g c v n b y v n h nh quy m c nh n">
+        <span class="work-meta">Henry David Thoreau · 1854</span>
+        <h3>Walden</h3>
+        <p>Một thử nghiệm về kinh tế có chủ đích: một cuộc đời thực sự tốn bao nhiêu, được liệt kê từng khoản. Cuốn sách gốc về đòn bẩy vận hành ở quy mô cá nhân.</p>
+        <div class="work-foot">
+          <span class="fmt-badge">PDF</span>
+          <span class="work-size">3 MB</span>
+          <a class="dl-btn" href="https://github.com/probizintel/probizintel.github.io/releases/download/library-v1/walden-thoreau.pdf" download><svg class="ico"><use href="#i-dl"/></svg>Tải PDF</a>
+        </div>
+      </article>
+    </div>
+    <div class="also">
+      <p class="also-head">Cùng kệ này <span>— 16 mục khác</span></p>
+      <ul class="also-list">        <li><span class="also-t">A Dictionary of the English Language by Samuel Johnson</span><span class="also-f">PDF · 124 MB</span></li>        <li><span class="also-t">Survival in Auschwitz - Primo Levi</span><span class="also-f">PDF · 93 MB</span></li>        <li><span class="also-t">Mathematical Principles of Natural Philosophy - Isaac Newton</span><span class="also-f">PDF · 75 MB</span></li>        <li><span class="also-t">Hamlet, Prince of Denmark - William Shakespeare 1564-1616</span><span class="also-f">PDF · 44 MB</span></li>        <li><span class="also-t">The Tragedy of King Richard III - William Shakespeare 1564-1616</span><span class="also-f">PDF · 43 MB</span></li>        <li><span class="also-t">Coriolanus - William Shakespeare 1564-1616</span><span class="also-f">PDF · 41 MB</span></li>        <li><span class="also-t">Cymbeline - William Shakespeare 1564-1616</span><span class="also-f">PDF · 40 MB</span></li>        <li><span class="also-t">Troilus and Cressida - William Shakespeare 1564-1616</span><span class="also-f">PDF · 39 MB</span></li>        <li><span class="also-t">Antony and Cleopatra - William Shakespeare 1564-1616</span><span class="also-f">PDF · 38 MB</span></li>        <li><span class="also-t">King Lear - William Shakespeare 1564-1616</span><span class="also-f">PDF · 38 MB</span></li>        <li><span class="also-t">The Second Part of King Henry IV - William Shakespeare 1564-1616</span><span class="also-f">PDF · 38 MB</span></li>        <li><span class="also-t">Othello, the Moor of Venice - William Shakespeare 1564-1616</span><span class="also-f">PDF · 38 MB</span></li>        <li><span class="also-t">The Life of King Henry V - William Shakespeare 1564-1616</span><span class="also-f">PDF · 38 MB</span></li>        <li><span class="also-t">The Second Part of King Henry VI - William Shakespeare 1564-1616</span><span class="also-f">PDF · 37 MB</span></li>        <li><span class="also-t">The Famous History of the Life of King Henry the Eighth - William Shakespeare 1564-1616</span><span class="also-f">PDF · 36 MB</span></li>        <li><span class="also-t">The Third Part of King Henry VI - William Shakespeare 1564-1616</span><span class="also-f">PDF · 35 MB</span></li>      </ul>
+    </div>
+  </section>
+  <section class="shelf" id="shelf-pmp" data-shelf="pmp">
+    <div class="shelf-head">
+      <span class="shelf-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4zM9 10h6M9 14h4"/></svg></span>
+      <div class="shelf-title">
+        <h2>Học liệu PMP</h2>
+        <p class="shelf-sub">Bài giảng PrepCast, thẻ ghi nhớ và kho podcast.</p>
+      </div>
+      <div class="shelf-meta">
+        <span class="shelf-count">33 tệp</span>
+        <span class="shelf-fmt">PDF 33</span>
+      </div>
+    </div>
+    <div class="work-grid">
+    </div>
+    <div class="also">
+      <p class="also-head">Cùng kệ này <span>— 16 mục khác</span></p>
+      <ul class="also-list">        <li><span class="also-t">PBT Handbook</span><span class="also-f">PDF · 7 MB</span></li>        <li><span class="also-t">PMBOK 5 ISO 21500 PMISK</span><span class="also-f">PDF · 3 MB</span></li>        <li><span class="also-t">Handbook of Project basedManagement</span><span class="also-f">PDF · 2 MB</span></li>        <li><span class="also-t">get-to-know-the-pmbok-guide-fifth-edition</span><span class="also-f">PDF · 2 MB</span></li>        <li><span class="also-t">pmboksec3</span><span class="also-f">PDF · 2 MB</span></li>        <li><span class="also-t">pdc pmphandbook</span><span class="also-f">PDF · 1 MB</span></li>        <li><span class="also-t">Changes PMBOK 5</span><span class="also-f">PDF · 1 MB</span></li>        <li><span class="also-t">pdc pgmphandbook</span><span class="also-f">PDF · 1 MB</span></li>        <li><span class="also-t">PMI-ACP Handbook</span><span class="also-f">PDF · 1 MB</span></li>        <li><span class="also-t">March 2013 Meeting PMBOK Guide Fifth Edition Update</span><span class="also-f">PDF · 1 MB</span></li>        <li><span class="also-t">Project Portfolio Mangement</span><span class="also-f">PDF · 1 MB</span></li>        <li><span class="also-t">Pocket companion to PMI PMBOK Guide</span><span class="also-f">PDF · 1 MB</span></li>        <li><span class="also-t">PMI-RMP Handbook</span><span class="also-f">PDF · 989 KB</span></li>        <li><span class="also-t">PMI-SP Handbook</span><span class="also-f">PDF · 987 KB</span></li>        <li><span class="also-t">Comparing PMBok 4-5Ed and ISO 21500</span><span class="also-f">PDF · 929 KB</span></li>        <li><span class="also-t">pdc capmhandbook</span><span class="also-f">PDF · 905 KB</span></li>      </ul>
+    </div>
+    <div class="coll-grid">
+      <article class="coll" data-shelf="pmp" data-text="the pm prepcast full lecture archive kh a pmp c c u tr c ghi h nh t ng b i bao qu t to n b c ng theo tr nh t">
+        <span class="coll-meta">136 lesson files</span>
+        <h4>The PM PrepCast — full lecture archive</h4>
+        <p>Khóa PMP có cấu trúc, ghi hình từng bài, bao quát toàn bộ đề cương theo trình tự.</p>
+      </article>
+      <article class="coll" data-shelf="pmp" data-text="eflash cards b th luy n t p cho itto v nh ngh a c ch nhanh nh t bi t m nh th c s ch a n m l nh v c n o">
+        <span class="coll-meta">336 cards</span>
+        <h4>eFlash Cards</h4>
+        <p>Bộ thẻ luyện tập cho ITTO và định nghĩa — cách nhanh nhất để biết mình thực sự chưa nắm lĩnh vực nào.</p>
+      </article>
+      <article class="coll" data-shelf="pmp" data-text="5 minutes project management podcast m thanh ng n v ph m vi r i ro c c b n li n quan v ch ng ch phi n b n v a m t ch ng i l m c a ng nh">
+        <span class="coll-meta">300 episodes</span>
+        <h4>5 Minutes Project Management Podcast</h4>
+        <p>Âm thanh ngắn về phạm vi, rủi ro, các bên liên quan và chứng chỉ. Phiên bản vừa một chặng đi làm của ngành.</p>
+      </article>
+      <article class="coll" data-shelf="pmp" data-text="andy jordan video series c c bu i n i chuy n th c h nh v nh ng ph n c ng vi c thi kh ng ki m tra ch nh tr n i b nh t i tr v 90 ng y u">
+        <span class="coll-meta">23 sessions</span>
+        <h4>Andy Jordan video series</h4>
+        <p>Các buổi nói chuyện thực hành về những phần công việc đề thi không kiểm tra: chính trị nội bộ, nhà tài trợ, và 90 ngày đầu.</p>
+      </article>
+    </div>
+  </section>
+  <section class="shelf" id="shelf-coursework" data-shelf="coursework">
+    <div class="shelf-head">
+      <span class="shelf-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v12H3zM8 21h8M12 18v3"/></svg></span>
+      <div class="shelf-title">
+        <h2>Học liệu MSM MBA</h2>
+        <p class="shelf-sub">Slide bài giảng, bộ tình huống và tài liệu bài tập từ chương trình Maastricht.</p>
+      </div>
+      <div class="shelf-meta">
+        <span class="shelf-count">5,799 tệp</span>
+        <span class="shelf-fmt">PDF 633 · DOCX 13 · DOC 354</span>
+      </div>
+    </div>
+    <div class="work-grid">
+    </div>
+    <div class="also">
+      <p class="also-head">Cùng kệ này <span>— 16 mục khác</span></p>
+      <ul class="also-list">        <li><span class="also-t">Introduction to Managerial Accounting</span><span class="also-f">AVI · 86 MB</span></li>        <li><span class="also-t">the book of mahjong</span><span class="also-f">PDF · 75 MB</span></li>        <li><span class="also-t">BP Deepwater Horizon Accident Investigation Report - YouTube</span><span class="also-f">FLV · 66 MB</span></li>        <li><span class="also-t">Accounting 1-26 6th Edition</span><span class="also-f">PDF · 62 MB</span></li>        <li><span class="also-t">collection 2</span><span class="also-f">PDF · 62 MB</span></li>        <li><span class="also-t">FaceBook Effect - David Kirkpatrick</span><span class="also-f">PDF · 56 MB</span></li>        <li><span class="also-t">Standard Costing</span><span class="also-f">AVI · 49 MB</span></li>        <li><span class="also-t">Statistics For Dummies.chm</span><span class="also-f">PDF · 46 MB</span></li>        <li><span class="also-t">The elusive quest for growth</span><span class="also-f">PDF · 42 MB</span></li>        <li><span class="also-t">BodyShop</span><span class="also-f">DOC · 37 MB</span></li>        <li><span class="also-t">Transocean Releases Internal Deepwater Horizon Investigation Report - Drilling Ahead</span><span class="also-f">FLV · 36 MB</span></li>        <li><span class="also-t">Management Accounting For Business Decisions</span><span class="also-f">PDF · 32 MB</span></li>        <li><span class="also-t">Principles of Managerial Finance 12Ed by Lawrence J Gitman</span><span class="also-f">PDF · 32 MB</span></li>        <li><span class="also-t">TableauPublicDesktop</span><span class="also-f">MSI · 32 MB</span></li>        <li><span class="also-t">Models of Proposal Writing</span><span class="also-f">PDF · 31 MB</span></li>        <li><span class="also-t">tai lieu quan ly du an</span><span class="also-f">RAR · 31 MB</span></li>      </ul>
+    </div>
+    <div class="coll-grid">
+      <article class="coll" data-shelf="coursework" data-text="managerial economics c l ng c u nh gi v c u tr c th tr ng p d ng cho quy t nh qu n tr thay v l thuy t">
+        <span class="coll-meta">MSM MBA</span>
+        <h4>Managerial Economics</h4>
+        <p>Ước lượng cầu, định giá và cấu trúc thị trường áp dụng cho quyết định quản trị thay vì lý thuyết.</p>
+      </article>
+      <article class="coll" data-shelf="coursework" data-text="managerial finance chi ph v n ho ch nh v n v l a ch n t i tr k m ph n b i t p b ng t nh">
+        <span class="coll-meta">MSM MBA</span>
+        <h4>Managerial Finance</h4>
+        <p>Chi phí vốn, hoạch định vốn và lựa chọn tài trợ, kèm phần bài tập bảng tính.</p>
+      </article>
+      <article class="coll" data-shelf="coursework" data-text="global corporate strategy ph n t ch ng nh ph m vi doanh nghi p v quy t nh qu c t h a c gi ng theo t nh hu ng">
+        <span class="coll-meta">MSM MBA</span>
+        <h4>Global Corporate Strategy</h4>
+        <p>Phân tích ngành, phạm vi doanh nghiệp và quyết định quốc tế hóa, được giảng theo tình huống.</p>
+      </article>
+      <article class="coll" data-shelf="coursework" data-text="global supply chain management mua s m logistics nh v t n kho v r i ro giao di n gi a c c g i th u">
+        <span class="coll-meta">MSM MBA</span>
+        <h4>Global Supply Chain Management</h4>
+        <p>Mua sắm, logistics, định vị tồn kho và rủi ro giao diện giữa các gói thầu.</p>
+      </article>
+      <article class="coll" data-shelf="coursework" data-text="leading change in multinationals c c m h nh thay i p d ng cho t ch c xuy n bi n gi i n i s kh ng c mang t nh c u tr c nhi u nh c nh n">
+        <span class="coll-meta">MSM MBA</span>
+        <h4>Leading Change in Multinationals</h4>
+        <p>Các mô hình thay đổi áp dụng cho tổ chức xuyên biên giới, nơi sự kháng cự mang tính cấu trúc nhiều như cá nhân.</p>
+      </article>
+      <article class="coll" data-shelf="coursework" data-text="managing cultural diversity kho ng c ch v n h a phong c ch m ph n v th nh ph n i ng qua c c b i c nh qu c gia">
+        <span class="coll-meta">MSM MBA</span>
+        <h4>Managing Cultural Diversity</h4>
+        <p>Khoảng cách văn hóa, phong cách đàm phán và thành phần đội ngũ qua các bối cảnh quốc gia.</p>
+      </article>
+      <article class="coll" data-shelf="coursework" data-text="business statistics ki m nh gi thuy t h i quy v l y m u k m b d li u excel v minitab">
+        <span class="coll-meta">MSM MBA</span>
+        <h4>Business Statistics</h4>
+        <p>Kiểm định giả thuyết, hồi quy và lấy mẫu, kèm bộ dữ liệu Excel và Minitab.</p>
+      </article>
+      <article class="coll" data-shelf="coursework" data-text="thesis workshop research methods c u tr c c ng l a ch n ph ng ph p v chu n b b o v t li u ng sau khung nghi n c u trong m c mba pm">
+        <span class="coll-meta">MSM MBA</span>
+        <h4>Thesis Workshop &amp; Research Methods</h4>
+        <p>Cấu trúc đề cương, lựa chọn phương pháp và chuẩn bị bảo vệ — tư liệu đằng sau khung nghiên cứu trong mục MBA/PM.</p>
+      </article>
+    </div>
+  </section>
+  <p class="empty-state" id="libEmpty" hidden>
+    <strong>Không có kết quả.</strong> Không có kết quả. Thử một tác giả (Porter), một chủ đề (rủi ro), hoặc một phương pháp (NPV).
+    <button class="link-btn" id="libReset" type="button">Đặt lại</button>
+  </p>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-text">ProBiz<span class="accent">Intel</span></span>
+      <p>Thư viện làm việc cho trí tuệ dự án công nghiệp — được lập mục, chú giải và lưu giữ một chỗ.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <div>
+        <h5>Các kệ</h5>
+        <a href="#shelf-strategy">Chiến lược &amp; Quản trị doanh nghiệp</a>
+        <a href="#shelf-finance">Tài chính &amp; Kế toán</a>
+        <a href="#shelf-project-management">Quản lý dự án</a>
+        <a href="#shelf-classics">Nền tảng — Kệ mở</a>
+      </div>
+      <div>
+        <h5>Cổng</h5>
+        <a href="../../index.html">Cổng chính</a>
+        <a href="../../MBAPM/index.html">MBA / QLDA</a>
+        <a href="../../mindmap/index.html">Sơ đồ tư duy</a>
+        <a href="../../books/">English</a>
+      </div>
+      <div>
+        <h5>Bản phát hành</h5>
+        <a href="https://github.com/probizintel/probizintel.github.io/releases/tag/library-v1" target="_blank" rel="noopener">library-v1</a>
+      </div>
+    </nav>
+  </div>
+  <div class="container footer-base">
+    <p>© <span id="year">2026</span> ProBizIntel.</p>
+    <p class="footer-target">probizintel.github.io/vi/books</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Top"><svg class="ico"><use href="#i-up"/></svg></button>
+<script src="../../books/library.js"></script>
+</body>
+</html>

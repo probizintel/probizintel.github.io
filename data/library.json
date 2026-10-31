@@ -1,0 +1,449 @@
+{
+ "totals": {
+  "files": 32899,
+  "bytes": 34460372327,
+  "works": 86
+ },
+ "shelves": [
+  {
+   "id": "strategy",
+   "en": "Strategy & Corporate Management",
+   "vi": "Chiến lược & Quản trị doanh nghiệp",
+   "count": 12360,
+   "formats": {
+    "HTM": 4857,
+    "HTML": 3859,
+    "PDF": 2347,
+    "GIF": 463,
+    "DOC": 263,
+    "JPG": 91,
+    "RTF": 88,
+    "CHM": 71,
+    "PNG": 60,
+    "PPT": 59,
+    "MOV": 34,
+    "SWF": 21,
+    "CSS": 18,
+    "PPS": 16,
+    "EXE": 16,
+    "BMP": 15,
+    "JS": 12,
+    "XLT": 11,
+    "XLS": 9,
+    "DOCX": 8,
+    "TXT": 7,
+    "INI": 7,
+    "XML": 4,
+    "CAB": 3,
+    "MSI": 3,
+    "PRC": 2,
+    "THMX": 2,
+    "WAV": 2,
+    "MHT": 1,
+    "MP3": 1,
+    "RAR": 1,
+    "TPP": 1,
+    "HDR": 1,
+    "EX_": 1,
+    "BIN": 1,
+    "INX": 1,
+    "INF": 1,
+    "HLP": 1,
+    "QDAT": 1,
+    "LNK": 1
+   },
+   "works": 9
+  },
+  {
+   "id": "finance",
+   "en": "Finance & Accounting",
+   "vi": "Tài chính & Kế toán",
+   "count": 2313,
+   "formats": {
+    "PDF": 900,
+    "HTML": 665,
+    "GIF": 143,
+    "XLS": 135,
+    "DOC": 90,
+    "EXE": 90,
+    "XML": 85,
+    "PPT": 74,
+    "TXT": 23,
+    "PNG": 23,
+    "MP4": 17,
+    "JPG": 15,
+    "HTM": 15,
+    "INF": 14,
+    "CSS": 6,
+    "DOCX": 3,
+    "IDENTIFIER": 3,
+    "MHT": 3,
+    "PRC": 1,
+    "POT": 1,
+    "CHM": 1,
+    "SIM": 1,
+    "REG": 1,
+    "XLSM": 1,
+    "OPF": 1,
+    "OTHER": 1,
+    "DLL": 1
+   },
+   "works": 7
+  },
+  {
+   "id": "economics",
+   "en": "Economics",
+   "vi": "Kinh tế học",
+   "count": 1483,
+   "formats": {
+    "PDF": 1013,
+    "HTML": 251,
+    "GIF": 103,
+    "MP3": 75,
+    "JPG": 7,
+    "DOC": 6,
+    "PPT": 5,
+    "CSS": 3,
+    "XSD": 3,
+    "URL": 3,
+    "DOCX": 2,
+    "XML": 2,
+    "PRC": 2,
+    "TXT": 2,
+    "XLS": 1,
+    "HTM": 1,
+    "DB": 1,
+    "GHT": 1,
+    "DJVU": 1,
+    "EPUB": 1
+   },
+   "works": 7
+  },
+  {
+   "id": "project-management",
+   "en": "Project Management",
+   "vi": "Quản lý dự án",
+   "count": 309,
+   "formats": {
+    "PDF": 261,
+    "CHM": 29,
+    "PPT": 9,
+    "DOC": 4,
+    "DOCX": 2,
+    "IDENTIFIER": 2,
+    "PPTX": 1,
+    "XLS": 1
+   },
+   "works": 8
+  },
+  {
+   "id": "leadership",
+   "en": "Leadership & Management",
+   "vi": "Lãnh đạo & Quản trị",
+   "count": 6766,
+   "formats": {
+    "HTM": 4883,
+    "PDF": 913,
+    "HTML": 502,
+    "GIF": 174,
+    "RTF": 88,
+    "CHM": 85,
+    "PPT": 17,
+    "DOC": 16,
+    "JPG": 15,
+    "JS": 12,
+    "XLT": 11,
+    "PPS": 8,
+    "EXE": 5,
+    "FLV": 5,
+    "IDENTIFIER": 4,
+    "DOCX": 4,
+    "XLS": 3,
+    "CSS": 3,
+    "TPP": 2,
+    "LOG": 2,
+    "1": 2,
+    "NFO": 2,
+    "CAB": 2,
+    "MHT": 1,
+    "TXT": 1,
+    "MSI": 1,
+    "INI": 1,
+    "MP3": 1,
+    "PRC": 1,
+    "PPTX": 1,
+    "DB": 1
+   },
+   "works": 7
+  },
+  {
+   "id": "ob",
+   "en": "Organizational Behaviour",
+   "vi": "Hành vi tổ chức",
+   "count": 328,
+   "formats": {
+    "HTML": 212,
+    "PDF": 66,
+    "GIF": 37,
+    "AVI": 6,
+    "JPG": 2,
+    "PPS": 1,
+    "DOC": 1,
+    "PPT": 1,
+    "TXT": 1,
+    "CSS": 1
+   },
+   "works": 7
+  },
+  {
+   "id": "operations",
+   "en": "Operations & Quality",
+   "vi": "Vận hành & Chất lượng",
+   "count": 5,
+   "formats": {
+    "PDF": 5
+   },
+   "works": 4
+  },
+  {
+   "id": "risk",
+   "en": "Risk Management",
+   "vi": "Quản lý rủi ro",
+   "count": 44,
+   "formats": {
+    "PDF": 36,
+    "DOC": 4,
+    "IDENTIFIER": 1,
+    "CHM": 1,
+    "XLS": 1,
+    "NFO": 1
+   },
+   "works": 6
+  },
+  {
+   "id": "knowledge",
+   "en": "Knowledge & Intellectual Capital",
+   "vi": "Tri thức & Vốn trí tuệ",
+   "count": 8,
+   "formats": {
+    "PDF": 5,
+    "CHM": 3
+   },
+   "works": 6
+  },
+  {
+   "id": "mba",
+   "en": "MBA Core",
+   "vi": "MBA cốt lõi",
+   "count": 23,
+   "formats": {
+    "PDF": 23
+   },
+   "works": 8
+  },
+  {
+   "id": "toolkits",
+   "en": "Business-in-a-Box",
+   "vi": "Bộ công cụ kinh doanh",
+   "count": 1151,
+   "formats": {
+    "RTF": 1083,
+    "XLS": 52,
+    "URL": 10,
+    "TXT": 3,
+    "PDF": 3
+   },
+   "works": 7
+  },
+  {
+   "id": "classics",
+   "en": "Foundations — Open Shelf",
+   "vi": "Nền tảng — Kệ mở",
+   "count": 236,
+   "formats": {
+    "PDF": 112,
+    "LIT": 41,
+    "JPG": 41,
+    "OPF": 41,
+    "RTF": 1
+   },
+   "works": 10
+  },
+  {
+   "id": "pmp",
+   "en": "PMP Study Assets",
+   "vi": "Học liệu PMP",
+   "count": 33,
+   "formats": {
+    "PDF": 33
+   },
+   "works": 0
+  },
+  {
+   "id": "coursework",
+   "en": "MSM MBA Coursework",
+   "vi": "Học liệu MSM MBA",
+   "count": 5799,
+   "formats": {
+    "WMZ": 1500,
+    "GIF": 1411,
+    "PDF": 633,
+    "DOC": 354,
+    "JPG": 327,
+    "PPT": 309,
+    "XLS": 308,
+    "MTW": 209,
+    "Z": 100,
+    "HTML": 89,
+    "XML": 64,
+    "EXE": 47,
+    "PNG": 42,
+    "MSO": 34,
+    "MOV": 29,
+    "BMP": 27,
+    "IDENTIFIER": 26,
+    "DXR": 22,
+    "HTM": 20,
+    "CSS": 20,
+    "ITM": 20,
+    "TXT": 16,
+    "TTF": 15,
+    "AF2": 15,
+    "DLL": 14,
+    "JS": 13,
+    "DOCX": 13,
+    "X32": 12,
+    "INF": 9,
+    "XLSX": 7,
+    "CHM": 6,
+    "INI": 6,
+    "FLV": 6,
+    "PPTX": 5,
+    "IFX": 5,
+    "XSD": 4,
+    "RTF": 4,
+    "RSR": 4,
+    "EOT": 3,
+    "SVG": 3,
+    "WOFF": 3,
+    "SWF": 3,
+    "HLP": 3,
+    "VSD": 2,
+    "FON": 2,
+    "MAP": 2,
+    "AVI": 2,
+    "SAV": 2,
+    "INS": 2,
+    "INV": 2,
+    "EX_": 2,
+    "LIB": 2,
+    "VXD": 2,
+    "SYS": 2,
+    "OTHER": 1,
+    "ICO": 1,
+    "PXJ": 1,
+    "QDAT": 1,
+    "X16": 1,
+    "MSG": 1,
+    "CSV": 1,
+    "RAR": 1,
+    "ZIP": 1,
+    "JDF": 1,
+    "WAV": 1,
+    "SPT": 1,
+    "DAT": 1,
+    "GZ": 1,
+    "ISU": 1,
+    "SPO": 1,
+    "MSI": 1
+   },
+   "works": 0
+  }
+ ],
+ "collections": [
+  {
+   "shelf": "pmp",
+   "en": "The PM PrepCast — full lecture archive",
+   "meta": "136 lesson files",
+   "ben": "A structured PMP course recorded lecture by lecture, covering the whole exam outline in sequence.",
+   "bvi": "Khóa PMP có cấu trúc, ghi hình từng bài, bao quát toàn bộ đề cương theo trình tự."
+  },
+  {
+   "shelf": "pmp",
+   "en": "eFlash Cards",
+   "meta": "336 cards",
+   "ben": "The drill deck for ITTOs and definitions — the fastest way to find out which knowledge area you actually do not know.",
+   "bvi": "Bộ thẻ luyện tập cho ITTO và định nghĩa — cách nhanh nhất để biết mình thực sự chưa nắm lĩnh vực nào."
+  },
+  {
+   "shelf": "pmp",
+   "en": "5 Minutes Project Management Podcast",
+   "meta": "300 episodes",
+   "ben": "Short-form audio on scope, risk, stakeholders and certification. The commute-sized version of the discipline.",
+   "bvi": "Âm thanh ngắn về phạm vi, rủi ro, các bên liên quan và chứng chỉ. Phiên bản vừa một chặng đi làm của ngành."
+  },
+  {
+   "shelf": "pmp",
+   "en": "Andy Jordan video series",
+   "meta": "23 sessions",
+   "ben": "Practitioner talks on the parts of the job the exam does not test: politics, sponsorship, and the first 90 days.",
+   "bvi": "Các buổi nói chuyện thực hành về những phần công việc đề thi không kiểm tra: chính trị nội bộ, nhà tài trợ, và 90 ngày đầu."
+  },
+  {
+   "shelf": "coursework",
+   "en": "Managerial Economics",
+   "meta": "MSM MBA",
+   "ben": "Demand estimation, pricing and market structure applied to managerial decisions rather than to theory.",
+   "bvi": "Ước lượng cầu, định giá và cấu trúc thị trường áp dụng cho quyết định quản trị thay vì lý thuyết."
+  },
+  {
+   "shelf": "coursework",
+   "en": "Managerial Finance",
+   "meta": "MSM MBA",
+   "ben": "Cost of capital, capital budgeting and financing choices, with the spreadsheet work attached.",
+   "bvi": "Chi phí vốn, hoạch định vốn và lựa chọn tài trợ, kèm phần bài tập bảng tính."
+  },
+  {
+   "shelf": "coursework",
+   "en": "Global Corporate Strategy",
+   "meta": "MSM MBA",
+   "ben": "Industry analysis, corporate scope and the internationalisation decision, taught case by case.",
+   "bvi": "Phân tích ngành, phạm vi doanh nghiệp và quyết định quốc tế hóa, được giảng theo tình huống."
+  },
+  {
+   "shelf": "coursework",
+   "en": "Global Supply Chain Management",
+   "meta": "MSM MBA",
+   "ben": "Sourcing, logistics, inventory positioning and the interface risk between packages.",
+   "bvi": "Mua sắm, logistics, định vị tồn kho và rủi ro giao diện giữa các gói thầu."
+  },
+  {
+   "shelf": "coursework",
+   "en": "Leading Change in Multinationals",
+   "meta": "MSM MBA",
+   "ben": "Change models applied to cross-border organisations, where the resistance is structural as much as personal.",
+   "bvi": "Các mô hình thay đổi áp dụng cho tổ chức xuyên biên giới, nơi sự kháng cự mang tính cấu trúc nhiều như cá nhân."
+  },
+  {
+   "shelf": "coursework",
+   "en": "Managing Cultural Diversity",
+   "meta": "MSM MBA",
+   "ben": "Cultural distance, negotiation styles and team composition across national contexts.",
+   "bvi": "Khoảng cách văn hóa, phong cách đàm phán và thành phần đội ngũ qua các bối cảnh quốc gia."
+  },
+  {
+   "shelf": "coursework",
+   "en": "Business Statistics",
+   "meta": "MSM MBA",
+   "ben": "Hypothesis testing, regression and sampling, with Excel and Minitab data sets included.",
+   "bvi": "Kiểm định giả thuyết, hồi quy và lấy mẫu, kèm bộ dữ liệu Excel và Minitab."
+  },
+  {
+   "shelf": "coursework",
+   "en": "Thesis Workshop & Research Methods",
+   "meta": "MSM MBA",
+   "ben": "Proposal structure, methodology choice and defence preparation — the material behind the research framework in the MBA/PM section.",
+   "bvi": "Cấu trúc đề cương, lựa chọn phương pháp và chuẩn bị bảo vệ — tư liệu đằng sau khung nghiên cứu trong mục MBA/PM."
+  }
+ ]
+}
