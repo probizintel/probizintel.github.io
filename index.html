@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProBizIntel | Heavy Industrial Project Intelligence</title>
+<meta name="description" content="A working knowledge portal for process automation, control & instrumentation project management, oil & gas capital strategy, and mega-project risk.">
+<meta name="theme-color" content="#080b10">
+<meta property="og:title" content="ProBizIntel | Heavy Industrial Project Intelligence">
+<meta property="og:description" content="Process automation, energy capital strategy, and mega-project risk — one integrated framework.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b1016'/%3E%3Cpath d='M17 4 8 18h6l-1 10 9-14h-6z' fill='%23f2a33c'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- Icon sprite -->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></symbol>
+  <symbol id="i-robot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M8 14h.01M16 14h.01M9 17.5h6"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 8.5 12 4l10 4.5-10 4.5z"/><path d="M6 11v4.2c0 1.6 2.7 2.8 6 2.8s6-1.2 6-2.8V11M22 8.5V14"/></symbol>
+  <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3 2.5 20h19z"/><path d="M12 9v5M12 17h.01"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></symbol>
+  <symbol id="i-tree" viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="5" rx="1"/><rect x="15" y="10" width="6" height="5" rx="1"/><rect x="3" y="16" width="6" height="5" rx="1"/><path d="M6 8v8M9 6h4a2 2 0 0 1 2 2v5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4.4 3 7.6 7 9 4-1.4 7-4.6 7-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-net" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.4"/><circle cx="5" cy="18" r="2.4"/><circle cx="19" cy="18" r="2.4"/><path d="M12 7.4v4.6M12 12 6.6 16M12 12l5.4 4"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12.5 16V8M17 16v-6"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 20V5M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5.5 5.5L20 6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 2.6 15.4 0 18M12 3c-2.6 2.6-2.6 15.4 0 18"/></symbol>
+  <symbol id="i-money" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 12h.01M18 12h.01"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></symbol>
+</svg>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="ProBizIntel home">
+      <span class="brand-mark"><svg class="ico"><use href="#i-bolt"/></svg></span>
+      <span class="brand-text">ProBiz<span class="accent">Intel</span></span>
+      <span class="brand-tag">Knowledge Portal</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a class="nav-link" href="#chain">Value Chain</a>
+      <a class="nav-link" href="#convergence">IT / OT / AI</a>
+      <a class="nav-link" href="#delivery">Delivery</a>
+      <a class="nav-link" href="#automation">Automation BoK</a>
+      <a class="nav-link" href="#career">Career</a>
+      <a class="nav-link" href="#mba-strategy">MBA Strategy</a>
+      <a class="nav-link" href="#risk-management">Risk Matrix</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="headerSearchBtn" type="button" aria-label="Search the portal">
+        <svg class="ico"><use href="#i-search"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <svg class="ico"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <a id="top"></a>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <p class="kicker"><span class="pulse"></span> Industrial Knowledge Infrastructure</p>
+      <h1>Heavy Industrial<br><span class="grad">Project Intelligence</span></h1>
+      <p class="lede">
+        The working intersection of process automation, energy capital strategy, and mega-project risk —
+        built for the people who have to deliver a plant, not just describe one.
+      </p>
+
+      <div class="search-block">
+        <div class="search-shell">
+          <svg class="ico search-ico"><use href="#i-search"/></svg>
+          <input type="search" id="portalSearch" placeholder="Filter knowledge domains, standards, or mitigations…" autocomplete="off" aria-label="Search the portal">
+          <button class="search-clear" id="searchClear" type="button" aria-label="Clear search" hidden>
+            <svg class="ico"><use href="#i-close"/></svg>
+          </button>
+          <kbd class="search-kbd">/</kbd>
+        </div>
+        <div class="search-meta">
+          <span class="search-count" id="searchCount" aria-live="polite"></span>
+          <div class="quick-chips" id="quickChips">
+            <button class="chip" type="button" data-q="HAZOP">HAZOP</button>
+            <button class="chip" type="button" data-q="FAT">FAT / SAT</button>
+            <button class="chip" type="button" data-q="SIL">SIL</button>
+            <button class="chip" type="button" data-q="P80">P80</button>
+            <button class="chip" type="button" data-q="Purdue">Purdue</button>
+          </div>
+        </div>
+      </div>
+
+      <dl class="hero-stats">
+        <div class="stat"><dt>4</dt><dd>Economic sectors mapped</dd></div>
+        <div class="stat"><dt>3</dt><dd>Technology layers converged</dd></div>
+        <div class="stat"><dt>5</dt><dd>Capital value gates</dd></div>
+        <div class="stat"><dt>9</dt><dd>Credentials benchmarked</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <div class="container content" id="content">
+
+    <!-- 01 VALUE CHAIN -->
+    <section class="knowledge-card" id="chain" data-title="Value chain economic sectors primary secondary tertiary quaternary">
+      <div class="card-head">
+        <div class="card-index">01</div>
+        <div class="card-title">
+          <h2>The Economic Value Chain</h2>
+          <p class="card-sub">Every capital project sits somewhere on this ladder. Automation projects straddle the last two rungs.</p>
+        </div>
+        <span class="badge">Foundations</span>
+      </div>
+
+      <div class="sector-chain">
+        <article class="sector-card s-item">
+          <div class="sector-num">01</div>
+          <h3>Primary</h3>
+          <p class="sector-role">Raw materials</p>
+          <p>Extracts or harvests natural resources directly from the earth, water, or air.</p>
+          <ul class="tag-list">
+            <li>Farming</li><li>Fishing</li><li>Forestry</li><li>Mining</li><li>Oil drilling</li>
+          </ul>
+          <p class="sector-foot">Provides the raw foundation for all other production.</p>
+        </article>
+
+        <div class="chain-link" aria-hidden="true"><svg class="ico"><use href="#i-chevron"/></svg></div>
+
+        <article class="sector-card s-item">
+          <div class="sector-num">02</div>
+          <h3>Secondary</h3>
+          <p class="sector-role">Manufacturing &amp; processing</p>
+          <p>Transforms raw materials into finished or semi-finished products.</p>
+          <ul class="tag-list">
+            <li>Steel mills</li><li>Car factories</li><li>Refineries</li><li>Construction</li>
+          </ul>
+          <p class="sector-foot">Adds physical value to raw materials — where OT lives.</p>
+        </article>
+
+        <div class="chain-link" aria-hidden="true"><svg class="ico"><use href="#i-chevron"/></svg></div>
+
+        <article class="sector-card s-item">
+          <div class="sector-num">03</div>
+          <h3>Tertiary</h3>
+          <p class="sector-role">Services &amp; distribution</p>
+          <p>Provides intangible services and moves goods rather than making them.</p>
+          <ul class="tag-list">
+            <li>Retail</li><li>Banking</li><li>Hospitals</li><li>Transport</li><li>Education</li>
+          </ul>
+          <p class="sector-foot">Connects manufactured products to the end consumer.</p>
+        </article>
+
+        <div class="chain-link" aria-hidden="true"><svg class="ico"><use href="#i-chevron"/></svg></div>
+
+        <article class="sector-card s-item">
+          <div class="sector-num">04</div>
+          <h3>Quaternary</h3>
+          <p class="sector-role">Information &amp; knowledge</p>
+          <p>Intellectual, research, and technology activity that lifts every other sector.</p>
+          <ul class="tag-list">
+            <li>Software</li><li>R&amp;D</li><li>IT services</li><li>Policy</li><li>Consulting</li>
+          </ul>
+          <p class="sector-foot">Drives innovation and long-term efficiency across the chain.</p>
+        </article>
+      </div>
+
+      <div class="note-strip">
+        <svg class="ico"><use href="#i-net"/></svg>
+        <p><strong>The overlap that matters:</strong> in a processing plant, IT, OT, and AI form the digital nervous system — bridging the physical factory floor (secondary) with knowledge systems (quaternary). IT handles the data you type, OT handles the machines that move, AI optimizes both.</p>
+      </div>
+    </section>
+
+    <!-- 02 CONVERGENCE -->
+    <section class="knowledge-card" id="convergence" data-title="IT OT AI convergence SCADA PLC DCS ERP CRM machine learning computer vision">
+      <div class="card-head">
+        <div class="card-index">02</div>
+        <div class="card-title">
+          <h2>IT / OT / AI Convergence</h2>
+          <p class="card-sub">Three systems, three priorities, one plant. Confusing them is how projects fail.</p>
+        </div>
+        <span class="badge badge-cyan">Integration</span>
+      </div>
+
+      <div class="tri-grid">
+        <article class="conv-card conv-ot s-item">
+          <div class="conv-head"><svg class="ico"><use href="#i-gear"/></svg><h3>Operational Technology</h3></div>
+          <p class="conv-role">Hardware and software that directly monitors and controls physical devices, valves, pumps, and machinery.</p>
+          <p class="conv-focus">Keeps the physical production line safe, stable, and running 24/7.</p>
+          <ul class="plain-list">
+            <li><strong>SCADA</strong> — supervisory control and data acquisition across the plant floor.</li>
+            <li><strong>PLC</strong> — rugged controllers wiring assembly lines and chemical valves.</li>
+            <li><strong>DCS</strong> — distributed control across a large processing plant.</li>
+          </ul>
+        </article>
+
+        <article class="conv-card conv-it s-item">
+          <div class="conv-head"><svg class="ico"><use href="#i-tree"/></svg><h3>Information Technology</h3></div>
+          <p class="conv-role">Enterprise systems that manage business data, communication, and digital transactions.</p>
+          <p class="conv-focus">Manages commercial operations, compliance, logistics, and administration.</p>
+          <ul class="plain-list">
+            <li><strong>ERP</strong> — supply chain, inventory, and financial records.</li>
+            <li><strong>CRM</strong> — sales and distribution scheduling.</li>
+            <li><strong>Cloud &amp; databases</strong> — secure storage for analytics and records.</li>
+          </ul>
+        </article>
+
+        <article class="conv-card conv-ai s-item">
+          <div class="conv-head"><svg class="ico"><use href="#i-robot"/></svg><h3>Artificial Intelligence</h3></div>
+          <p class="conv-role">Models and algorithms that ingest massive data streams to predict outcomes and act.</p>
+          <p class="conv-focus">Finds hidden patterns to automate problem-solving and optimize efficiency.</p>
+          <ul class="plain-list">
+            <li><strong>Machine learning</strong> — forecast when a part will break.</li>
+            <li><strong>Computer vision</strong> — scan passing products for microscopic defects.</li>
+            <li><strong>Explainability</strong> — operators must see <em>why</em> an alert fired.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="table-wrap s-item">
+        <table class="data-table">
+          <caption class="sr-only">Comparison of OT, IT and AI priorities</caption>
+          <thead>
+            <tr><th scope="col">Dimension</th><th scope="col">Operational Technology</th><th scope="col">Information Technology</th><th scope="col">Artificial Intelligence</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Primary domain</th>
+              <td>Physical plant floor — valves, motors, pumps.</td>
+              <td>Virtual business network — servers, email, files.</td>
+              <td>Algorithmic layer analyzing both domains.</td>
+            </tr>
+            <tr>
+              <th scope="row">Top priority</th>
+              <td><span class="pill pill-red">Availability &amp; safety</span> a crash can cause physical damage.</td>
+              <td><span class="pill pill-cyan">Confidentiality</span> protecting business data from leaks.</td>
+              <td><span class="pill pill-amber">Optimization</span> yield, energy, and error prediction.</td>
+            </tr>
+            <tr>
+              <th scope="row">Time horizon</th>
+              <td>Real time — actions in milliseconds.</td>
+              <td>Transactional — delays rarely cause physical harm.</td>
+              <td>Continuous — live streams plus deep history.</td>
+            </tr>
+            <tr>
+              <th scope="row">Failure mode</th>
+              <td>Unsafe process condition, trip, or asset damage.</td>
+              <td>Data loss, breach, or commercial disruption.</td>
+              <td>Silent drift, bias, or untrusted recommendations.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="sub-head">Worked example — refinery or chemical plant</h3>
+      <div class="layer-stack">
+        <article class="layer s-item">
+          <span class="layer-tag">OT</span>
+          <div>
+            <h4>Reflex layer</h4>
+            <p>Temperature sensors on a distillation tower detect a pressure spike and automatically adjust a valve to prevent a pipe rupture.</p>
+          </div>
+        </article>
+        <article class="layer s-item">
+          <span class="layer-tag">IT</span>
+          <div>
+            <h4>Commercial layer</h4>
+            <p>The system flags low raw chemical inventory, matches production rates against client invoices and market prices, and schedules a reorder.</p>
+          </div>
+        </article>
+        <article class="layer s-item">
+          <span class="layer-tag">AI</span>
+          <div>
+            <h4>Predictive layer</h4>
+            <p>Pulls vibration data from OT and maintenance logs from IT: <em>"This compressor has an 87% chance of failing next Tuesday — schedule maintenance now."</em></p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 03 DELIVERY -->
+    <section class="knowledge-card" id="delivery" data-title="industrial digital project management waterfall agile phases FAT SAT commissioning scope design build go-live">
+      <div class="card-head">
+        <div class="card-index">03</div>
+        <div class="card-title">
+          <h2>Delivering the Digital Plant</h2>
+          <p class="card-sub">Physical work is predictive. Software is adaptive. A single project has to be both.</p>
+        </div>
+        <span class="badge badge-amber">Execution</span>
+      </div>
+
+      <div class="split-compare">
+        <article class="split-card s-item">
+          <h3><svg class="ico"><use href="#i-doc"/></svg> Predictive (Waterfall)</h3>
+          <p class="split-for">Used for OT physical infrastructure.</p>
+          <div class="flow-inline">
+            <span>Engineering</span><i>→</i><span>Procurement</span><i>→</i><span>Construction</span><i>→</i><span>Commissioning</span>
+          </div>
+          <p>You cannot undo a poured concrete foundation or a heavy reactor tank. Design is frozen before steel is cut.</p>
+        </article>
+        <article class="split-card s-item">
+          <h3><svg class="ico"><use href="#i-robot"/></svg> Adaptive (Agile)</h3>
+          <p class="split-for">Used for IT software and AI models.</p>
+          <div class="flow-inline">
+            <span>Sprint</span><i>→</i><span>Test</span><i>→</i><span>Retrain</span><i>→</i><span>Sprint</span>
+          </div>
+          <p>Short cycles write code, test algorithms, and update models against fresh data — without moving a single valve.</p>
+        </article>
+      </div>
+
+      <h3 class="sub-head">The four-phase integration lifecycle</h3>
+      <div class="phase-grid">
+        <article class="phase s-item">
+          <div class="phase-top"><span class="phase-num">1</span><span class="phase-line"></span></div>
+          <h4>Scope &amp; Alignment</h4>
+          <p class="phase-goal">Define what the project solves without disrupting production.</p>
+          <p><strong>PM focus:</strong> reconcile plant managers who care about uptime and safety with executives who care about ROI and data visibility.</p>
+          <p class="phase-eg"><strong>Example:</strong> AI smart cameras for defect detection on an assembly line.</p>
+        </article>
+        <article class="phase s-item">
+          <div class="phase-top"><span class="phase-num">2</span><span class="phase-line"></span></div>
+          <h4>Architecture &amp; Cyber-Safety</h4>
+          <p class="phase-goal">Design how IT, OT, and AI talk to each other securely.</p>
+          <p><strong>PM focus:</strong> enforce the Purdue Model so a compromised corporate account cannot reach a physical valve.</p>
+          <p class="phase-eg"><strong>Example:</strong> route sensor data through secure gateways before the AI cloud.</p>
+        </article>
+        <article class="phase s-item">
+          <div class="phase-top"><span class="phase-num">3</span><span class="phase-line"></span></div>
+          <h4>Build, Code &amp; Train</h4>
+          <p class="phase-goal">Wire the physical plant while coding the software.</p>
+          <p><strong>PM focus:</strong> manage a split timeline — IT trains models on history while OT pulls fiber and mounts sensors.</p>
+          <p class="phase-eg"><strong>Example:</strong> simulation runs proving predictions match sensor readouts before go-live.</p>
+        </article>
+        <article class="phase s-item">
+          <div class="phase-top"><span class="phase-num">4</span><span class="phase-line"></span></div>
+          <h4>Commissioning &amp; Go-Live</h4>
+          <p class="phase-goal">Turn the system on and make it part of daily operations.</p>
+          <p><strong>PM focus:</strong> rigorous testing plus change management — operators must trust the tools.</p>
+          <p class="phase-eg"><strong>Milestones:</strong> FAT in an isolated lab, then SAT on the live floor.</p>
+        </article>
+      </div>
+
+      <div class="milestone-pair">
+        <div class="milestone s-item">
+          <span class="mono-label">FAT</span>
+          <h4>Factory Acceptance Testing</h4>
+          <p>Integrated IT/OT system tested in an isolated lab environment at the integrator's shop — before anything ships.</p>
+        </div>
+        <div class="milestone s-item">
+          <span class="mono-label">SAT</span>
+          <h4>Site Acceptance Testing</h4>
+          <p>Every loop re-tested live on the plant floor during a scheduled, brief maintenance shutdown.</p>
+        </div>
+      </div>
+
+      <h3 class="sub-head">Critical trade-offs</h3>
+      <div class="table-wrap s-item">
+        <table class="data-table">
+          <thead>
+            <tr><th scope="col">Risk</th><th scope="col">The danger</th><th scope="col">Mitigation</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Scope creep</th>
+              <td>"Cool features" added to an AI model slow delivery and blow the budget.</td>
+              <td><strong>Strict gatekeeping:</strong> a Change Control Board freezes software requirements before physical deployment.</td>
+            </tr>
+            <tr>
+              <th scope="row">Operational downtime</th>
+              <td>Taking machines offline for sensor installs costs millions per day.</td>
+              <td><strong>Phased cut-overs:</strong> install only inside pre-planned maintenance windows.</td>
+            </tr>
+            <tr>
+              <th scope="row">The black box</th>
+              <td>Operators ignore AI alerts they cannot explain.</td>
+              <td><strong>Explainable AI:</strong> requirements must demand the interface justifies every shutdown recommendation.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 04 AUTOMATION BOK -->
+    <section class="knowledge-card" id="automation" data-title="PAC I automation body of knowledge P&amp;ID instrument index loop diagrams FDS SIL IEC 61511 62443 Purdue Modbus OPC UA HAZOP MTO">
+      <div class="card-head">
+        <div class="card-index">04</div>
+        <div class="card-title">
+          <h2>PAC&amp;I Body of Knowledge</h2>
+          <p class="card-sub">Process automation, control &amp; instrumentation — four engineering tracks running in parallel.</p>
+        </div>
+        <span class="badge">ISA / PMI Baseline</span>
+      </div>
+
+      <p class="intro-text">Instrumentation, electrical, control systems, and networking move simultaneously. A PM who only understands one track cannot sequence the other three.</p>
+
+      <div class="tabs" role="tablist" aria-label="Body of knowledge domains">
+        <button class="tab is-active" role="tab" aria-selected="true" aria-controls="tab-docs" id="tabbtn-docs" type="button">Documentation</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="tab-safety" id="tabbtn-safety" type="button">Safety &amp; Standards</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="tab-net" id="tabbtn-net" type="button">Networks &amp; Cyber</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="tab-skills" id="tabbtn-skills" type="button">Delivery Skills</button>
+      </div>
+
+      <div class="tab-panels">
+        <div class="tab-panel is-active" id="tab-docs" role="tabpanel" aria-labelledby="tabbtn-docs">
+          <p class="panel-note">The PM's map. If it is not on a drawing, it is not in scope.</p>
+          <div class="doc-grid">
+            <article class="doc-item s-item">
+              <h4>P&amp;ID</h4>
+              <p class="doc-full">Piping and Instrumentation Diagram</p>
+              <p>The definitive schematic of process piping, vessels, and control loops. The master scope document.</p>
+            </article>
+            <article class="doc-item s-item">
+              <h4>Instrument Index</h4>
+              <p class="doc-full">Every tag on site</p>
+              <p>A database of every sensor, valve, transmitter, and actuator — tag numbers, vendors, ranges, locations.</p>
+            </article>
+            <article class="doc-item s-item">
+              <h4>Loop Diagrams</h4>
+              <p class="doc-full">Wiring truth</p>
+              <p>How a field device connects to the junction box, marshaling panel, and PLC/DCS I/O card.</p>
+            </article>
+            <article class="doc-item s-item">
+              <h4>FDS</h4>
+              <p class="doc-full">Functional Design Specification</p>
+              <p>The software blueprint: PLC logic, interlocks, and SCADA behavior under every operating scenario.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-safety" role="tabpanel" aria-labelledby="tabbtn-safety" hidden>
+          <p class="panel-note">Functional safety is not a deliverable — it is a licence to operate.</p>
+          <div class="doc-grid">
+            <article class="doc-item s-item">
+              <h4>ISA-84 / IEC 61511</h4>
+              <p class="doc-full">Functional safety</p>
+              <p>The governing standard for Safety Instrumented Systems in the process industries.</p>
+            </article>
+            <article class="doc-item s-item">
+              <h4>SIL 1 – 4</h4>
+              <p class="doc-full">Safety Integrity Level</p>
+              <p>High-SIL loops demand strict change management, independent validation, and audited procurement.</p>
+            </article>
+            <article class="doc-item s-item">
+              <h4>Hazardous Area</h4>
+              <p class="doc-full">ATEX / NEC / Zone</p>
+              <p>Equipment for explosive atmospheres must be certified intrinsically safe or explosion-proof.</p>
+            </article>
+            <article class="doc-item s-item">
+              <h4>HAZOP &amp; LOPA</h4>
+              <p class="doc-full">Hazard review</p>
+              <p>Structured "what if" review of every node — including what happens if CV-101 fails open.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-net" role="tabpanel" aria-labelledby="tabbtn-net" hidden>
+          <p class="panel-note">Segmentation is the control. Flat networks are the incident report.</p>
+          <div class="doc-grid">
+            <article class="doc-item s-item">
+              <h4>Purdue Model</h4>
+              <p class="doc-full">ISA-95 / IEC 62443</p>
+              <p>Segments the plant from Level 0 field devices up to Level 5 enterprise IT.</p>
+            </article>
+            <article class="doc-item s-item">
+              <h4>Field protocols</h4>
+              <p class="doc-full">HART · Modbus</p>
+              <p>Understand bandwidth, determinism, and failure modes before specifying them.</p>
+            </article>
+            <article class="doc-item s-item">
+              <h4>Plant buses</h4>
+              <p class="doc-full">Profibus / Profinet · EtherNet/IP</p>
+              <p>Topology, diagnostics, and segment limits drive cable and panel design.</p>
+            </article>
+            <article class="doc-item s-item">
+              <h4>OPC UA</h4>
+              <p class="doc-full">The IT/OT bridge</p>
+              <p>Secure, structured data exchange between control systems and enterprise/AI platforms.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-skills" role="tabpanel" aria-labelledby="tabbtn-skills" hidden>
+          <p class="panel-note">Estimating, sequencing, and testing are the three skills that keep a project solvent.</p>
+          <div class="doc-grid">
+            <article class="doc-item s-item">
+              <h4>I/O Count Estimation</h4>
+              <p class="doc-full">Cost engine</p>
+              <p>Panel size, server capacity, and programming hours all derive from I/O counts on the P&amp;ID.</p>
+            </article>
+            <article class="doc-item s-item">
+              <h4>MTO Management</h4>
+              <p class="doc-full">Material take-off</p>
+              <p>Cables, trays, conduits, tubing. A missed cable length stalls a crew and inflates cost.</p>
+            </article>
+            <article class="doc-item s-item">
+              <h4>Long-Lead Procurement</h4>
+              <p class="doc-full">6–12 months</p>
+              <p>Control valves, analyzers, and DCS controllers must be specified in design, not construction.</p>
+            </article>
+            <article class="doc-item s-item">
+              <h4>Commissioning Sequence</h4>
+              <p class="doc-full">Cold → hot → water → live</p>
+              <p>Cold loop checks, hot loop checks, water runs, then live process tuning. No shortcuts.</p>
+            </article>
+            <article class="doc-item s-item">
+              <h4>Brownfield Migration</h4>
+              <p class="doc-full">Live plant cut-over</p>
+              <p>Replace legacy control while producing: hot cut-over procedures and constrained shutdown windows.</p>
+            </article>
+            <article class="doc-item s-item">
+              <h4>Requirements Traceability</h4>
+              <p class="doc-full">P&amp;ID to code</p>
+              <p>Every functional requirement maps from drawing to PLC block to HMI screen to test record.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <div class="sequence-strip">
+        <span class="seq-label">Commissioning logic</span>
+        <div class="seq-flow">
+          <span class="seq">Cold loop checks</span><i>→</i>
+          <span class="seq">Hot loop checks</span><i>→</i>
+          <span class="seq">Water runs</span><i>→</i>
+          <span class="seq">Live tuning</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 CAREER -->
+    <section class="knowledge-card" id="career" data-title="career roadmap certification CCST CAP PMP FS Eng TUV Exida horizons skills">
+      <div class="card-head">
+        <div class="card-index">05</div>
+        <div class="card-title">
+          <h2>Building the Capability</h2>
+          <p class="card-sub">Three horizons from drawing literacy to enterprise architecture.</p>
+        </div>
+        <span class="badge badge-cyan">Roadmap</span>
+      </div>
+
+      <div class="roadmap">
+        <article class="road-step s-item">
+          <div class="road-marker"><span>01</span></div>
+          <div class="road-body">
+            <p class="road-when">Months 1–6</p>
+            <h3>Engineering Foundations</h3>
+            <p>Learn to read — and audaciously critique — P&amp;IDs, loop drawings, and electrical schematics. Shadow senior instrument techs through a calibration turnaround.</p>
+            <div class="cred-row">
+              <span class="cred"><svg class="ico"><use href="#i-shield"/></svg> ISA CCST path</span>
+              <span class="cred"><svg class="ico"><use href="#i-doc"/></svg> P&amp;ID / loop reading</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="road-step s-item">
+          <div class="road-marker"><span>02</span></div>
+          <div class="road-body">
+            <p class="road-when">Months 6–18</p>
+            <h3>System Integration &amp; Execution</h3>
+            <p>Own small PLC/SCADA upgrades and single-skid integrations. Live inside the FAT lifecycle until acceptance criteria are second nature.</p>
+            <div class="cred-row">
+              <span class="cred"><svg class="ico"><use href="#i-chart"/></svg> PMI PMP</span>
+              <span class="cred"><svg class="ico"><use href="#i-gear"/></svg> ISA CAP</span>
+              <span class="cred"><svg class="ico"><use href="#i-doc"/></svg> ISA MT01</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="road-step s-item">
+          <div class="road-marker"><span>03</span></div>
+          <div class="road-body">
+            <p class="road-when">Months 18+</p>
+            <h3>Safety &amp; Enterprise Architecture</h3>
+            <p>Lead multidisciplinary HAZOP reviews. Run brownfield migrations that merge legacy OT hardware with modern IT databases and predictive analytics.</p>
+            <div class="cred-row">
+              <span class="cred"><svg class="ico"><use href="#i-shield"/></svg> TÜV / Exida FS Eng</span>
+              <span class="cred"><svg class="ico"><use href="#i-net"/></svg> IEC 62443</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="note-strip note-quiet">
+        <svg class="ico"><use href="#i-check"/></svg>
+        <p><strong>Field experience beats coursework:</strong> volunteer to lead a FAT, sit through a hot commissioning window, and facilitate a P&amp;ID review. That is where cross-discipline coordination is actually learned.</p>
+      </div>
+    </section>
+
+    <!-- 06 MBA -->
+    <section class="knowledge-card" id="mba-strategy" data-title="MBA oil gas construction strategy capital EPC FIDIC FEED curriculum programs career ROI">
+      <div class="card-head">
+        <div class="card-index">06</div>
+        <div class="card-title">
+          <h2>MBA: Energy Capital Strategy</h2>
+          <p class="card-sub">General management theory breaks under multi-billion dollar assets. This is the project-facing version.</p>
+        </div>
+        <span class="badge badge-amber">Executive Level</span>
+      </div>
+
+      <div class="pillar-grid">
+        <article class="pillar s-item">
+          <span class="pillar-ico"><svg class="ico"><use href="#i-money"/></svg></span>
+          <h4>Mega-Project Capital Discipline</h4>
+          <p>Capital Value Process, stage-gating from FEED to commissioning, asset lifecycle costing, multi-billion dollar financing.</p>
+        </article>
+        <article class="pillar s-item">
+          <span class="pillar-ico"><svg class="ico"><use href="#i-chart"/></svg></span>
+          <h4>Energy Economics &amp; Risk</h4>
+          <p>Global supply and demand, geopolitical exposure, and hedging strategies that decide whether a project is greenlit or paused.</p>
+        </article>
+        <article class="pillar s-item">
+          <span class="pillar-ico"><svg class="ico"><use href="#i-doc"/></svg></span>
+          <h4>Contractual &amp; Legal Engineering</h4>
+          <p>FIDIC, EPC and EPCM frameworks, joint operating agreements, and dispute resolution.</p>
+        </article>
+        <article class="pillar s-item">
+          <span class="pillar-ico"><svg class="ico"><use href="#i-globe"/></svg></span>
+          <h4>Supply Chain &amp; Logistics</h4>
+          <p>International procurement, modular construction logistics, and local-content regulation in emerging markets.</p>
+        </article>
+        <article class="pillar s-item">
+          <span class="pillar-ico"><svg class="ico"><use href="#i-bolt"/></svg></span>
+          <h4>Energy Transition Strategy</h4>
+          <p>Balancing hydrocarbon infrastructure with decarbonization, CCS, and ESG compliance.</p>
+        </article>
+        <article class="pillar s-item">
+          <span class="pillar-ico"><svg class="ico"><use href="#i-shield"/></svg></span>
+          <h4>Capital Risk Governance</h4>
+          <p>Board-level risk appetite, portfolio oversight, and enterprise risk frameworks that survive audit.</p>
+        </article>
+      </div>
+
+      <h3 class="sub-head">Program archetypes</h3>
+      <div class="table-wrap s-item">
+        <table class="data-table">
+          <thead>
+            <tr><th scope="col">Program type</th><th scope="col">Target institutions</th><th scope="col">Strategic advantage</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Specialized global MBA</th>
+              <td>Robert Gordon (Aberdeen) · Texas A&amp;M (Mays)</td>
+              <td>Situated in energy capitals with dense pipelines into Tier-1 operators.</td>
+            </tr>
+            <tr>
+              <th scope="row">Energy executive program</th>
+              <td>Oklahoma (Price) · Strathclyde</td>
+              <td>For mid-career engineers moving into executive management without leaving the field.</td>
+            </tr>
+            <tr>
+              <th scope="row">General MBA + project track</th>
+              <td>Rice (Jones) · Rotman</td>
+              <td>Elite brand with strong local recruiting into energy and infrastructure finance.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="two-col">
+        <div class="s-item">
+          <h3 class="sub-head tight">Career outcomes</h3>
+          <ul class="role-list">
+            <li><strong>EPC Project Director</strong> — owns budget, schedule, and contract compliance on multi-year builds.</li>
+            <li><strong>Commercial Asset Manager</strong> — JV relations and investment strategy for upstream/midstream assets.</li>
+            <li><strong>Contracts &amp; Procurement Director</strong> — cross-border EPC structures and vendor claims.</li>
+            <li><strong>Energy Infrastructure Consultant</strong> — feasibility, risk, and turnaround for PE and sovereign funds.</li>
+          </ul>
+        </div>
+        <div class="s-item">
+          <h3 class="sub-head tight">Credentials to pair</h3>
+          <ul class="cert-list">
+            <li><span class="cert-code">PMP</span><div><strong>PMI Project Management Professional</strong><p>The baseline demanded by Shell, ExxonMobil, Bechtel, and Fluor.</p></div></li>
+            <li><span class="cert-code">CCP</span><div><strong>AACE Certified Cost Professional</strong><p>Cost estimation, forensic scheduling, earned value management.</p></div></li>
+            <li><span class="cert-code">RICS</span><div><strong>Chartered Surveyor — Infrastructure</strong><p>International contracts, commercial management, arbitration.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 RISK -->
+    <section class="knowledge-card" id="risk-management" data-title="risk matrix stage gate CVP FEED EPC commissioning QSRA Monte Carlo P80 bow tie commodity FX interface logistics subsurface labor">
+      <div class="card-head">
+        <div class="card-index">07</div>
+        <div class="card-title">
+          <h2>Heavy Asset Risk Matrix</h2>
+          <p class="card-sub">Extreme capital density, volatile markets, high-hazard environments. One unmitigated risk can cancel a project.</p>
+        </div>
+        <span class="badge badge-red">High Exposure</span>
+      </div>
+
+      <h3 class="sub-head tight">Capital Value Process — stage-gate flow</h3>
+      <div class="gate-flow">
+        <article class="gate s-item">
+          <div class="gate-num">03</div>
+          <div class="gate-body">
+            <h4>FEED</h4>
+            <p>Freeze the design basis. HAZOP and HAZID studies eliminate late design change — the number one cause of execution failure.</p>
+          </div>
+        </article>
+        <div class="gate-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></div>
+        <article class="gate s-item">
+          <div class="gate-num">04</div>
+          <div class="gate-body">
+            <h4>EPC Execution</h4>
+            <p>Construction productivity, material logistics, currency exposure, weather windows, and QSRA modelling.</p>
+          </div>
+        </article>
+        <div class="gate-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></div>
+        <article class="gate s-item">
+          <div class="gate-num">05</div>
+          <div class="gate-body">
+            <h4>Commissioning</h4>
+            <p>Pre-Start Safety Review (PSSR), dynamic testing, regulatory licensing, and asset handover.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="risk-toolbar">
+        <h3 class="sub-head tight">Vulnerability &amp; mitigation</h3>
+        <div class="filter-chips" id="riskFilters" role="group" aria-label="Filter risks by category">
+          <button class="chip is-active" type="button" data-filter="all">All</button>
+          <button class="chip" type="button" data-filter="financial">Financial</button>
+          <button class="chip" type="button" data-filter="supply">Supply chain</button>
+          <button class="chip" type="button" data-filter="technical">Technical</button>
+        </div>
+      </div>
+
+      <div class="risk-grid" id="riskGrid">
+        <article class="risk-card s-item" data-cat="financial">
+          <div class="risk-top">
+            <span class="risk-label financial">Financial</span>
+            <span class="severity" title="Severity: critical"><i></i><i></i><i></i><i></i><i></i></span>
+          </div>
+          <h4>Commodity price flux</h4>
+          <p>A project approved at $90/bbl can be uneconomic at $50/bbl mid-construction.</p>
+          <div class="mitigation"><strong>Control</strong> Economic stress-testing in design plus commodity hedging to protect near-term capex.</div>
+        </article>
+
+        <article class="risk-card s-item" data-cat="financial">
+          <div class="risk-top">
+            <span class="risk-label financial">Financial</span>
+            <span class="severity" title="Severity: high"><i></i><i></i><i></i><i></i><i class="off"></i></span>
+          </div>
+          <h4>FX &amp; inflationary spiral</h4>
+          <p>Turbines and reactors sourced globally expose the budget to multi-currency swings and steel/nickel spikes.</p>
+          <div class="mitigation"><strong>Control</strong> Progressive indexation clauses and firm fixed-price commitments on critical equipment.</div>
+        </article>
+
+        <article class="risk-card s-item" data-cat="supply">
+          <div class="risk-top">
+            <span class="risk-label supply">Supply chain</span>
+            <span class="severity" title="Severity: critical"><i></i><i></i><i></i><i></i><i></i></span>
+          </div>
+          <h4>Package interface failure</h4>
+          <p>Package A (platform) and Package B (pipeline) slip out of sync; one asset sits idle at massive daily cost.</p>
+          <div class="mitigation"><strong>Control</strong> Dedicated interface managers backed by legally binding cross-package penalty agreements.</div>
+        </article>
+
+        <article class="risk-card s-item" data-cat="supply">
+          <div class="risk-top">
+            <span class="risk-label supply">Supply chain</span>
+            <span class="severity" title="Severity: high"><i></i><i></i><i></i><i></i><i class="off"></i></span>
+          </div>
+          <h4>Modular logistics bottleneck</h4>
+          <p>Multi-ton modules built in low-cost yards and shipped to remote sites. One storm or canal closure halts installation.</p>
+          <div class="mitigation"><strong>Control</strong> Secure heavy-lift vessels early, build buffer storage at the destination port, schedule weather windows.</div>
+        </article>
+
+        <article class="risk-card s-item" data-cat="technical">
+          <div class="risk-top">
+            <span class="risk-label technical">Technical</span>
+            <span class="severity" title="Severity: high"><i></i><i></i><i></i><i></i><i class="off"></i></span>
+          </div>
+          <h4>Subsurface uncertainty</h4>
+          <p>Routing and anchoring face unknown geotechnical, seismic, or environmental hazards.</p>
+          <div class="mitigation"><strong>Control</strong> Front-end geological profiling, 3D seismic imaging, and explicit contingency for underground obstacles.</div>
+        </article>
+
+        <article class="risk-card s-item" data-cat="technical">
+          <div class="risk-top">
+            <span class="risk-label technical">Technical</span>
+            <span class="severity" title="Severity: medium"><i></i><i></i><i></i><i class="off"></i><i class="off"></i></span>
+          </div>
+          <h4>Labour &amp; productivity deficit</h4>
+          <p>Remote sites lack certified alloy welders and other scarce trades; turnover compounds delay.</p>
+          <div class="mitigation"><strong>Control</strong> Local vocational training, offsite modular fabrication, and premium camp conditions.</div>
+        </article>
+      </div>
+
+      <div class="analytics-pair">
+        <article class="analytics-card s-item">
+          <h3><svg class="ico"><use href="#i-chart"/></svg> QSRA — stop guessing</h3>
+          <p>Quantitative Schedule &amp; Cost Risk Analysis runs Monte Carlo simulation over the integrated schedule and cost model (Primavera Risk Analysis, @RISK). The output is a distribution, not a date.</p>
+          <div class="p-bars" aria-hidden="true">
+            <div class="p-row"><span>P10</span><div class="bar"><i style="width:38%"></i></div><span class="p-val">Q2 2029</span></div>
+            <div class="p-row"><span>P50</span><div class="bar"><i style="width:58%"></i></div><span class="p-val">Q3 2029</span></div>
+            <div class="p-row is-key"><span>P80</span><div class="bar"><i style="width:78%"></i></div><span class="p-val">Q4 2029</span></div>
+            <div class="p-row"><span>P90</span><div class="bar"><i style="width:92%"></i></div><span class="p-val">Q1 2030</span></div>
+          </div>
+          <p class="analytics-note">Commitment language: <em>"80% confidence the expansion finishes by Q4 2029 under $3.2B."</em></p>
+        </article>
+
+        <article class="analytics-card s-item">
+          <h3><svg class="ico"><use href="#i-warn"/></svg> Bow-tie model</h3>
+          <p>Maps root causes to ultimate consequences through a single top event, separating preventive barriers from mitigating recovery measures.</p>
+          <div class="bowtie" aria-hidden="true">
+            <div class="bt-side">
+              <span class="bt-label">Threats</span>
+              <span class="bt-node">Loss of containment</span>
+              <span class="bt-node">Overpressure</span>
+              <span class="bt-node">Operator error</span>
+            </div>
+            <div class="bt-event">Top<br>event</div>
+            <div class="bt-side right">
+              <span class="bt-label">Consequences</span>
+              <span class="bt-node">Fire</span>
+              <span class="bt-node">Toxic release</span>
+              <span class="bt-node">Production loss</span>
+            </div>
+          </div>
+          <p class="analytics-note">Barriers on the left prevent; barriers on the right recover. Audit both.</p>
+        </article>
+      </div>
+
+      <div class="cred-strip">
+        <span class="cred-strip-label">Risk credentials</span>
+        <span class="cred"><svg class="ico"><use href="#i-shield"/></svg> PMI-RMP</span>
+        <span class="cred"><svg class="ico"><use href="#i-globe"/></svg> IRM Enterprise Risk</span>
+        <span class="cred"><svg class="ico"><use href="#i-chart"/></svg> AACE CCP</span>
+      </div>
+    </section>
+
+    <!-- 08 REFERENCES -->
+    <section class="knowledge-card" id="references" data-title="references sources ISA PMI standards investopedia economics help">
+      <div class="card-head">
+        <div class="card-index">08</div>
+        <div class="card-title">
+          <h2>Reference Library</h2>
+          <p class="card-sub">Primary sources behind the frameworks above.</p>
+        </div>
+        <span class="badge">Sources</span>
+      </div>
+      <div class="ref-grid">
+        <a class="ref s-item" href="https://www.isa.org/certification/cap" target="_blank" rel="noopener">
+          <span class="ref-org">ISA</span><span class="ref-title">Certified Automation Professional (CAP)</span><svg class="ico"><use href="#i-link"/></svg>
+        </a>
+        <a class="ref s-item" href="https://www.isa.org/certification/certificate-programs/automation-project-management-specialist-certifica" target="_blank" rel="noopener">
+          <span class="ref-org">ISA</span><span class="ref-title">Automation Project Management Specialist</span><svg class="ico"><use href="#i-link"/></svg>
+        </a>
+        <a class="ref s-item" href="https://www.pmi.org/certifications/project-management-pmp" target="_blank" rel="noopener">
+          <span class="ref-org">PMI</span><span class="ref-title">Project Management Professional</span><svg class="ico"><use href="#i-link"/></svg>
+        </a>
+        <a class="ref s-item" href="https://www.pmi.org/certifications/risk-management-rmp" target="_blank" rel="noopener">
+          <span class="ref-org">PMI</span><span class="ref-title">Risk Management Professional (RMP)</span><svg class="ico"><use href="#i-link"/></svg>
+        </a>
+        <a class="ref s-item" href="https://www.investopedia.com/terms/s/sector.asp" target="_blank" rel="noopener">
+          <span class="ref-org">Investopedia</span><span class="ref-title">Economic Sectors Guide</span><svg class="ico"><use href="#i-link"/></svg>
+        </a>
+        <a class="ref s-item" href="https://www.economicshelp.org/blog/12436/concepts/sectors-economy/" target="_blank" rel="noopener">
+          <span class="ref-org">Economics Help</span><span class="ref-title">Sectors of the Economy</span><svg class="ico"><use href="#i-link"/></svg>
+        </a>
+        <a class="ref s-item" href="https://www.theirm.org/" target="_blank" rel="noopener">
+          <span class="ref-org">IRM</span><span class="ref-title">Enterprise Risk Management</span><svg class="ico"><use href="#i-link"/></svg>
+        </a>
+        <a class="ref s-item" href="https://www.rics.org/" target="_blank" rel="noopener">
+          <span class="ref-org">RICS</span><span class="ref-title">Chartered Surveyor — Infrastructure</span><svg class="ico"><use href="#i-link"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <p class="empty-state" id="emptyState" hidden>
+      <strong>No matches.</strong> Try a standard (<em>IEC 61511</em>), a document (<em>P&amp;ID</em>), or a risk (<em>FX</em>).
+    </p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-text">ProBiz<span class="accent">Intel</span></span>
+      <p>Industrial knowledge infrastructure — automation, capital strategy, and risk in one frame.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <div>
+        <h5>Frameworks</h5>
+        <a href="#chain">Value chain</a>
+        <a href="#convergence">IT / OT / AI</a>
+        <a href="#delivery">Delivery lifecycle</a>
+        <a href="#automation">PAC&amp;I BoK</a>
+      </div>
+      <div>
+        <h5>Strategy</h5>
+        <a href="#career">Career roadmap</a>
+        <a href="#mba-strategy">MBA strategy</a>
+        <a href="#risk-management">Risk matrix</a>
+        <a href="#references">References</a>
+      </div>
+    </nav>
+  </div>
+  <div class="container footer-base">
+    <p>© <span id="year">2026</span> ProBizIntel. All rights reserved. Industrial Knowledge Infrastructure Project.</p>
+    <p class="footer-target">Deployment target: probizintel.github.io</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Back to top">
+  <svg class="ico"><use href="#i-up"/></svg>
+</button>
+
+<script src="app.js"></script>
+</body>
+</html>
