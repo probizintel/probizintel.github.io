@@ -241,6 +241,23 @@
   box-shadow: var(--shadow);
   transform: translateY(-1px);
 }
+
+/* Deep link from a reading path: make the target unmistakable. */
+.work { scroll-margin-top: 96px; }
+.work:target {
+  border-color: var(--amber);
+  background: var(--amber-soft);
+  box-shadow: 0 0 0 3px var(--amber-line), var(--shadow);
+  animation: work-ping 1.5s ease-out 1;
+}
+@keyframes work-ping {
+  0%   { box-shadow: 0 0 0 0 rgba(184, 80, 30, .34), var(--shadow); }
+  70%  { box-shadow: 0 0 0 10px rgba(184, 80, 30, 0), var(--shadow); }
+  100% { box-shadow: 0 0 0 3px var(--amber-line), var(--shadow); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .work:target { animation: none; }
+}
 .work-meta {
   font-family: var(--f-mono);
   font-size: .68rem;

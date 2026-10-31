@@ -2,7 +2,7 @@
  "totals": {
   "files": 32912,
   "bytes": 34495351795,
-  "works": 129
+  "works": 126
  },
  "shelves": [
   {
@@ -88,7 +88,7 @@
     "OTHER": 1,
     "DLL": 1
    },
-   "works": 10
+   "works": 9
   },
   {
    "id": "economics",
@@ -188,7 +188,7 @@
     "PPTX": 1,
     "DB": 1
    },
-   "works": 12
+   "works": 11
   },
   {
    "id": "ob",
@@ -217,7 +217,7 @@
    "formats": {
     "PDF": 5
    },
-   "works": 5
+   "works": 4
   },
   {
    "id": "risk",
