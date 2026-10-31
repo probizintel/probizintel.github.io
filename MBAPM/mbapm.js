@@ -20,7 +20,10 @@
       balance: 'Balance', paid: 'Paid', opening: 'Opening',
       sl: 'Straight line', dbb: 'Double declining balance', soyd: 'Sum of years’ digits',
       annualDep: 'Annual charge', bookEnd: 'Closing book value', depTotal: 'Total depreciation',
-      method: 'Method', perYear: 'per year (constant)'
+      method: 'Method', perYear: 'per year (constant)',
+      cfbt: 'CFBT', dep: 'Depreciation', int: 'Interest', taxable: 'Taxable profit',
+      tax: 'Tax', prin: 'Principal', cfat: 'CFAT', total: 'Total',
+      cfatNote: 'Equity cash flow after tax'
     },
     vi: {
       npv: 'NPV', irr: 'IRR', payback: 'Hoàn vốn', dpayback: 'Hoàn vốn có chiết khấu',
@@ -34,7 +37,10 @@
       balance: 'Dư nợ', paid: 'Đã trả', opening: 'Dư đầu kỳ',
       sl: 'Đường thẳng', dbb: 'Số dư giảm dần kép', soyd: 'Tổng số năm',
       annualDep: 'Chi phí mỗi năm', bookEnd: 'Giá trị còn lại', depTotal: 'Tổng khấu hao',
-      method: 'Phương pháp', perYear: 'mỗi năm (không đổi)'
+      method: 'Phương pháp', perYear: 'mỗi năm (không đổi)',
+      cfbt: 'CFBT', dep: 'Khấu hao', int: 'Lãi vay', taxable: 'Lợi nhuận chịu thuế',
+      tax: 'Thuế', prin: 'Gốc', cfat: 'CFAT', total: 'Tổng',
+      cfatNote: 'Dòng tiền sau thuế của chủ sở hữu'
     }
   };
 
@@ -233,16 +239,60 @@
     }
   }
 
-  /* ---------------- wiring ---------------- */
-  function runAll() { runNPV(); runLoan(); runDep(); }
+  /* ---------------- after-tax cash flow ---------------- */
+  function runCFAT() {
+    var out = $('#cfOut');
+    if (!out) return;
+    var n = Math.max(1, Math.min(30, Math.round(num($('#cfYears'), 6))));
+    var bt = num($('#cfBt'), 900000);
+    var dep = num($('#cfDep'), 300000);
+    var interest = num($('#cfInt'), 60000);
+    var prin = num($('#cfPrin'), 100000);
+    var rate = num($('#cfTax'), 20) / 100;
 
-  var pairs = [['#npvRun', runNPV], ['#lnRun', runLoan], ['#dpRun', runDep]];
+    var rows = '', totBt = 0, totTax = 0, totCf = 0;
+    for (var y = 1; y <= n; y++) {
+      var taxable = bt - dep - interest;
+      var tax = Math.max(0, taxable) * rate;
+      var cfat = bt - prin - interest - tax;
+      totBt += bt; totTax += tax; totCf += cfat;
+      rows += '<tr><td>' + y + '</td><td>' + money(bt) + '</td><td>' + money(dep) +
+              '</td><td>' + money(interest) + '</td><td>' + money(taxable) + '</td><td>' +
+              money(tax) + '</td><td>' + money(prin) + '</td><td><strong>' + money(cfat) +
+              '</strong></td></tr>';
+    }
+
+    var firstTaxable = bt - dep - interest;
+    var firstTax = Math.max(0, firstTaxable) * rate;
+
+    out.innerHTML =
+      '<div class="res-grid">' +
+        cell(t('cfbt'), money(bt), '') +
+        cell(t('tax'), money(firstTax), 'is-neg') +
+        cell(t('cfat'), money(bt - prin - interest - firstTax), 'is-pos') +
+        cell(t('total'), money(totCf), '') +
+      '</div>' +
+      '<div class="table-scroll"><table class="mini-table">' +
+        '<thead><tr><th>' + t('year') + '</th><th>' + t('cfbt') + '</th><th>' + t('dep') +
+        '</th><th>' + t('int') + '</th><th>' + t('taxable') + '</th><th>' + t('tax') +
+        '</th><th>' + t('prin') + '</th><th>' + t('cfat') + '</th></tr></thead>' +
+        '<tbody>' + rows + '</tbody>' +
+        '<tfoot><tr><td>' + t('total') + '</td><td>' + money(totBt) + '</td><td></td><td></td>' +
+        '<td></td><td>' + money(totTax) + '</td><td></td><td>' + money(totCf) + '</td></tr></tfoot>' +
+      '</table></div>';
+  }
+
+  /* ---------------- wiring ---------------- */
+  function runAll() { runNPV(); runLoan(); runDep(); runCFAT(); }
+
+  var pairs = [['#npvRun', runNPV], ['#lnRun', runLoan], ['#dpRun', runDep], ['#cfRun', runCFAT]];
   pairs.forEach(function (p) {
     var btn = $(p[0]);
     if (btn) btn.addEventListener('click', p[1]);
   });
 
-  ['#npvC0', '#npvCF', '#npvRate', '#lnAmt', '#lnRate', '#lnYears', '#dpCost', '#dpSalv', '#dpLife'].forEach(function (sel) {
+  ['#npvC0', '#npvCF', '#npvRate', '#lnAmt', '#lnRate', '#lnYears', '#dpCost', '#dpSalv', '#dpLife',
+   '#cfYears', '#cfBt', '#cfDep', '#cfInt', '#cfPrin', '#cfTax'].forEach(function (sel) {
     var el = $(sel);
     if (!el) return;
     el.addEventListener('keydown', function (e) { if (e.key === 'Enter') runAll(); });

@@ -573,3 +573,37 @@
   .pm-matrix td { min-width: 118px; }
   .fstep { padding: 12px 14px; }
 }
+
+/* ---------- notation strip ---------- */
+.notation {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(168px, 1fr));
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  overflow: hidden;
+}
+.nt {
+  background: var(--panel);
+  padding: 11px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.nt code {
+  font-family: var(--f-mono);
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--amber);
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.nt span {
+  font-size: .74rem;
+  line-height: 1.45;
+  color: var(--text-3);
+}

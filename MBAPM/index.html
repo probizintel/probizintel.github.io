@@ -112,7 +112,7 @@
       <div class="stat"><dt>15</dt><dd data-vi="Học phần MSM MBA">MSM MBA courses</dd></div>
       <div class="stat"><dt>42</dt><dd data-vi="Quy trình PMBOK">PMBOK processes</dd></div>
       <div class="stat"><dt>59</dt><dd data-vi="Yếu tố rủi ro được xếp hạng">Ranked risk factors</dd></div>
-      <div class="stat"><dt>3</dt><dd data-vi="Công cụ tài chính tương tác">Live finance tools</dd></div>
+      <div class="stat"><dt>4</dt><dd data-vi="Công cụ tài chính tương tác">Live finance tools</dd></div>
     </dl>
   </div>
 </section>
@@ -408,7 +408,7 @@
       <div class="card-index">04</div>
       <div class="card-title">
         <h2 data-vi="Bộ công cụ Thẩm định Tài chính">The Financial Appraisal Toolkit</h2>
-        <p class="card-sub" data-vi="Bốn phép tính quyết định một dự án có được duyệt hay không. Chạy thử ngay trên trang này.">Four calculations decide whether a project is approved. Run them here.</p>
+        <p class="card-sub" data-vi="Bốn công cụ, một câu hỏi: dự án này có đáng bỏ vốn không. Chạy thử ngay trên trang này.">Four calculators, one question: is this project worth the capital. Run them here.</p>
       </div>
       <span class="badge badge-cyan" data-vi="Tương tác">Interactive</span>
     </div>
@@ -422,6 +422,7 @@
       <button class="tab is-active" role="tab" aria-selected="true" aria-controls="tool-npv" id="tt-npv" type="button" data-vi="NPV / IRR">NPV / IRR</button>
       <button class="tab" role="tab" aria-selected="false" aria-controls="tool-loan" id="tt-loan" type="button" data-vi="Lịch trả nợ">Loan schedule</button>
       <button class="tab" role="tab" aria-selected="false" aria-controls="tool-dep" id="tt-dep" type="button" data-vi="Khấu hao">Depreciation</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="tool-cfat" id="tt-cfat" type="button" data-vi="Dòng tiền sau thuế">After-tax CF</button>
     </div>
 
     <div class="tab-panels">
@@ -483,6 +484,23 @@
           <p class="tool-note" data-vi="Khấu hao không phải dòng tiền, nhưng nó quyết định lợi nhuận kế toán và thuế. Ba phương pháp cho ba con số lợi nhuận khác nhau trên cùng một tài sản."><strong>Depreciation is not cash flow</strong>, but it drives accounting profit and tax. Three methods give three different profit figures on the same asset.</p>
         </div>
       </div>
+
+      <!-- CFAT -->
+      <div class="tab-panel" id="tool-cfat" role="tabpanel" aria-labelledby="tt-cfat" hidden>
+        <div class="tool">
+          <div class="tool-inputs">
+            <label class="field"><span data-vi="Số năm hoạt động (N)">Operating years (N)</span><input type="number" id="cfYears" value="6" step="1" min="1" max="30"></label>
+            <label class="field"><span data-vi="CFBT — dòng tiền trước thuế/năm">CFBT — cash flow before tax, per year</span><input type="number" id="cfBt" value="900000" step="10000"></label>
+            <label class="field"><span data-vi="Khấu hao mỗi năm (D)">Depreciation per year (D)</span><input type="number" id="cfDep" value="300000" step="10000"></label>
+            <label class="field"><span data-vi="Lãi vay mỗi năm">Interest per year</span><input type="number" id="cfInt" value="60000" step="1000"></label>
+            <label class="field"><span data-vi="Trả vốn gốc mỗi năm">Principal repayment per year</span><input type="number" id="cfPrin" value="100000" step="1000"></label>
+            <label class="field"><span data-vi="Thuế suất (%)">Tax rate (%)</span><input type="number" id="cfTax" value="20" step="1"></label>
+            <button class="btn-run" id="cfRun" type="button" data-vi="Tính">Calculate</button>
+          </div>
+          <div class="tool-out" id="cfOut" aria-live="polite"></div>
+          <p class="tool-note" data-vi="<strong>CFAT của chủ sở hữu</strong> = CFBT − trả vốn gốc − trả lãi vay − thuế thu nhập. Thuế tính trên lợi nhuận chịu thuế (CFBT − khấu hao − lãi vay), nên khấu hao làm giảm thuế mà không rời khỏi túi bạn — đó là lý do ba phương pháp khấu hao ở tab trước lại quan trọng đến vậy."><strong>Equity CFAT</strong> = CFBT − principal − interest − income tax. Tax is charged on taxable profit (CFBT − depreciation − interest), so depreciation cuts the tax bill without leaving your pocket — which is why the depreciation method in the previous tab matters.</p>
+        </div>
+      </div>
     </div>
 
     <h3 class="sub-head" data-vi="Công thức nền">The formulas underneath</h3>
@@ -517,6 +535,18 @@
         <code>Q* = FC / (P − VC)</code>
         <p data-vi="Sản lượng tối thiểu để không lỗ. Mẫu số chính là biên đóng góp trên mỗi đơn vị.">Minimum volume to avoid a loss. The denominator is contribution margin per unit.</p>
       </article>
+    </div>
+
+    <h3 class="sub-head" data-vi="Quy ước ký hiệu (QLDA)">Notation, as taught in the QLDA course</h3>
+    <div class="notation">
+      <div class="nt s-item"><code>P</code><span data-vi="Nguyên giá tài sản cố định của dự án">Original cost of the project asset</span></div>
+      <div class="nt s-item"><code>SV</code><span data-vi="Giá trị thu hồi khi thanh lý">Salvage value on disposal</span></div>
+      <div class="nt s-item"><code>N</code><span data-vi="Thời hạn khấu hao">Depreciation life, in years</span></div>
+      <div class="nt s-item"><code>D<sub>x</sub></code><span data-vi="Chi phí khấu hao năm x">Depreciation charge in year x</span></div>
+      <div class="nt s-item"><code>B<sub>x</sub></code><span data-vi="Giá trị còn lại cuối năm x (B<sub>N</sub> = SV)">Book value at end of year x (B<sub>N</sub> = SV)</span></div>
+      <div class="nt s-item"><code>T<sub>x</sub></code><span data-vi="Khấu hao luỹ kế đến năm x (T<sub>N</sub> = P − SV)">Accumulated depreciation to year x (T<sub>N</sub> = P − SV)</span></div>
+      <div class="nt s-item"><code>CFBT</code><span data-vi="Dòng tiền trước thuế">Cash flow before tax</span></div>
+      <div class="nt s-item"><code>CFAT</code><span data-vi="Dòng tiền sau thuế của chủ sở hữu">After-tax cash flow to equity</span></div>
     </div>
   </section>
 
