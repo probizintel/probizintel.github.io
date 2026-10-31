@@ -54,6 +54,7 @@
           { label: 'Economics', vi: 'Kinh tế học', href: '../books/index.html#shelf-economics' },
           { label: 'Project Management', vi: 'Quản lý dự án', href: '../books/index.html#shelf-project-management' },
           { label: 'Risk Management', vi: 'Quản lý rủi ro', href: '../books/index.html#shelf-risk' },
+          { label: 'QLDA Workbooks', vi: 'Sổ bài tập QLDA', href: '../books/index.html#shelf-qlda' },
           { label: 'Open Shelf — free', vi: 'Kệ mở — miễn phí', href: '../books/index.html#shelf-classics' },
           { label: 'Thư viện tiếng Việt', vi: 'Vietnamese library', href: '../vi/books/index.html' }
         ]
