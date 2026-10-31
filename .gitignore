@@ -1,0 +1,4 @@
+.workbuddy-ai/
+*.log
+Thumbs.db
+.DS_Store

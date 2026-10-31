@@ -1,12 +1,89 @@
 /* ==========================================================================
    ProBizIntel — portal interactions
-   Vanilla JS. No dependencies. Progressive enhancement only.
+   Vanilla JS. No dependencies. Bilingual EN / VI with localStorage persistence.
    ========================================================================== */
 (function () {
   'use strict';
 
   var $ = function (sel, ctx) { return (ctx || document).querySelector(sel); };
   var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
+
+  var STORAGE_KEY = 'pbi-lang';
+  var currentLang = 'en';
+
+  var STRINGS = {
+    en: {
+      matches: 'matches',
+      match: 'match',
+      noMatches: 'No matches for',
+      menuOpen: 'Open menu',
+      menuClose: 'Close menu',
+      title: 'ProBizIntel | Heavy Industrial Project Intelligence'
+    },
+    vi: {
+      matches: 'kết quả',
+      match: 'kết quả',
+      noMatches: 'Không có kết quả cho',
+      menuOpen: 'Mở menu',
+      menuClose: 'Đóng menu',
+      title: 'ProBizIntel | Trí tuệ Dự án Công nghiệp Nặng'
+    }
+  };
+
+  function t(key) { return STRINGS[currentLang][key] || STRINGS.en[key]; }
+
+  /* ---------------- i18n engine ---------------- */
+  var textStore = new Map();   // element -> original innerHTML
+  var phStore = new Map();     // input -> original placeholder
+  var ariaStore = new Map();   // element -> original aria-label
+
+  function applyLang(lang, persist) {
+    currentLang = lang === 'vi' ? 'vi' : 'en';
+    document.documentElement.setAttribute('lang', currentLang);
+    document.title = t('title');
+
+    $$('[data-vi]').forEach(function (el) {
+      if (!textStore.has(el)) textStore.set(el, el.innerHTML);
+      var vi = el.getAttribute('data-vi');
+      el.innerHTML = currentLang === 'vi' ? vi : textStore.get(el);
+    });
+
+    $$('[data-vi-ph]').forEach(function (el) {
+      if (!phStore.has(el)) phStore.set(el, el.getAttribute('placeholder') || '');
+      el.setAttribute('placeholder', currentLang === 'vi' ? el.getAttribute('data-vi-ph') : phStore.get(el));
+    });
+
+    $$('[data-vi-aria]').forEach(function (el) {
+      if (!ariaStore.has(el)) ariaStore.set(el, el.getAttribute('aria-label') || '');
+      el.setAttribute('aria-label', currentLang === 'vi' ? el.getAttribute('data-vi-aria') : ariaStore.get(el));
+    });
+
+    $$('.lang-btn').forEach(function (btn) {
+      var active = btn.getAttribute('data-lang') === currentLang;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+
+    if (persist !== false) {
+      try { localStorage.setItem(STORAGE_KEY, currentLang); } catch (e) { /* storage blocked */ }
+    }
+
+    // refresh an active search so titles + counters follow the language
+    var input = $('#portalSearch');
+    if (input && input.value.trim()) applySearch(input.value);
+    else if (input) applySearch('');
+  }
+
+  $$('.lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      applyLang(btn.getAttribute('data-lang'), true);
+    });
+  });
+
+  var stored = null;
+  try { stored = localStorage.getItem(STORAGE_KEY); } catch (e) { stored = null; }
+  var initial = stored || ((navigator.language || 'en').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en');
+  applyLang(initial, false);
 
   /* ---------------- year ---------------- */
   var yearEl = $('#year');
@@ -46,7 +123,9 @@
     if (!nav || !menuBtn) return;
     nav.classList.remove('is-open');
     menuBtn.setAttribute('aria-expanded', 'false');
-    menuBtn.setAttribute('aria-label', 'Open menu');
+    var label = menuBtn.getAttribute('data-vi-aria');
+    if (label) menuBtn.setAttribute('aria-label', currentLang === 'vi' ? label : t('menuOpen'));
+    else menuBtn.setAttribute('aria-label', t('menuOpen'));
   }
 
   if (menuBtn && nav) {
@@ -54,7 +133,7 @@
       e.stopPropagation();
       var open = nav.classList.toggle('is-open');
       menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      menuBtn.setAttribute('aria-label', open ? t('menuClose') : t('menuOpen'));
     });
     nav.addEventListener('click', function (e) {
       if (e.target.closest('.nav-link')) closeNav();
@@ -67,7 +146,7 @@
     });
   }
 
-  /* ---------------- active nav (IntersectionObserver) ---------------- */
+  /* ---------------- active nav ---------------- */
   var navLinks = $$('.nav-link');
   var sections = navLinks
     .map(function (link) { return document.getElementById(link.getAttribute('href').slice(1)); })
@@ -80,7 +159,6 @@
         if (entry.isIntersecting) visible.add(entry.target.id);
         else visible.delete(entry.target.id);
       });
-      // pick the topmost visible section in document order
       var current = null;
       sections.forEach(function (sec) { if (visible.has(sec.id) && !current) current = sec.id; });
       if (current) {
@@ -148,14 +226,14 @@
   var emptyEl = $('#emptyState');
   var searchSections = $$('.knowledge-card');
 
-  function clearSearchHighlights() {
-    $$('.search-hit').forEach(function (el) { el.classList.remove('search-hit'); });
+  function sectionTitle(sec) {
+    var key = currentLang === 'vi' ? 'data-title-vi' : 'data-title';
+    return (sec.getAttribute(key) || sec.getAttribute('data-title') || '').toLowerCase();
   }
 
   function hideOrphanHeadings(sec, query) {
     if (!query) {
-      $$('.sub-head, .risk-toolbar, .tabs, .sequence-strip, .cred-strip, .note-strip', sec)
-        .forEach(function (el) { el.classList.remove('is-hidden'); });
+      $$('.sub-head', sec).forEach(function (el) { el.classList.remove('is-hidden'); });
       return;
     }
     $$('.sub-head', sec).forEach(function (head) {
@@ -171,11 +249,12 @@
   }
 
   function applySearch(raw) {
+    if (!searchSections || !searchSections.length) return;
     var query = (raw || '').trim().toLowerCase();
     var total = 0;
 
     searchSections.forEach(function (sec) {
-      var titleHit = query && (sec.getAttribute('data-title') || '').toLowerCase().indexOf(query) !== -1;
+      var titleHit = query && sectionTitle(sec).indexOf(query) !== -1;
       var items = $$('.s-item', sec);
       var visibleCount = 0;
 
@@ -198,15 +277,14 @@
       if (!query) {
         countEl.innerHTML = '';
       } else if (total === 0) {
-        countEl.innerHTML = 'No matches for <b>' + escapeHtml(raw.trim()) + '</b>';
+        countEl.innerHTML = t('noMatches') + ' <b>' + escapeHtml(raw.trim()) + '</b>';
       } else {
-        countEl.innerHTML = '<b>' + total + '</b> ' + (total === 1 ? 'match' : 'matches') +
-          ' for \u201c' + escapeHtml(raw.trim()) + '\u201d';
+        countEl.innerHTML = '<b>' + total + '</b> ' + t(total === 1 ? 'match' : 'matches') +
+          ' \u2014 \u201c' + escapeHtml(raw.trim()) + '\u201d';
       }
     }
     if (emptyEl) emptyEl.hidden = !(query && total === 0);
 
-    // reset category filter when a new query is typed
     if (query && riskFilters) {
       var active = $('.chip.is-active', riskFilters);
       if (active && active.getAttribute('data-filter') !== 'all') {
@@ -304,7 +382,7 @@
     revealTargets.forEach(function (el) { revealer.observe(el); });
   }
 
-  /* ---------------- smooth in-page links (respect reduced motion) ---------------- */
+  /* ---------------- in-page links ---------------- */
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   $$('a[href^="#"]').forEach(function (link) {
     link.addEventListener('click', function (e) {
