@@ -171,7 +171,7 @@
   color: var(--amber);
   letter-spacing: -.02em;
 }
-.domain h4 { font-size: .95rem; margin: 4px 0 6px; }
+.domain h3 { font-size: .95rem; margin: 4px 0 6px; }
 .domain p { margin: 0; font-size: .8rem; line-height: 1.55; color: var(--text-2); }
 .fine-print {
   font-size: .74rem;
@@ -528,7 +528,7 @@
   color: var(--amber);
   letter-spacing: .04em;
 }
-.read-card h4 { font-size: .88rem; color: var(--text); margin: 2px 0 3px; }
+.read-card h3 { font-size: .88rem; color: var(--text); margin: 2px 0 3px; }
 .read-card p { margin: 0; font-size: .76rem; color: var(--text-3); line-height: 1.45; }
 .read-go {
   margin-top: 8px;

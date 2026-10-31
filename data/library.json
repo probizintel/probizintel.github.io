@@ -2,7 +2,7 @@
  "totals": {
   "files": 32912,
   "bytes": 34495351795,
-  "works": 99
+  "works": 129
  },
  "shelves": [
   {
@@ -52,7 +52,7 @@
     "QDAT": 1,
     "LNK": 1
    },
-   "works": 9
+   "works": 11
   },
   {
    "id": "finance",
@@ -88,7 +88,7 @@
     "OTHER": 1,
     "DLL": 1
    },
-   "works": 7
+   "works": 10
   },
   {
    "id": "economics",
@@ -117,7 +117,7 @@
     "DJVU": 1,
     "EPUB": 1
    },
-   "works": 7
+   "works": 10
   },
   {
    "id": "project-management",
@@ -134,7 +134,7 @@
     "PPTX": 1,
     "XLS": 1
    },
-   "works": 8
+   "works": 12
   },
   {
    "id": "qlda",
@@ -188,7 +188,7 @@
     "PPTX": 1,
     "DB": 1
    },
-   "works": 7
+   "works": 12
   },
   {
    "id": "ob",
@@ -207,7 +207,7 @@
     "TXT": 1,
     "CSS": 1
    },
-   "works": 7
+   "works": 8
   },
   {
    "id": "operations",
@@ -217,7 +217,7 @@
    "formats": {
     "PDF": 5
    },
-   "works": 4
+   "works": 5
   },
   {
    "id": "risk",
@@ -232,7 +232,7 @@
     "XLS": 1,
     "NFO": 1
    },
-   "works": 6
+   "works": 8
   },
   {
    "id": "knowledge",
@@ -243,7 +243,7 @@
     "PDF": 5,
     "CHM": 3
    },
-   "works": 6
+   "works": 8
   },
   {
    "id": "mba",
@@ -253,7 +253,7 @@
    "formats": {
     "PDF": 23
    },
-   "works": 8
+   "works": 11
   },
   {
    "id": "toolkits",
@@ -281,7 +281,7 @@
     "OPF": 41,
     "RTF": 1
    },
-   "works": 10
+   "works": 14
   },
   {
    "id": "pmp",

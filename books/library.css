@@ -367,7 +367,7 @@
   text-transform: uppercase;
   color: var(--cyan);
 }
-.coll h4 { font-size: .92rem; margin: 6px 0 6px; }
+.coll h3 { font-size: .92rem; margin: 6px 0 6px; }
 .coll p { margin: 0; font-size: .82rem; line-height: 1.55; color: var(--text-2); }
 
 /* ---------- states ---------- */
