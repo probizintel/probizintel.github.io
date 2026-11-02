@@ -1,6 +1,6 @@
 /* ==========================================================================
    ProBizIntel — portal interactions
-   Vanilla JS. No dependencies. Bilingual EN / VI with localStorage persistence.
+   Vanilla JS. No dependencies. Trilingual EN / VI / ES with localStorage persistence.
    ========================================================================== */
 (function () {
   'use strict';
@@ -27,6 +27,14 @@
       menuOpen: 'Mở menu',
       menuClose: 'Đóng menu',
       title: 'ProBizIntel | Trí tuệ Dự án Công nghiệp Nặng'
+    },
+    es: {
+      matches: 'coincidencias',
+      match: 'coincidencia',
+      noMatches: 'Sin coincidencias para',
+      menuOpen: 'Abrir menú',
+      menuClose: 'Cerrar menú',
+      title: 'ProBizIntel | Inteligencia de Proyectos Industriales Pesados'
     }
   };
 
@@ -35,7 +43,8 @@
   // Per-page titles: <html data-title-en="…" data-title-vi="…">
   var PAGE_TITLE = {
     en: document.documentElement.getAttribute('data-title-en'),
-    vi: document.documentElement.getAttribute('data-title-vi')
+    vi: document.documentElement.getAttribute('data-title-vi'),
+    es: document.documentElement.getAttribute('data-title-es')
   };
   function pageTitle() {
     return PAGE_TITLE[currentLang] || PAGE_TITLE.en || t('title');
@@ -47,24 +56,32 @@
   var ariaStore = new Map();   // element -> original aria-label
 
   function applyLang(lang, persist) {
-    currentLang = lang === 'vi' ? 'vi' : 'en';
+    currentLang = (lang === 'vi' ? 'vi' : (lang === 'es' ? 'es' : 'en'));
     document.documentElement.setAttribute('lang', currentLang);
     document.title = pageTitle();
 
-    $$('[data-vi]').forEach(function (el) {
+    $$('[data-vi],[data-es]').forEach(function (el) {
       if (!textStore.has(el)) textStore.set(el, el.innerHTML);
-      var vi = el.getAttribute('data-vi');
-      el.innerHTML = currentLang === 'vi' ? vi : textStore.get(el);
+      var target = textStore.get(el);
+      if (currentLang === 'vi' && el.hasAttribute('data-vi')) target = el.getAttribute('data-vi');
+      else if (currentLang === 'es' && el.hasAttribute('data-es')) target = el.getAttribute('data-es');
+      el.innerHTML = target;
     });
 
-    $$('[data-vi-ph]').forEach(function (el) {
+    $$('[data-vi-ph],[data-es-ph]').forEach(function (el) {
       if (!phStore.has(el)) phStore.set(el, el.getAttribute('placeholder') || '');
-      el.setAttribute('placeholder', currentLang === 'vi' ? el.getAttribute('data-vi-ph') : phStore.get(el));
+      var target = phStore.get(el);
+      if (currentLang === 'vi' && el.hasAttribute('data-vi-ph')) target = el.getAttribute('data-vi-ph');
+      else if (currentLang === 'es' && el.hasAttribute('data-es-ph')) target = el.getAttribute('data-es-ph');
+      el.setAttribute('placeholder', target);
     });
 
-    $$('[data-vi-aria]').forEach(function (el) {
+    $$('[data-vi-aria],[data-es-aria]').forEach(function (el) {
       if (!ariaStore.has(el)) ariaStore.set(el, el.getAttribute('aria-label') || '');
-      el.setAttribute('aria-label', currentLang === 'vi' ? el.getAttribute('data-vi-aria') : ariaStore.get(el));
+      var target = ariaStore.get(el);
+      if (currentLang === 'vi' && el.hasAttribute('data-vi-aria')) target = el.getAttribute('data-vi-aria');
+      else if (currentLang === 'es' && el.hasAttribute('data-es-aria')) target = el.getAttribute('data-es-aria');
+      el.setAttribute('aria-label', target);
     });
 
     $$('.lang-btn').forEach(function (btn) {
@@ -91,7 +108,8 @@
 
   var stored = null;
   try { stored = localStorage.getItem(STORAGE_KEY); } catch (e) { stored = null; }
-  var initial = stored || ((navigator.language || 'en').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en');
+  var nav0 = (navigator.language || 'en').toLowerCase();
+  var initial = stored || (nav0.indexOf('es') === 0 ? 'es' : (nav0.indexOf('vi') === 0 ? 'vi' : 'en'));
   applyLang(initial, false);
 
   /* ---------------- year ---------------- */
